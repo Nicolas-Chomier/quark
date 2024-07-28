@@ -24,6 +24,7 @@
 		"@rollup/plugin-babel": "^6.0.4",
 		"@rollup/plugin-commonjs": "^26.0.1",
 		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-terser": "^0.4.4",
 		"@rollup/plugin-typescript": "^11.1.6",
 		"@types/node": "^20.14.12",
 		"@types/react": "^18",
@@ -32,6 +33,7 @@
 		"eslint-config-next": "14.2.5",
 		"quark": "file:./lib",
 		"rollup-plugin-css-only": "^4.5.2",
+		"rollup-plugin-delete": "^2.0.0",
 		"rollup-plugin-postcss": "^4.0.2",
 		"typescript": "^5"
 	}
