@@ -20,6 +20,15 @@ export default function Home() {
 					<Link href='/pages/inputs' className={styles.link}>
 						Inputs
 					</Link>
+					<Link href='/pages/flex' className={styles.link}>
+						Flex
+					</Link>
+					<Link href='/pages/dialog' className={styles.link}>
+						Dialog
+					</Link>
+					<Link href='/pages/typography' className={styles.link}>
+						Typography
+					</Link>
 				</div>
 			</div>
 		</main>

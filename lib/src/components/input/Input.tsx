@@ -48,7 +48,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 				data-width={width}
 				data-border={border}
 				data-border-radius={borderRadius}
-				className={`${styles.input} ${className}`}
+				className={`${styles.input} ${className || ''}`}
 				ref={ref}
 				{...props}
 			/>

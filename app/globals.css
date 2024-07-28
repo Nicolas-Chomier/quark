@@ -32,3 +32,17 @@ a {
 	color: inherit;
 }
 
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='number'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url'] {
+	font-size: 108%;
+}
+

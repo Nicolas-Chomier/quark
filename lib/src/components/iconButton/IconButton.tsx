@@ -64,7 +64,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
 				data-variant={variant}
 				data-size={size}
 				data-border-radius={borderRadius}
-				className={`${styles.iconButton} ${className}`}
+				className={`${styles.iconButton} ${className || ''}`}
 				ref={ref}
 				{...props}
 			>

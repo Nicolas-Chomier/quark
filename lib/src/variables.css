@@ -14,6 +14,7 @@
 	--button-text-color-theme: #fafafa;
 	--button-text-color-accent: #fafafa;
 	--button-text-color-simple: #fafafa;
+	--button-text-color-outline: #fafafa;
 	--button-text-color-fade: #181818;
 	--button-text-color-infos: #181818;
 	--button-text-color-success: #fafafa;
@@ -49,6 +50,8 @@
 	--iconButton-text-color-theme: #fafafa;
 	--iconButton-text-color-accent: #fafafa;
 	--iconButton-text-color-simple: #fafafa;
+	--iconButton-text-color-outline: #fafafa;
+	--iconButton-text-color-fade: #fafafa;
 	--iconButton-text-color-fade: #181818;
 	--iconButton-text-color-infos: #181818;
 	--iconButton-text-color-success: #fafafa;
@@ -81,7 +84,7 @@
 	--input-radius-xxxl: 20px;
 	--input-radius-full: 9999px;
 
-	--input-text-color-normal: #181818;
+	--input-text-color-normal: #fafafa;
 	--input-text-color-placeholder: #919191;
 	--input-text-color-disabled: #bebfc5;
 
@@ -98,4 +101,29 @@
 	--spinner-background-color-theme: #7148fc;
 	--spinner-background-color-accent: #d3fc48;
 	--spinner-background-color-basic: #fafafa;
+
+	/* Flex */
+	--flex-background-color-standard: #181818;
+	--flex-radius-xxxs: 4px;
+	--flex-radius-xxs: 6px;
+	--flex-radius-xs: 8px;
+	--flex-radius-s: 10px;
+	--flex-radius-m: 12px;
+	--flex-radius-l: 14px;
+	--flex-radius-xl: 16px;
+	--flex-radius-xxl: 18px;
+	--flex-radius-xxxl: 20px;
+	--flex-radius-full: 9999px;
+
+	/* Dialog */
+	--dialog-background-color-dialog: #111111de;
+	--dialog-background-color-backdrop: #0000002f;
+
+	/* Typography */
+	--typography-text-color-theme: #7148fc;
+	--typography-text-color-accent: #d3fc48;
+	--typography-text-color-infos: #87aaeb;
+	--typography-text-color-success: #3e9b4f;
+	--typography-text-color-warning: #ffd000;
+	--typography-text-color-danger: #e5484d;
 }

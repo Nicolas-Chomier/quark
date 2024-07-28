@@ -95,7 +95,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 				data-variant={variant}
 				data-width={width}
 				data-border-radius={borderRadius}
-				className={`${styles.button} ${className}`}
+				className={`${styles.button} ${className || ''}`}
 				ref={ref}
 				{...props}
 			>

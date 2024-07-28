@@ -12,18 +12,18 @@
 
 /* Size */
 .iconButton[data-size='s'] {
-	min-width: 2.125rem;
-	min-height: 2.125rem;
+	width: 2.125rem;
+	height: 2.125rem;
 }
 
 .iconButton[data-size='m'] {
-	min-width: 2.5rem;
-	min-height: 2.5rem;
+	width: 2.5rem;
+	height: 2.5rem;
 }
 
 .iconButton[data-size='l'] {
-	min-width: 2.75rem;
-	min-height: 2.75rem;
+	width: 2.75rem;
+	height: 2.75rem;
 }
 
 /* Variants */
@@ -184,7 +184,7 @@
 
 /* STATES FOCUS */
 .iconButton:focus {
-	box-shadow: inset 0 0 0 2px var(--iconButton-border-color-focus);
+	box-shadow: inset 0 0 0 1.5px var(--iconButton-border-color-focus);
 }
 
 /* Button animations */
