@@ -1,0 +1,101 @@
+:root {
+	/* Button */
+	--button-radius-xxxs: 4px;
+	--button-radius-xxs: 6px;
+	--button-radius-xs: 8px;
+	--button-radius-s: 10px;
+	--button-radius-m: 12px;
+	--button-radius-l: 14px;
+	--button-radius-xl: 16px;
+	--button-radius-xxl: 18px;
+	--button-radius-xxxl: 20px;
+	--button-radius-full: 9999px;
+
+	--button-text-color-theme: #fafafa;
+	--button-text-color-accent: #fafafa;
+	--button-text-color-simple: #fafafa;
+	--button-text-color-fade: #181818;
+	--button-text-color-infos: #181818;
+	--button-text-color-success: #fafafa;
+	--button-text-color-warning: #181818;
+	--button-text-color-danger: #fafafa;
+	--button-text-color-disabled: #bebfc5;
+
+	--button-background-color-theme: #7148fc;
+	--button-background-color-accent: #d3fc48;
+	--button-background-color-simple: #181818;
+	--button-background-color-fade: #f2f2f5;
+	--button-background-color-infos: #87aaeb;
+	--button-background-color-success: #3e9b4f;
+	--button-background-color-warning: #ffd000;
+	--button-background-color-danger: #e5484d;
+	--button-background-color-disabled: #e5e4e2;
+
+	--button-border-color-normal: #0000001f;
+	--button-border-color-focus: #ff0000;
+
+	/* IconButton */
+	--iconButton-radius-xxxs: 4px;
+	--iconButton-radius-xxs: 6px;
+	--iconButton-radius-xs: 8px;
+	--iconButton-radius-s: 10px;
+	--iconButton-radius-m: 12px;
+	--iconButton-radius-l: 14px;
+	--iconButton-radius-xl: 16px;
+	--iconButton-radius-xxl: 18px;
+	--iconButton-radius-xxxl: 20px;
+	--iconButton-radius-full: 9999px;
+
+	--iconButton-text-color-theme: #fafafa;
+	--iconButton-text-color-accent: #fafafa;
+	--iconButton-text-color-simple: #fafafa;
+	--iconButton-text-color-fade: #181818;
+	--iconButton-text-color-infos: #181818;
+	--iconButton-text-color-success: #fafafa;
+	--iconButton-text-color-warning: #181818;
+	--iconButton-text-color-danger: #fafafa;
+	--iconButton-text-color-disabled: #bebfc5;
+
+	--iconButton-background-color-theme: #7148fc;
+	--iconButton-background-color-accent: #d3fc48;
+	--iconButton-background-color-simple: #181818;
+	--iconButton-background-color-fade: #f2f2f5;
+	--iconButton-background-color-infos: #87aaeb;
+	--iconButton-background-color-success: #3e9b4f;
+	--iconButton-background-color-warning: #ffd000;
+	--iconButton-background-color-danger: #e5484d;
+	--iconButton-background-color-disabled: #e5e4e2;
+
+	--iconButton-border-color-normal: #0000001f;
+	--iconButton-border-color-focus: #ff0000;
+
+	/* Input */
+	--input-radius-xxxs: 4px;
+	--input-radius-xxs: 6px;
+	--input-radius-xs: 8px;
+	--input-radius-s: 10px;
+	--input-radius-m: 12px;
+	--input-radius-l: 14px;
+	--input-radius-xl: 16px;
+	--input-radius-xxl: 18px;
+	--input-radius-xxxl: 20px;
+	--input-radius-full: 9999px;
+
+	--input-text-color-normal: #181818;
+	--input-text-color-placeholder: #919191;
+	--input-text-color-disabled: #bebfc5;
+
+	--input-background-color-focus: #e6e6e6;
+	--input-background-color-disabled: #e5e4e2;
+
+	--input-border-color-normal: #0000001f;
+	--input-border-color-focus: #a8a8a8;
+
+	/* Label */
+	--label-text-color-normal: #181818;
+
+	/* Spinner */
+	--spinner-background-color-theme: #7148fc;
+	--spinner-background-color-accent: #d3fc48;
+	--spinner-background-color-basic: #fafafa;
+}

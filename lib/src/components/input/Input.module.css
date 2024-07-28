@@ -1,0 +1,122 @@
+.input {
+	z-index: 1;
+	font-family: inherit;
+	text-align: justify;
+	text-rendering: optimizeLegibility;
+	background-color: transparent;
+	color: var(--input-text-color-normal);
+	resize: none;
+	box-sizing: border-box;
+}
+
+/* Width */
+.input[data-width='s'] {
+	min-height: 2.5rem;
+	max-height: 2.5rem;
+	min-width: 12.5rem;
+	max-width: 12.5rem;
+	padding: 0 0.625rem;
+}
+
+.input[data-width='m'] {
+	min-height: 2.5rem;
+	max-height: 2.5rem;
+	min-width: 12.75rem;
+	max-width: 12.75rem;
+	padding: 0 0.625rem;
+}
+
+.input[data-width='l'] {
+	min-height: 2.5rem;
+	max-height: 2.5rem;
+	min-width: 12.875rem;
+	max-width: 12.875rem;
+	padding: 0 0.625rem;
+}
+
+.input[data-width='full'] {
+	min-height: 2.5rem;
+	max-height: 2.5rem;
+	width: 100%;
+	padding: 0 0.625rem;
+}
+
+/* Border */
+.input[data-border='true'] {
+	box-shadow: inset 0 0 0 1px var(--input-border-color-normal);
+}
+
+/* Border Radius */
+.input[data-border-radius='xxxs'] {
+	border-radius: var(--input-radius-xxxs);
+}
+
+.input[data-border-radius='xxs'] {
+	border-radius: var(--input-radius-xxs);
+}
+
+.input[data-border-radius='xs'] {
+	border-radius: var(--input-radius-xs);
+}
+
+.input[data-border-radius='s'] {
+	border-radius: var(--input-radius-s);
+}
+
+.input[data-border-radius='m'] {
+	border-radius: var(--input-radius-m);
+}
+
+.input[data-border-radius='l'] {
+	border-radius: var(--input-radius-l);
+}
+
+.input[data-border-radius='xl'] {
+	border-radius: var(--input-radius-xl);
+}
+
+.input[data-border-radius='xxl'] {
+	border-radius: var(--input-radius-xxl);
+}
+
+.input[data-border-radius='xxxl'] {
+	border-radius: var(--input-radius-xxxl);
+}
+
+.input[data-border-radius='full'] {
+	border-radius: var(--input-radius-full);
+}
+
+.inputLabel {
+	margin-bottom: 0.5rem;
+}
+
+/* Placeholder */
+.input::placeholder {
+	color: var(--input-text-color-placeholder);
+}
+
+/* Focus */
+.input:focus {
+	background-color: var(--input-background-color-focus);
+	box-shadow: inset 0 0 0 1px var(--input-border-color-focus);
+}
+
+/* Disabled */
+.input:disabled {
+	background-color: var(--input-text-color-disabled);
+	color: var(--input-text-color-disabled);
+	cursor: default;
+	animation: none;
+}
+
+.input:disabled::placeholder {
+	color: var(--input-text-color-disabled);
+}
+
+/* custom-input.css */
+.input[type='number']::-webkit-inner-spin-button,
+.input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
