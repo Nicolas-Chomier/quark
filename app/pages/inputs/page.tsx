@@ -1,11 +1,9 @@
 // pages/button-test.tsx
 'use client';
 import React from 'react';
-import { Input } from '../../../src/components/input/input';
 import styles from './page.module.css';
-import { InputFieldX } from 'app/holdGenComponent/Objects/inputFieldX/InputFieldX';
-import { KeyRound } from 'lucide-react';
-import { Label } from '../../../src/components/label/Label';
+import { Label } from '@/lib/src/components/label/Label';
+import { Input } from '@/lib/src/components/input/Input';
 
 export default function InputTest() {
 	return (
@@ -40,26 +38,7 @@ export default function InputTest() {
 						border
 					/>
 				</div>
-				<div>
-					<h1>Comparaison</h1>
-					<InputFieldX
-						value={'value'}
-						type={'password'}
-						name={'name'}
-						placeholder={'Mot de passe...'}
-						isDisable={false}
-						isError={false}
-						kind='primary'
-						onFieldChange={function (
-							value: string | undefined,
-						): void {
-							throw new Error('Function not implemented.');
-						}}
-					>
-						<KeyRound />
-					</InputFieldX>
-					<Input type='password' name={'Test1'} placeholder='test1' />
-				</div>
+
 				<div>
 					<h1>Special</h1>
 					<Input type='text' name={'spe'} placeholder='spe' />

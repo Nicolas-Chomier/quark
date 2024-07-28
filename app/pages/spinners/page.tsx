@@ -1,7 +1,7 @@
 // pages/button-test.tsx
 'use client';
 import React from 'react';
-import { Spinner } from '../../../src/components/spinner/Spinner';
+import { Spinner } from '@/lib/src/components/spinner/Spinner';
 import styles from './page.module.css';
 
 export default function SpinnerTest() {
