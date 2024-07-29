@@ -1,17 +1,25 @@
 {
-	"name": "quark_lib_project",
-	"version": "0.1.0",
-	"private": true,
+	"type": "module",
+	"name": "quark",
+	"version": "0.0.1",
+	"main": "dist/index.js",
+	"module": "dist/index.esm.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
+		"build": "rollup -c rollup.config.js",
+		"prepublishOnly": "npm run build",
 		"start": "next start",
-		"lint": "next lint",
-		"build:lib": "cd lib && npm run build",
-		"test:lib": "cd lib && npm test"
+		"lint": "next lint"
 	},
 	"dependencies": {
+		"@radix-ui/react-checkbox": "^1.1.1",
 		"@radix-ui/react-tooltip": "^1.1.2",
+		"@types/node": "^20.14.12",
+		"rollup": "^4.19.1",
 		"lucide-react": "^0.417.0",
 		"next": "14.2.5",
 		"react": "^18",
@@ -39,3 +47,4 @@
 		"typescript": "^5"
 	}
 }
+
