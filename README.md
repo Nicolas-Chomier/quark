@@ -1,3 +1,5 @@
 # QUARK
 
-V1.0.0
+Mise en place de la librairie d'objets QUARK
+V0.0.1
+

@@ -38,6 +38,15 @@ const rollupConfig = {
 			modules: true,
 			extract: 'Quark_UI.css',
 		}),
+		babel({
+			babelHelpers: 'bundled',
+			extensions: ['.js', '.jsx', '.ts', '.tsx'],
+			presets: [
+				'@babel/preset-react',
+				'@babel/preset-typescript',
+				'@babel/preset-env',
+			],
+		}),
 		terser(),
 	],
 	external: ['react', 'react-dom'],
