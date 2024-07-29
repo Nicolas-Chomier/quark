@@ -7,4 +7,7 @@ export { IconButton, type IconButtonProps, } from './components/iconButton/IconB
 export { Input, type InputProps } from './components/input/Input';
 export { Label, type LabelProps } from './components/label/Label';
 export { Spinner, type SpinnerProps } from './components/spinner/Spinner';
+export { Table, type TableProps } from './components/table/Table';
+export { TextArea, type TextAreaProps } from './components/textarea/TextArea';
+export { Tooltip, type TooltipProps } from './components/tooltip/Tooltip';
 export { Typography, type TypographyProps, } from './components/typography/Typography';
