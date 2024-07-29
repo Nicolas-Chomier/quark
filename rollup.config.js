@@ -25,7 +25,7 @@ const rollupConfig = {
 		typescript({ tsconfig: './tsconfig.json' }),
 		postcss({
 			modules: true,
-			extract: 'dist/styles.css',
+			extract: 'quarkStyles.css',
 		}),
 		babel({
 			babelHelpers: 'bundled',
