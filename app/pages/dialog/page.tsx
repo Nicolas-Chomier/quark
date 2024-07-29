@@ -6,7 +6,7 @@ import { Dialog } from '@/lib/src/components/dialog/Dialog';
 import { IconButton } from '@/lib/src/components/iconButton/IconButton';
 import { Button } from '@/lib/src/components/button/Button';
 
-export default function ButtonTest() {
+export default function DialogTest() {
 	const [open, setOpen] = useState(false);
 
 	const handleOpenDialog = (): void => {

@@ -1,0 +1,9 @@
+.tooltipTrigger {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tooltipArrow {
+	fill: transparent;
+}

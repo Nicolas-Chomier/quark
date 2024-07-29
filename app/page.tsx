@@ -29,6 +29,18 @@ export default function Home() {
 					<Link href='/pages/typography' className={styles.link}>
 						Typography
 					</Link>
+					<Link href='/pages/checkbox' className={styles.link}>
+						Checkbox
+					</Link>
+					<Link href='/pages/textArea' className={styles.link}>
+						TextArea
+					</Link>
+					<Link href='/pages/tooltips' className={styles.link}>
+						Tooltip
+					</Link>
+					<Link href='/pages/table' className={styles.link}>
+						Table
+					</Link>
 				</div>
 			</div>
 		</main>

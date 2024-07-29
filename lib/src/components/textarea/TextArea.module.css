@@ -1,0 +1,108 @@
+.textarea {
+	line-height: 1.5;
+	background-color: var(--textarea-background-color-standard);
+	transition: box-shadow 0.15s ease-in-out;
+}
+
+/* Font family */
+.textarea[data-standard-font-family='true'] {
+	font-family: inherit;
+}
+
+/* Font size */
+.textarea[data-font-size='xs'] {
+	padding: 0.5rem;
+	font-size: 1rem;
+}
+.textarea[data-font-size='s'] {
+	padding: 0.625rem;
+	font-size: 1.125rem;
+}
+.textarea[data-font-size='m'] {
+	padding: 0.75rem;
+	font-size: 1.25rem;
+}
+.textarea[data-font-size='l'] {
+	padding: 0.875rem;
+	font-size: 1.375rem;
+}
+.textarea[data-font-size='xl'] {
+	padding: 1rem;
+	font-size: 1.5rem;
+}
+
+/* Width */
+.textarea[data-width='s'] {
+	width: 12.5rem;
+	resize: none;
+}
+.textarea[data-width='m'] {
+	width: 15.5rem;
+	resize: none;
+}
+.textarea[data-width='l'] {
+	width: 18.75rem;
+	resize: none;
+}
+.textarea[data-width='full'] {
+	width: 100%;
+	resize: none;
+}
+.textarea[data-width='auto'] {
+	width: 12.5rem;
+}
+
+/* Border */
+.textarea[data-border='true'] {
+	box-shadow: inset 0 0 0 1px var(--textarea-border-color-standard);
+}
+
+/* Border radius */
+.textarea[data-border-radius='xxxs'] {
+	border-radius: var(--textarea-radius-xxxs);
+}
+.textarea[data-border-radius='xxs'] {
+	border-radius: var(--textarea-radius-xxs);
+}
+.textarea[data-border-radius='xs'] {
+	border-radius: var(--textarea-radius-xs);
+}
+.textarea[data-border-radius='s'] {
+	border-radius: var(--textarea-radius-s);
+}
+.textarea[data-border-radius='m'] {
+	border-radius: var(--textarea-radius-m);
+}
+.textarea[data-border-radius='l'] {
+	border-radius: var(--textarea-radius-l);
+}
+.textarea[data-border-radius='xl'] {
+	border-radius: var(--textarea-radius-xl);
+}
+.textarea[data-border-radius='xxl'] {
+	border-radius: var(--textarea-radius-xxl);
+}
+.textarea[data-border-radius='xxxl'] {
+	border-radius: var(--textarea-radius-xxxl);
+}
+.textarea[data-border-radius='full'] {
+	border-radius: var(--textarea-radius-full);
+}
+
+/* Disabled */
+.textarea:disabled {
+	background-color: var(--textarea-background-color-disabled);
+	opacity: 1;
+}
+
+/* Placeholder */
+.textarea::placeholder {
+	color: var(--textarea-text-color-placeholder);
+	opacity: 1;
+}
+
+/* Focus */
+.textarea:focus {
+	outline: none;
+	box-shadow: inset 0 0 0 1.4px var(--textarea-border-color-focus);
+}

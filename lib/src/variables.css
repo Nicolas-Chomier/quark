@@ -104,6 +104,7 @@
 
 	/* Flex */
 	--flex-background-color-standard: #181818;
+
 	--flex-radius-xxxs: 4px;
 	--flex-radius-xxs: 6px;
 	--flex-radius-xs: 8px;
@@ -126,4 +127,47 @@
 	--typography-text-color-success: #3e9b4f;
 	--typography-text-color-warning: #ffd000;
 	--typography-text-color-danger: #e5484d;
+
+	/* Checkbox */
+	--checkbox-background-color-outline: #0000001a;
+
+	--checkbox-radius-s: 3px;
+	--checkbox-radius-m: 5px;
+	--checkbox-radius-l: 7px;
+	--checkbox-radius-full: 9999px;
+
+	--checkbox-children-color-solid-theme: #fafafa;
+	--checkbox-children-color-solid-accent: #fafafa;
+	--checkbox-children-color-solid-standard: #fafafa;
+	--checkbox-children-color-solid-fade: #181818;
+
+	--checkbox-color-theme: #7148fc;
+	--checkbox-color-accent: #fc48e4;
+	--checkbox-color-standard: #181818;
+	--checkbox-color-fade: #00000052;
+
+	--checkbox-color-disabled: #4b4b4b6b;
+
+	--checkbox-border-color-focus: #ff0000;
+	--checkbox-border-color-hover: #ff0000;
+
+	/* TextArea */
+	--textarea-background-color-standard: #0000001a;
+	--textarea-background-color-disabled: #505050d3;
+
+	--textarea-radius-xxxs: 4px;
+	--textarea-radius-xxs: 6px;
+	--textarea-radius-xs: 8px;
+	--textarea-radius-s: 10px;
+	--textarea-radius-m: 12px;
+	--textarea-radius-l: 14px;
+	--textarea-radius-xl: 16px;
+	--textarea-radius-xxl: 18px;
+	--textarea-radius-xxxl: 20px;
+	--textarea-radius-full: 9999px;
+
+	--textarea-border-color-standard: #0000001f;
+	--textarea-border-color-focus: #ff0000;
+
+	--textarea-text-color-placeholder: #919191;
 }
