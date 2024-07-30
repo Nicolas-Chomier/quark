@@ -1,5 +1,6 @@
 import './variables.css';
 
+export { Badge, type BadgeProps } from './components/badge/Badge';
 export { Button, type ButtonProps } from './components/button/Button';
 export { Checkbox, type CheckboxProps } from './components/checkbox/Checkbox';
 export { Dialog, type DialogProps } from './components/dialog/Dialog';

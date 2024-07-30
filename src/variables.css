@@ -170,4 +170,41 @@
 	--textarea-border-color-focus: #ff0000;
 
 	--textarea-text-color-placeholder: #919191;
+
+	/* Badge */
+	--badge-color-theme: #6319ec;
+	--badge-color-accent: #2fccf3;
+	--badge-color-info: #2e21e9;
+	--badge-color-success: #46f323;
+	--badge-color-warning: #f1ee16;
+	--badge-color-danger: #f11e1e;
+
+	--badge-background-color-theme: #6319ec;
+	--badge-background-color-accent: #2fccf3;
+	--badge-background-color-info: #2e21e9;
+	--badge-background-color-success: #46f323;
+	--badge-background-color-warning: #f1ee16;
+	--badge-background-color-danger: #f11e1e;
+
+	--badge-fade-background-theme: rgba(99, 25, 236, 0.1);
+	--badge-fade-background-accent: rgba(47, 204, 243, 0.1);
+	--badge-fade-background-info: rgba(46, 33, 233, 0.1);
+	--badge-fade-background-success: rgba(70, 243, 35, 0.1);
+	--badge-fade-background-warning: rgba(241, 238, 22, 0.1);
+	--badge-fade-background-danger: rgba(241, 30, 30, 0.1);
+
+	--badge-text-color-theme: white;
+	--badge-text-color-accent: white;
+	--badge-text-color-info: white;
+	--badge-text-color-success: white;
+	--badge-text-color-warning: black;
+	--badge-text-color-danger: white;
+
+	--badge-border-radius-xxs: 0.125rem;
+	--badge-border-radius-xs: 0.25rem;
+	--badge-border-radius-sm: 0.375rem;
+	--badge-border-radius-md: 0.5rem;
+	--badge-border-radius-lg: 0.75rem;
+	--badge-border-radius-xl: 1rem;
+	--badge-border-radius-xxl: 1.5rem;
 }
