@@ -207,6 +207,23 @@
 	--badge-border-radius-lg: 0.75rem;
 	--badge-border-radius-xl: 1rem;
 	--badge-border-radius-xxl: 1.5rem;
+
+	/* Select */
+	--select-border-color-standard: #000000;
+	--select-border-color-active: #ff0000;
+
+	--select-field-and-panel-border-radius: 0.938rem;
+
+	--select-field-background-color-standard: red;
+	--select-field-background-color-hover: rgba(218, 53, 53, 0.644);
+
+	--select-panel-background-color-hover: green;
+	--select-panel-background-color: transparent;
+
+	--select-scrollbar-background-color-inner: rgb(22, 22, 22);
+	--select-scrollbar-background-color-outer: rgb(252, 2, 2);
+
+	--select-scrollbar-width: 1rem;
 }
 
 /* Sizes */
@@ -769,6 +786,8 @@
 }
 
 .Flex-module_flex__bglxA {
+	width: fit-content;
+	height: fit-content;
 	display: flex;
 	z-index: 1;
 	box-sizing: border-box;
@@ -1792,6 +1811,75 @@
 	margin-bottom: 0.3rem;
 	font-size: inherit;
 	font-weight: inherit;
+}
+
+.Select-module_container__1w7JC {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.Select-module_field__Idqyt {
+	display: flex;
+	align-items: center;
+	gap: 0.125rem;
+	padding: 0.1875rem;
+	border-radius: var(--select-field-and-panel-border-radius);
+	box-shadow: inset 0 0 0 1px var(--select-border-color-standard);
+	background-color: var(--select-field-background-color-standard);
+	transition: background-color 0.2s ease;
+}
+.Select-module_field__Idqyt:hover {
+	background-color: var(--select-field-background-color-hover);
+}
+
+.Select-module_panel__46z3C {
+	margin-top: 0.125rem;
+	width: 15.5rem;
+	max-width: 15.5rem;
+	height: 0;
+	overflow-y: auto;
+	background-color: var(--select-panel-background-color);
+	border-radius: var(--select-field-and-panel-border-radius);
+	transition: height 0.3s ease, box-shadow 0.3s ease;
+}
+.Select-module_panelOpen__9SjEH {
+	height: auto;
+	height: calc-size(auto);
+	max-height: 14.875rem;
+	box-shadow: inset 0 0 0 1px var(--select-border-color-active);
+}
+.Select-module_customButton__svbBJ {
+	width: 100%;
+	max-width: 15.5rem;
+	height: 2.375rem;
+	padding: 0.25rem;
+	border: none;
+	outline: none;
+	color: inherit;
+	background-color: transparent;
+	cursor: pointer;
+	font: inherit;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.Select-module_customButton__svbBJ:hover {
+	background-color: var(--select-panel-background-color-hover);
+}
+.Select-module_panel__46z3C::-webkit-scrollbar {
+	width: 0;
+}
+.Select-module_panel__46z3C[data-scrollbar='true']::-webkit-scrollbar {
+	width: var(--select-scrollbar-width);
+}
+.Select-module_panel__46z3C[data-scrollbar='true']::-webkit-scrollbar-track {
+	background: var(--select-scrollbar-background-color-outer);
+}
+.Select-module_panel__46z3C[data-scrollbar='true']::-webkit-scrollbar-thumb {
+	background: var(--select-scrollbar-background-color-inner);
 }
 
 

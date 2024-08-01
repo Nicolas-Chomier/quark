@@ -207,4 +207,21 @@
 	--badge-border-radius-lg: 0.75rem;
 	--badge-border-radius-xl: 1rem;
 	--badge-border-radius-xxl: 1.5rem;
+
+	/* Select */
+	--select-border-color-standard: #000000;
+	--select-border-color-active: #ff0000;
+
+	--select-field-and-panel-border-radius: 0.938rem;
+
+	--select-field-background-color-standard: red;
+	--select-field-background-color-hover: rgba(218, 53, 53, 0.644);
+
+	--select-panel-background-color-hover: green;
+	--select-panel-background-color: transparent;
+
+	--select-scrollbar-background-color-inner: rgb(22, 22, 22);
+	--select-scrollbar-background-color-outer: rgb(252, 2, 2);
+
+	--select-scrollbar-width: 1rem;
 }

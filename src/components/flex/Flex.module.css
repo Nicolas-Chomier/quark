@@ -1,4 +1,6 @@
 .flex {
+	width: fit-content;
+	height: fit-content;
 	display: flex;
 	z-index: 1;
 	box-sizing: border-box;
