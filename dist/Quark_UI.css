@@ -179,6 +179,7 @@
 	--badge-color-warning: #f1ee16;
 	--badge-color-danger: #f11e1e;
 
+	--badge-background-color-standard: #181818;
 	--badge-background-color-theme: #6319ec;
 	--badge-background-color-accent: #2fccf3;
 	--badge-background-color-info: #2e21e9;
@@ -193,6 +194,7 @@
 	--badge-fade-background-warning: rgba(241, 238, 22, 0.1);
 	--badge-fade-background-danger: rgba(241, 30, 30, 0.1);
 
+	--badge-text-color-standard: white;
 	--badge-text-color-theme: white;
 	--badge-text-color-accent: white;
 	--badge-text-color-info: white;
@@ -235,25 +237,31 @@
 	justify-content: center;
 	line-height: 1;
 	text-align: center;
-	white-space: nowrap;
 	vertical-align: baseline;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 .Badge-module_badge__viR1-[data-size='small'] {
 	font-size: 0.75rem;
 	padding: 0.28rem 0.5rem;
 	max-width: 4rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .Badge-module_badge__viR1-[data-size='medium'] {
 	font-size: 0.875rem;
 	padding: 0.375rem 0.75rem;
 	max-width: 5rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .Badge-module_badge__viR1-[data-size='large'] {
 	font-size: 1rem;
 	padding: 0.5rem 1rem;
 	max-width: 6rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /* Border radius */
@@ -283,28 +291,32 @@
 }
 
 /* Solid */
+.Badge-module_badge__viR1-[data-variant='solid'] {
+	background-color: var(--badge-background-color-standard);
+	color: var(--badge-text-color-standard);
+}
 .Badge-module_badge__viR1-[data-variant='solid'][data-color='theme'] {
-	background-color: var(--badge-background-theme);
+	background-color: var(--badge-background-color-theme);
 	color: var(--badge-text-color-theme);
 }
 .Badge-module_badge__viR1-[data-variant='solid'][data-color='accent'] {
-	background-color: var(--badge-background-accent);
+	background-color: var(--badge-background-color-accent);
 	color: var(--badge-text-color-accent);
 }
 .Badge-module_badge__viR1-[data-variant='solid'][data-color='info'] {
-	background-color: var(--badge-background-info);
+	background-color: var(--badge-background-color-info);
 	color: var(--badge-text-color-info);
 }
 .Badge-module_badge__viR1-[data-variant='solid'][data-color='success'] {
-	background-color: var(--badge-background-success);
+	background-color: var(--badge-background-color-success);
 	color: var(--badge-text-color-success);
 }
 .Badge-module_badge__viR1-[data-variant='solid'][data-color='warning'] {
-	background-color: var(--badge-background-warning);
+	background-color: var(--badge-background-color-warning);
 	color: var(--badge-text-color-warning);
 }
 .Badge-module_badge__viR1-[data-variant='solid'][data-color='danger'] {
-	background-color: var(--badge-background-danger);
+	background-color: var(--badge-background-color-danger);
 	color: var(--badge-text-color-danger);
 }
 

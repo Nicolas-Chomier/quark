@@ -179,6 +179,7 @@
 	--badge-color-warning: #f1ee16;
 	--badge-color-danger: #f11e1e;
 
+	--badge-background-color-standard: #181818;
 	--badge-background-color-theme: #6319ec;
 	--badge-background-color-accent: #2fccf3;
 	--badge-background-color-info: #2e21e9;
@@ -193,6 +194,7 @@
 	--badge-fade-background-warning: rgba(241, 238, 22, 0.1);
 	--badge-fade-background-danger: rgba(241, 30, 30, 0.1);
 
+	--badge-text-color-standard: white;
 	--badge-text-color-theme: white;
 	--badge-text-color-accent: white;
 	--badge-text-color-info: white;
