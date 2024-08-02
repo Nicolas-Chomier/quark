@@ -11,7 +11,7 @@
 	align-items: center;
 	gap: 0.125rem;
 	padding: 0.1875rem;
-	border-radius: var(--select-field-and-panel-border-radius);
+	border-radius: var(--select-field-and-panel-radius);
 	box-shadow: inset 0 0 0 1px var(--select-border-color-standard);
 	background-color: var(--select-field-background-color-standard);
 	transition: background-color 0.2s ease;
@@ -27,7 +27,7 @@
 	height: 0;
 	overflow-y: auto;
 	background-color: var(--select-panel-background-color);
-	border-radius: var(--select-field-and-panel-border-radius);
+	border-radius: var(--select-field-and-panel-radius);
 	transition: height 0.3s ease, box-shadow 0.3s ease;
 }
 .panelOpen {
@@ -37,7 +37,7 @@
 	box-shadow: inset 0 0 0 1px var(--select-border-color-active);
 }
 .customButton {
-	width: 100%;
+	width: 15.5rem;
 	max-width: 15.5rem;
 	height: 2.375rem;
 	padding: 0.25rem;
@@ -65,4 +65,5 @@
 }
 .panel[data-scrollbar='true']::-webkit-scrollbar-thumb {
 	background: var(--select-scrollbar-background-color-inner);
+	border-radius: 99px;
 }

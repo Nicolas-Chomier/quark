@@ -36,25 +36,25 @@
 
 /* Border radius */
 .badge[data-border-radius='xxs'] {
-	border-radius: var(--badge-border-radius-xxs);
+	border-radius: var(--badge-radius-xxs);
 }
 .badge[data-border-radius='xs'] {
-	border-radius: var(--badge-border-radius-xs);
+	border-radius: var(--badge-radius-xs);
 }
 .badge[data-border-radius='sm'] {
-	border-radius: var(--badge-border-radius-sm);
+	border-radius: var(--badge-radius-s);
 }
 .badge[data-border-radius='md'] {
-	border-radius: var(--badge-border-radius-md);
+	border-radius: var(--badge-radius-m);
 }
 .badge[data-border-radius='lg'] {
-	border-radius: var(--badge-border-radius-lg);
+	border-radius: var(--badge-radius-l);
 }
 .badge[data-border-radius='xl'] {
-	border-radius: var(--badge-border-radius-xl);
+	border-radius: var(--badge-radius-xl);
 }
 .badge[data-border-radius='xxl'] {
-	border-radius: var(--badge-border-radius-xxl);
+	border-radius: var(--badge-radius-xxl);
 }
 .badge[data-border-radius='full'] {
 	border-radius: 9999px;
