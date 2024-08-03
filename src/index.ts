@@ -34,3 +34,8 @@ export { useMousePosition } from './hooks/useMousePosition';
 export { useReadLocalStorage } from './hooks/useReadLocalStorage';
 export { useSessionStorage } from './hooks/useSessionStorage';
 export { useCopyToClipboard } from './hooks/useCopyToClipboard';
+
+/* Functions */
+export { _object } from './functions/object';
+export { _array } from './functions/array';
+export { _capitalize } from './functions/string';
