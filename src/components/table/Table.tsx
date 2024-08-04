@@ -121,7 +121,7 @@ export const Table: React.FC<TableProps> = ({
 		);
 
 	return (
-		<div className={styles.container}>
+		<div className={styles.tableContainer}>
 			<table className={styles.table} data-width={size}>
 				{isLoading ? (
 					<thead>
