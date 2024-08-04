@@ -1,20 +1,16 @@
 import React from 'react';
-type GenericObject<T> = {
-    [key: string]: T;
-};
-export interface TableProps {
-    data: any;
-    allowSelection?: number;
-    striped?: boolean;
-    hoverable?: boolean;
-    size?: string;
-    responsive?: boolean;
-    className?: string;
-    children?: React.ReactNode;
+interface TableData {
+    id: number;
+    [key: string]: any;
 }
-export declare const Table: React.ForwardRefExoticComponent<TableProps & React.RefAttributes<HTMLTableElement>>;
-export declare const objectHasAtLeastOneKey: (obj: GenericObject<unknown> | undefined | null) => boolean;
-export declare const extractObjectKeys: (obj: GenericObject<unknown> | undefined | null) => string[] | undefined;
-export declare const getSplitedTableContent: (data: GenericObject<string | number>[] | undefined, rowPerPage?: number) => any;
-export declare const buildMultiSelectionResult: (data: GenericObject<string | number>[] | undefined, IDList: number[]) => GenericObject<string | number>[] | undefined;
+export interface TableProps {
+    data: TableData[];
+    rowsPerPage?: number;
+    allowSelection?: 'single' | 'multiple' | 'none';
+    size?: 'xs' | 's' | 'm' | 'l' | 'xl';
+    isLoading?: boolean;
+    error?: boolean;
+    onRowsSelect: (selectedRows: TableData[]) => void;
+}
+export declare const Table: React.FC<TableProps>;
 export {};

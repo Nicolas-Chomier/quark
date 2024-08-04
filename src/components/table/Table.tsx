@@ -1,192 +1,243 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import {
+	Check,
+	ChevronLeft,
+	ChevronRight,
+	ChevronsLeft,
+	ChevronsRight,
+	X,
+} from 'lucide-react';
+import { FallBack } from '../fallback/Fallback';
+import { Spinner } from '../spinner/Spinner';
 import styles from './Table.module.css';
-import { TablePagination } from './TablePagination';
 
-type GenericObject<T> = {
-	[key: string]: T;
-};
-
-export interface TableProps {
-	data: any;
-	allowSelection?: number;
-	striped?: boolean;
-	hoverable?: boolean;
-	size?: string;
-	responsive?: boolean;
-	className?: string;
-	children?: React.ReactNode;
+interface TableData {
+	id: number;
+	[key: string]: any;
 }
 
-export const Table = React.forwardRef<HTMLTableElement, TableProps>(
-	(
-		{
-			data,
-			allowSelection = 0,
-			striped,
-			hoverable,
-			size,
-			responsive,
-			className,
-			children,
-		},
-		ref,
-	) => {
-		const [selectedRows, setSelectedRows] = useState<number[]>([]);
-		const [pageID, setPageID] = useState<number>(1);
-		const [page, setPage] = useState(0);
-		const { header, splitedRows } = useMemo(() => {
-			if (!data) return { header: [], splitedRows: [] };
-			return getSplitedTableContent(data, 5);
-		}, [data]);
+export interface TableProps {
+	data: TableData[];
+	rowsPerPage?: number;
+	allowSelection?: 'single' | 'multiple' | 'none';
+	size?: 'xs' | 's' | 'm' | 'l' | 'xl';
+	isLoading?: boolean;
+	error?: boolean;
+	onRowsSelect: (selectedRows: TableData[]) => void;
+}
 
-		const handleHeaderCheckbox = () => {
-			console.log('header checkbox clicked');
-		};
+export const Table: React.FC<TableProps> = ({
+	data = [],
+	rowsPerPage = 5,
+	allowSelection,
+	size,
+	isLoading,
+	error,
+	onRowsSelect,
+}) => {
+	// State for selected rows and current page
+	const [selectedRows, setSelectedRows] = useState<number[]>([]);
+	const [currentPage, setCurrentPage] = useState(1);
 
-		const handleBodyCheckbox = (index: number) => {
-			console.log('body checkbox clicked', index);
+	// State for checkbox
+	const [allRowsSelected, setAllRowsSelected] = useState(false);
+
+	// Calculate pagination details
+	const totalPages = Math.ceil(data.length / rowsPerPage);
+	const startIndex = (currentPage - 1) * rowsPerPage;
+	const endIndex = startIndex + rowsPerPage;
+	const currentData = data.slice(startIndex, endIndex);
+
+	const columns = useMemo(() => {
+		if (data.length === 0) return [];
+		const columnKeys = Object.keys(data[0]);
+		return columnKeys.map((key) => ({
+			key,
+			header: key.toUpperCase(),
+		}));
+	}, [data]);
+
+	// Toggle selection of a single row
+	const toggleRow = (id: number) => {
+		if (allowSelection === 'single') {
+			setSelectedRows([id]);
+		} else {
 			setSelectedRows((prev) =>
-				prev.includes(index)
-					? prev.filter((i) => i !== index)
-					: [...prev, index],
+				prev.includes(id)
+					? prev.filter((rowId) => rowId !== id)
+					: [...prev, id],
 			);
-		};
-		const handlePage = (pageNbs: number) => {
-			const pageNbs_ = pageNbs - 1;
-			setPage(pageNbs_);
-		};
-		console.log(header);
+		}
+	};
 
+	// Toggle selection of all rows on the current page
+	const toggleAll = () => {
+		if (allowSelection === 'single') {
+			setSelectedRows([]);
+		} else {
+			const currentIds = currentData.map((row) => row.id);
+			setSelectedRows((prev) => {
+				if (prev.length >= currentIds.length) {
+					setAllRowsSelected(false);
+					return prev.filter((id) => !currentIds.includes(id));
+				} else {
+					setAllRowsSelected(true);
+					return [...new Set([...prev, ...currentIds])];
+				}
+			});
+		}
+	};
+
+	// Change the current page
+	const changePage = (page: number) => {
+		setCurrentPage(page);
+	};
+
+	// Manage icon state when all rows are selected or not
+	useEffect(() => {
+		const currentIds = currentData.map((row) => row.id);
+		if (selectedRows.length === currentIds.length) {
+			setAllRowsSelected(true);
+		} else {
+			setAllRowsSelected(false);
+		}
+	}, [currentData, selectedRows]);
+
+	// Effect to notify parent component of selected rows
+	useEffect(() => {
+		const selectedData = data.filter((row) =>
+			selectedRows.includes(row.id),
+		);
+		onRowsSelect(selectedData);
+	}, [selectedRows, data, onRowsSelect]);
+
+	if (!isLoading && (data.length === 0 || error))
 		return (
-			<div data-responsive={responsive}>
-				<table
-					ref={ref}
-					className={`${styles.table} ${className || ''}`}
-					data-striped={striped}
-					data-hoverable={hoverable}
-					data-size={size}
-				>
+			<FallBack
+				width='l'
+				borderRadius='s'
+				message='No rows to display.'
+			/>
+		);
+
+	return (
+		<div className={styles.container}>
+			<table className={styles.table} data-width={size}>
+				{isLoading ? (
 					<thead>
 						<tr>
-							{allowSelection > 0 && (
-								<th scope='col' onClick={handleHeaderCheckbox}>
-									<span>selectbox</span>
+							<th
+								colSpan={
+									columns.length + (allowSelection ? 1 : 0)
+								}
+							></th>
+						</tr>
+					</thead>
+				) : (
+					<thead>
+						<tr>
+							{allowSelection ? (
+								<th>
+									<button
+										className={styles.checkbox}
+										onClick={toggleAll}
+									>
+										{allRowsSelected ? (
+											<X
+												size={16}
+												strokeWidth={3.6}
+												color='var(--X-icon-color)'
+											/>
+										) : (
+											<Check
+												size={14}
+												strokeWidth={3.6}
+											/>
+										)}
+									</button>
 								</th>
-							)}
-							{header.map((cell: string, index: number) => (
-								<th scope='col' key={`table-header-${index}`}>
-									{`${cell}`.toUpperCase()}
-								</th>
+							) : null}
+
+							{columns.map((column) => (
+								<th key={column.key}>{column.header}</th>
 							))}
 						</tr>
 					</thead>
-					<tbody>
-						{splitedRows[page].map(
-							(
-								row:
-									| { [s: string]: unknown }
-									| ArrayLike<unknown>,
-								index: number,
-							) => {
-								const isSelected = selectedRows.includes(index);
+				)}
 
-								return (
-									<tr
-										key={`body-row-${index}`}
-										data-selected={isSelected}
-										onClick={() =>
-											handleBodyCheckbox(index)
-										}
-									>
-										{allowSelection > 0 && (
-											<th scope='row'>
-												<span>tedqzdqzdst</span>
-											</th>
-										)}
-										{Object.values(row).map(
-											(cell: any, id: number) => (
-												<td key={`td-${index}-${id}`}>
-													{cell}
-												</td>
-											),
-										)}
-									</tr>
-								);
-							},
-						)}
+				{isLoading ? (
+					<tbody className={styles.loadingTBody}>
+						<tr>
+							<td
+								colSpan={
+									columns.length + (allowSelection ? 1 : 0)
+								}
+							>
+								<Spinner size='xl' />
+							</td>
+						</tr>
 					</tbody>
-				</table>
-				<footer>
-					<TablePagination
-						size={splitedRows?.length}
-						handleClick={handlePage}
-					/>
-				</footer>
-			</div>
-		);
-	},
-);
+				) : (
+					<tbody>
+						{currentData.map((row) => (
+							<tr
+								key={row.id}
+								data-allow-selection={allowSelection}
+								data-selected={selectedRows.includes(row.id)}
+								onClick={() => toggleRow(row.id)}
+							>
+								{allowSelection ? (
+									<td className={styles.checkboxContainer}>
+										<span className={styles.checkbox}>
+											{selectedRows.includes(row.id) ? (
+												<Check
+													size={14}
+													strokeWidth={3.6}
+												/>
+											) : null}
+										</span>
+									</td>
+								) : null}
 
-Table.displayName = 'Table';
-
-export const objectHasAtLeastOneKey = (
-	obj: GenericObject<unknown> | undefined | null,
-): boolean => {
-	return (
-		obj !== null &&
-		obj !== undefined &&
-		typeof obj === 'object' &&
-		Object.keys(obj).length > 0
+								{columns.map((column) => (
+									<td key={column.key}>{row[column.key]}</td>
+								))}
+							</tr>
+						))}
+					</tbody>
+				)}
+			</table>
+			<footer className={styles.pagination}>
+				<button
+					onClick={() => changePage(1)}
+					disabled={currentPage === 1}
+				>
+					<ChevronsLeft />
+				</button>
+				<button
+					onClick={() => changePage(currentPage - 1)}
+					disabled={currentPage === 1}
+				>
+					<ChevronLeft />
+				</button>
+				<span className={styles.pageInfo}>
+					{isLoading
+						? 'Loading...'
+						: `Page ${currentPage} / ${totalPages}`}
+				</span>
+				<button
+					onClick={() => changePage(currentPage + 1)}
+					disabled={currentPage === totalPages}
+				>
+					<ChevronRight />
+				</button>
+				<button
+					onClick={() => changePage(totalPages)}
+					disabled={currentPage === totalPages}
+				>
+					<ChevronsRight />
+				</button>
+			</footer>
+		</div>
 	);
-};
-
-export const extractObjectKeys = (
-	obj: GenericObject<unknown> | undefined | null,
-): string[] | undefined => {
-	const isObject = objectHasAtLeastOneKey(obj);
-
-	if (obj && isObject) {
-		return Object.keys(obj);
-	}
-	return undefined;
-};
-
-type TFormattedResult =
-	| { header: string[]; splitedRows: GenericObject<string | number>[][] }
-	| undefined;
-
-export const getSplitedTableContent = (
-	data: GenericObject<string | number>[] | undefined,
-	rowPerPage = 5,
-): any => {
-	if (data && data.length > 0) {
-		const firstItem = data?.[0];
-		const header = extractObjectKeys(firstItem);
-
-		if (header) {
-			const splitedRows = [];
-			for (let i = 0; i < data.length; i += rowPerPage) {
-				splitedRows.push(data.slice(i, i + rowPerPage));
-			}
-
-			return { header: header, splitedRows: splitedRows };
-		} else {
-			return undefined;
-		}
-	}
-	return undefined;
-};
-// Construit un tableau d'objet avec les index de la liste de données
-export const buildMultiSelectionResult = (
-	data: GenericObject<string | number>[] | undefined,
-	IDList: number[],
-) => {
-	if (data && data.length > 0 && IDList && IDList.length > 0) {
-		const result = [];
-		for (const id of IDList) {
-			result.push(data[id - 1]);
-		}
-		return result;
-	}
-	return undefined;
 };

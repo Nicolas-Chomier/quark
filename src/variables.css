@@ -259,4 +259,30 @@
 	--fallback-radius-xxl: 18px;
 	--fallback-radius-xxxl: 20px;
 	--fallback-radius-full: 9999px;
+
+	/* Table */
+	--table-padding: 0.75rem;
+
+	--table-background-color-standard: #19191c;
+	--table-header-background-color-standard: #262629;
+
+	--table-header-checkbox-background-color-standard: #3e3e45;
+	--table-header-checkbox-radius: 5px;
+
+	--table-text-color-standard: #e6e6e6;
+
+	--table-radius: 20px;
+	--table-header-radius: 12px;
+
+	--table-border-color-standard: #262629;
+
+	--table-row-background-color-selected: rgb(143, 47, 252);
+	--table-row-text-color-hover: hotpink;
+	--table-row-text-color-selected-hover: #e6e6e6;
+
+	--table-pagination-button-radius: 10px;
+	--table-pagination-button-background-color-standard: #3e3e45;
+	--table-pagination-button-text-color-standard: #e6e6e6;
+
+	--X-icon-color: rgb(224, 51, 51);
 }
