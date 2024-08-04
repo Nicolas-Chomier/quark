@@ -23,6 +23,16 @@
 	width: 1.5rem;
 	height: 1.5rem;
 }
+.spinner[data-size='xl'] {
+	border: 3px solid;
+	width: 3rem;
+	height: 3rem;
+}
+.spinner[data-size='xxl'] {
+	border: 3px solid;
+	width: 4rem;
+	height: 4rem;
+}
 
 /* Color */
 .spinner[data-color='theme'] {

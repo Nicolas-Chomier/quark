@@ -14,6 +14,10 @@
 }
 
 /* Size */
+.checkboxDefault[data-size='xs'] {
+	width: 1.125rem;
+	height: 1.125rem;
+}
 .checkboxDefault[data-size='s'] {
 	width: 1.4rem;
 	height: 1.4rem;

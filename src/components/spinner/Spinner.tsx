@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Spinner.module.css';
 
 export interface SpinnerProps {
-	size?: 's' | 'm' | 'l';
+	size?: 's' | 'm' | 'l' | 'xl' | 'xxl';
 	color?: 'theme' | 'accent' | 'basic';
 }
 
