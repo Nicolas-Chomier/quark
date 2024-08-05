@@ -49,33 +49,48 @@ export const NewTable: React.FC<NewTableProps> = ({
 		}));
 	}, [data]);
 
+	// Row selection handler
+	const handleRowSelection = (selectedIds: number[]) => {
+		const selectedData = data.filter((row) => selectedIds.includes(row.id));
+		onRowsSelect(selectedData);
+	};
+
 	// Toggle selection of a single row
 	const toggleRow = (id: number) => {
 		if (allowSelection === 'single') {
 			setSelectedRows([id]);
+			handleRowSelection([id]);
 		} else {
-			setSelectedRows((prev) =>
-				prev.includes(id)
+			setSelectedRows((prev) => {
+				const newSelection = prev.includes(id)
 					? prev.filter((rowId) => rowId !== id)
-					: [...prev, id],
-			);
+					: [...prev, id];
+				handleRowSelection(newSelection);
+				return newSelection;
+			});
 		}
 	};
 
-	// Toggle selection of all rows on the current page
+	// Toggle all rows
 	const toggleAll = () => {
 		if (allowSelection === 'single') {
 			setSelectedRows([]);
+			handleRowSelection([]);
 		} else {
 			const currentIds = currentData.map((row) => row.id);
 			setSelectedRows((prev) => {
+				let newSelection;
 				if (prev.length >= currentIds.length) {
 					setAllRowsSelected(false);
-					return prev.filter((id) => !currentIds.includes(id));
+					newSelection = prev.filter(
+						(id) => !currentIds.includes(id),
+					);
 				} else {
 					setAllRowsSelected(true);
-					return [...new Set([...prev, ...currentIds])];
+					newSelection = [...new Set([...prev, ...currentIds])];
 				}
+				handleRowSelection(newSelection);
+				return newSelection;
 			});
 		}
 	};

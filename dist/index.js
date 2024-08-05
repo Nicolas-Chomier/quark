@@ -3012,36 +3012,50 @@ var NewTable = function NewTable(_ref) {
       };
     });
   }, [data]);
+  // Row selection handler
+  var handleRowSelection = function handleRowSelection(selectedIds) {
+    var selectedData = data.filter(function (row) {
+      return selectedIds.includes(row.id);
+    });
+    onRowsSelect(selectedData);
+  };
   // Toggle selection of a single row
   var toggleRow = function toggleRow(id) {
     if (allowSelection === 'single') {
       setSelectedRows([id]);
+      handleRowSelection([id]);
     } else {
       setSelectedRows(function (prev) {
-        return prev.includes(id) ? prev.filter(function (rowId) {
+        var newSelection = prev.includes(id) ? prev.filter(function (rowId) {
           return rowId !== id;
         }) : [].concat(_toConsumableArray(prev), [id]);
+        handleRowSelection(newSelection);
+        return newSelection;
       });
     }
   };
-  // Toggle selection of all rows on the current page
+  // Toggle all rows
   var toggleAll = function toggleAll() {
     if (allowSelection === 'single') {
       setSelectedRows([]);
+      handleRowSelection([]);
     } else {
       var currentIds = currentData.map(function (row) {
         return row.id;
       });
       setSelectedRows(function (prev) {
+        var newSelection;
         if (prev.length >= currentIds.length) {
           setAllRowsSelected(false);
-          return prev.filter(function (id) {
+          newSelection = prev.filter(function (id) {
             return !currentIds.includes(id);
           });
         } else {
           setAllRowsSelected(true);
-          return _toConsumableArray(new Set([].concat(_toConsumableArray(prev), _toConsumableArray(currentIds))));
+          newSelection = _toConsumableArray(new Set([].concat(_toConsumableArray(prev), _toConsumableArray(currentIds))));
         }
+        handleRowSelection(newSelection);
+        return newSelection;
       });
     }
   };
