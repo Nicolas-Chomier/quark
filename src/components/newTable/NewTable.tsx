@@ -110,14 +110,6 @@ export const NewTable: React.FC<NewTableProps> = ({
 		}
 	}, [currentData, selectedRows]);
 
-	// Effect to notify parent component of selected rows
-	useEffect(() => {
-		const selectedData = data.filter((row) =>
-			selectedRows.includes(row.id),
-		);
-		onRowsSelect(selectedData);
-	}, [selectedRows, data, onRowsSelect]);
-
 	if (!isLoading && (data.length === 0 || error))
 		return (
 			<FallBack

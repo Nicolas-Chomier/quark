@@ -3074,13 +3074,6 @@ var NewTable = function NewTable(_ref) {
       setAllRowsSelected(false);
     }
   }, [currentData, selectedRows]);
-  // Effect to notify parent component of selected rows
-  React.useEffect(function () {
-    var selectedData = data.filter(function (row) {
-      return selectedRows.includes(row.id);
-    });
-    onRowsSelect(selectedData);
-  }, [selectedRows, data, onRowsSelect]);
   if (!isLoading && (data.length === 0 || error)) return /*#__PURE__*/React.createElement(FallBack, {
     width: 'l',
     borderRadius: 's',
@@ -6948,6 +6941,7 @@ exports.Label = Label;
 exports.MultiSelect = MultiSelect;
 exports.NewTable = NewTable;
 exports.Select = Select;
+exports.Spinner = Spinner;
 exports.TextArea = TextArea;
 exports.Tooltip = Tooltip;
 exports.Typography = Typography;

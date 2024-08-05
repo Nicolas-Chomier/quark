@@ -3054,13 +3054,6 @@ var NewTable = function NewTable(_ref) {
       setAllRowsSelected(false);
     }
   }, [currentData, selectedRows]);
-  // Effect to notify parent component of selected rows
-  useEffect(function () {
-    var selectedData = data.filter(function (row) {
-      return selectedRows.includes(row.id);
-    });
-    onRowsSelect(selectedData);
-  }, [selectedRows, data, onRowsSelect]);
   if (!isLoading && (data.length === 0 || error)) return /*#__PURE__*/React__default.createElement(FallBack, {
     width: 'l',
     borderRadius: 's',
@@ -6916,4 +6909,4 @@ var _capitalize = function _capitalize(word) {
   return word[0].toUpperCase() + word.slice(1);
 };
 
-export { Badge, Button, Checkbox, Dialog, FallBack, Flex, IconButton, Input, Label, MultiSelect, NewTable, Select, TextArea, Tooltip, Typography, _array, _capitalize, _object, useCheckedNumber, useClickOutside, useCopyToClipboard, useEventCallback, useEventListener, useIsomorphicLayoutEffect, useLocalStorage, useMediaQuery, useMousePosition, useReadLocalStorage, useSessionStorage };
+export { Badge, Button, Checkbox, Dialog, FallBack, Flex, IconButton, Input, Label, MultiSelect, NewTable, Select, Spinner, TextArea, Tooltip, Typography, _array, _capitalize, _object, useCheckedNumber, useClickOutside, useCopyToClipboard, useEventCallback, useEventListener, useIsomorphicLayoutEffect, useLocalStorage, useMediaQuery, useMousePosition, useReadLocalStorage, useSessionStorage };
