@@ -18,7 +18,7 @@ export {
 	type MultiSelectProps,
 } from './components/multiSelect/MultiSelect';
 export { Select, type SelectProps } from './components/select/Select';
-export { Spinner, type SpinnerProps } from './components/spinner/Spinner';
+/* export { Spinner, type SpinnerProps } from './components/spinner/Spinner'; */
 export { NewTable, type NewTableProps } from './components/newTable/NewTable';
 export { TextArea, type TextAreaProps } from './components/textarea/TextArea';
 export { Tooltip, type TooltipProps } from './components/tooltip/Tooltip';

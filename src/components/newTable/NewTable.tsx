@@ -1,12 +1,4 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import {
-	Check,
-	ChevronLeft,
-	ChevronRight,
-	ChevronsLeft,
-	ChevronsRight,
-	X,
-} from 'lucide-react';
 import { FallBack } from '../fallback/Fallback';
 import { Spinner } from '../spinner/Spinner';
 import styles from './NewTable.module.css';
@@ -144,16 +136,38 @@ export const NewTable: React.FC<NewTableProps> = ({
 										onClick={toggleAll}
 									>
 										{allRowsSelected ? (
-											<X
-												size={16}
-												strokeWidth={3.6}
+											<svg
+												xmlns='http://www.w3.org/2000/svg'
+												width='16'
+												height='16'
+												viewBox='0 0 24 24'
 												color='var(--table-X-icon-color)'
-											/>
+											>
+												<path
+													fill='none'
+													stroke='currentColor'
+													strokeLinecap='round'
+													strokeLinejoin='round'
+													strokeWidth='3.6'
+													d='M18 6L6 18M6 6l12 12'
+												/>
+											</svg>
 										) : (
-											<Check
-												size={14}
-												strokeWidth={3.6}
-											/>
+											<svg
+												xmlns='http://www.w3.org/2000/svg'
+												width='14'
+												height='14'
+												viewBox='0 0 24 24'
+											>
+												<path
+													fill='none'
+													stroke='currentColor'
+													strokeLinecap='round'
+													strokeLinejoin='round'
+													strokeWidth='3.6'
+													d='M20 6L9 17l-5-5'
+												/>
+											</svg>
 										)}
 									</button>
 								</th>
@@ -198,10 +212,21 @@ export const NewTable: React.FC<NewTableProps> = ({
 									<td className={styles.tableTBodyCell}>
 										<span className={styles.checkbox}>
 											{selectedRows.includes(row.id) ? (
-												<Check
-													size={14}
-													strokeWidth={3.6}
-												/>
+												<svg
+													xmlns='http://www.w3.org/2000/svg'
+													width='14'
+													height='14'
+													viewBox='0 0 24 24'
+												>
+													<path
+														fill='none'
+														stroke='currentColor'
+														strokeLinecap='round'
+														strokeLinejoin='round'
+														strokeWidth='3.6'
+														d='M20 6L9 17l-5-5'
+													/>
+												</svg>
 											) : null}
 										</span>
 									</td>
@@ -226,14 +251,42 @@ export const NewTable: React.FC<NewTableProps> = ({
 					onClick={() => changePage(1)}
 					disabled={currentPage === 1}
 				>
-					<ChevronsLeft />
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='22'
+						height='22'
+						viewBox='0 0 24 24'
+					>
+						<path
+							fill='none'
+							stroke='currentColor'
+							strokeLinecap='round'
+							strokeLinejoin='round'
+							strokeWidth='2'
+							d='m11 17l-5-5l5-5m7 10l-5-5l5-5'
+						/>
+					</svg>
 				</button>
 				<button
 					className={styles.paginationButton}
 					onClick={() => changePage(currentPage - 1)}
 					disabled={currentPage === 1}
 				>
-					<ChevronLeft />
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='22'
+						height='22'
+						viewBox='0 0 24 24'
+					>
+						<path
+							fill='none'
+							stroke='currentColor'
+							strokeLinecap='round'
+							strokeLinejoin='round'
+							strokeWidth='2'
+							d='m15 18l-6-6l6-6'
+						/>
+					</svg>
 				</button>
 				<span className={styles.pageInfo}>
 					{isLoading
@@ -245,14 +298,42 @@ export const NewTable: React.FC<NewTableProps> = ({
 					onClick={() => changePage(currentPage + 1)}
 					disabled={currentPage === totalPages}
 				>
-					<ChevronRight />
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='22'
+						height='22'
+						viewBox='0 0 24 24'
+					>
+						<path
+							fill='none'
+							stroke='currentColor'
+							strokeLinecap='round'
+							strokeLinejoin='round'
+							strokeWidth='2'
+							d='m9 18l6-6l-6-6'
+						/>
+					</svg>
 				</button>
 				<button
 					className={styles.paginationButton}
 					onClick={() => changePage(totalPages)}
 					disabled={currentPage === totalPages}
 				>
-					<ChevronsRight />
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='22'
+						height='22'
+						viewBox='0 0 24 24'
+					>
+						<path
+							fill='none'
+							stroke='currentColor'
+							strokeLinecap='round'
+							strokeLinejoin='round'
+							strokeWidth='2'
+							d='m6 17l5-5l-5-5m7 10l5-5l-5-5'
+						/>
+					</svg>
 				</button>
 			</footer>
 		</div>

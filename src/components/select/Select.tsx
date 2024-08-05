@@ -5,7 +5,6 @@ import React, {
 	useMemo,
 	useCallback,
 } from 'react';
-import { Search, Trash2, X } from 'lucide-react';
 import { Label } from '../label/Label';
 import { Input } from '../input/Input';
 import { IconButton } from '../iconButton/IconButton';
@@ -60,9 +59,61 @@ export const Select: React.FC<SelectProps> = ({
 	// Render appropriate icon based on component state
 	const renderContent = () => {
 		if (isDisable) return null;
-		if (isError) return <X />;
-		if (inputValue && !isValid) return <Trash2 />;
-		return <Search />;
+		if (isError)
+			return (
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					width='22'
+					height='22'
+					viewBox='0 0 24 24'
+				>
+					<path
+						fill='none'
+						stroke='currentColor'
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						strokeWidth='2'
+						d='M18 6L6 18M6 6l12 12'
+					/>
+				</svg>
+			);
+		if (inputValue && !isValid)
+			return (
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					width='24'
+					height='24'
+					viewBox='0 0 24 24'
+				>
+					<path
+						fill='none'
+						stroke='currentColor'
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						strokeWidth='1.8'
+						d='M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2m-6 5v6m4-6v6'
+					/>
+				</svg>
+			);
+		return (
+			<svg
+				xmlns='http://www.w3.org/2000/svg'
+				width='24'
+				height='24'
+				viewBox='0 0 24 24'
+			>
+				<g
+					fill='none'
+					stroke='currentColor'
+					strokeLinecap='round'
+					strokeLinejoin='round'
+					strokeWidth='1.8'
+				>
+					<circle cx='11' cy='11' r='8' />
+					<path d='m21 21l-4.3-4.3' />
+				</g>
+			</svg>
+		);
 	};
 
 	// Close dropdown when clicking outside

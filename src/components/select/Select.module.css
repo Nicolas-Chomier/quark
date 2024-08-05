@@ -29,12 +29,14 @@
 	background-color: var(--select-panel-background-color);
 	border-radius: var(--select-field-and-panel-radius);
 	transition: height 0.3s ease, box-shadow 0.3s ease;
+	z-index: 9999;
 }
 .panelOpen {
 	height: auto;
 	height: calc-size(auto);
 	max-height: 14.875rem;
 	box-shadow: inset 0 0 0 1px var(--select-border-color-active);
+	z-index: 9999;
 }
 .customButton {
 	width: 15.5rem;
@@ -50,6 +52,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	z-index: 9999;
 }
 .customButton:hover {
 	background-color: var(--select-panel-background-color-hover);

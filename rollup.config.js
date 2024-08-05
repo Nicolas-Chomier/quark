@@ -47,7 +47,7 @@ const rollupConfig = {
 				'@babel/preset-env',
 			],
 		}),
-		terser(),
+		/* terser(), */
 	],
 	external: ['react', 'react-dom'],
 };
