@@ -3,7 +3,7 @@ type TableData = {
     id: number;
     [key: string]: any;
 };
-export type NewTableProps = {
+export type TableProps = {
     data: TableData[];
     rowsPerPage?: number;
     allowSelection?: 'single' | 'multiple';
@@ -12,5 +12,5 @@ export type NewTableProps = {
     error?: boolean;
     onRowsSelect: (selectedRows: TableData[]) => void;
 };
-export declare const NewTable: React.FC<NewTableProps>;
+export declare const Table: React.FC<TableProps>;
 export {};

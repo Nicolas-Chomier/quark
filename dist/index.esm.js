@@ -2951,9 +2951,9 @@ var Select = function Select(_ref) {
   })))));
 };
 
-var styles$3 = {"tableContainer":"NewTable-module_tableContainer__gaHYv","table":"NewTable-module_table__NBBkL","tableThead":"NewTable-module_tableThead__JMItP","tableTheadCell":"NewTable-module_tableTheadCell__8G2BH","tableTBody":"NewTable-module_tableTBody__a-GBL","tableTBodyRow":"NewTable-module_tableTBodyRow__JaulV","tableTBodyCell":"NewTable-module_tableTBodyCell__l0lvj","checkbox":"NewTable-module_checkbox__Vo59M","pagination":"NewTable-module_pagination__Zkfhj","pageInfo":"NewTable-module_pageInfo__c9lJx","paginationButton":"NewTable-module_paginationButton__qTHWc","clicky":"NewTable-module_clicky__7ZyI5","loadingTBodyRow":"NewTable-module_loadingTBodyRow__XvZgP","loadingTBodyCell":"NewTable-module_loadingTBodyCell__s-n8X"};
+var styles$3 = {"tableContainer":"Table-module_tableContainer__Q4by1","table":"Table-module_table__-LOHJ","tableThead":"Table-module_tableThead__x3-4a","tableTheadCell":"Table-module_tableTheadCell__kg8Pb","tableTBody":"Table-module_tableTBody__-bSzd","tableTBodyRow":"Table-module_tableTBodyRow__L11kn","tableTBodyCell":"Table-module_tableTBodyCell__jELTx","checkbox":"Table-module_checkbox__qQDd5","pagination":"Table-module_pagination__H8Ury","pageInfo":"Table-module_pageInfo__TOzx3","paginationButton":"Table-module_paginationButton__CHVFw","clicky":"Table-module_clicky__h1AO0","loadingTBodyRow":"Table-module_loadingTBodyRow__wCI13","loadingTBodyCell":"Table-module_loadingTBodyCell__T6mTG"};
 
-var NewTable = function NewTable(_ref) {
+var Table = function Table(_ref) {
   var _ref$data = _ref.data,
     data = _ref$data === void 0 ? [] : _ref$data,
     _ref$rowsPerPage = _ref.rowsPerPage,
@@ -2993,14 +2993,14 @@ var NewTable = function NewTable(_ref) {
     });
   }, [data]);
   // Row selection handler
-  var handleRowSelection = function handleRowSelection(selectedIds) {
+  var handleRowSelection = useCallback(function (selectedIds) {
     var selectedData = data.filter(function (row) {
       return selectedIds.includes(row.id);
     });
     onRowsSelect(selectedData);
-  };
+  }, [data, onRowsSelect]);
   // Toggle selection of a single row
-  var toggleRow = function toggleRow(id) {
+  var toggleRow = useCallback(function (id) {
     if (allowSelection === 'single') {
       setSelectedRows([id]);
       handleRowSelection([id]);
@@ -3013,9 +3013,9 @@ var NewTable = function NewTable(_ref) {
         return newSelection;
       });
     }
-  };
+  }, [allowSelection, handleRowSelection]);
   // Toggle all rows
-  var toggleAll = function toggleAll() {
+  var toggleAll = useCallback(function () {
     if (allowSelection === 'single') {
       setSelectedRows([]);
       handleRowSelection([]);
@@ -3038,11 +3038,11 @@ var NewTable = function NewTable(_ref) {
         return newSelection;
       });
     }
-  };
+  }, [allowSelection, currentData, handleRowSelection]);
   // Change the current page
-  var changePage = function changePage(page) {
+  var changePage = useCallback(function (page) {
     setCurrentPage(page);
-  };
+  }, []);
   // Manage icon state when all rows are selected or not
   useEffect(function () {
     var currentIds = currentData.map(function (row) {
@@ -6909,4 +6909,4 @@ var _capitalize = function _capitalize(word) {
   return word[0].toUpperCase() + word.slice(1);
 };
 
-export { Badge, Button, Checkbox, Dialog, FallBack, Flex, IconButton, Input, Label, MultiSelect, NewTable, Select, Spinner, TextArea, Tooltip, Typography, _array, _capitalize, _object, useCheckedNumber, useClickOutside, useCopyToClipboard, useEventCallback, useEventListener, useIsomorphicLayoutEffect, useLocalStorage, useMediaQuery, useMousePosition, useReadLocalStorage, useSessionStorage };
+export { Badge, Button, Checkbox, Dialog, FallBack, Flex, IconButton, Input, Label, MultiSelect, Select, Spinner, Table, TextArea, Tooltip, Typography, _array, _capitalize, _object, useCheckedNumber, useClickOutside, useCopyToClipboard, useEventCallback, useEventListener, useIsomorphicLayoutEffect, useLocalStorage, useMediaQuery, useMousePosition, useReadLocalStorage, useSessionStorage };

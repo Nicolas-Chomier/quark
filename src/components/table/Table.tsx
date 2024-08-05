@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { FallBack } from '../fallback/Fallback';
 import { Spinner } from '../spinner/Spinner';
-import styles from './NewTable.module.css';
+import styles from './Table.module.css';
 
 type TableData = {
 	id: number;
 	[key: string]: any;
 };
 
-export type NewTableProps = {
+export type TableProps = {
 	data: TableData[];
 	rowsPerPage?: number;
 	allowSelection?: 'single' | 'multiple';
@@ -18,7 +18,7 @@ export type NewTableProps = {
 	onRowsSelect: (selectedRows: TableData[]) => void;
 };
 
-export const NewTable: React.FC<NewTableProps> = ({
+export const Table: React.FC<TableProps> = ({
 	data = [],
 	rowsPerPage = 5,
 	allowSelection,
@@ -50,29 +50,37 @@ export const NewTable: React.FC<NewTableProps> = ({
 	}, [data]);
 
 	// Row selection handler
-	const handleRowSelection = (selectedIds: number[]) => {
-		const selectedData = data.filter((row) => selectedIds.includes(row.id));
-		onRowsSelect(selectedData);
-	};
+	const handleRowSelection = useCallback(
+		(selectedIds: number[]) => {
+			const selectedData = data.filter((row) =>
+				selectedIds.includes(row.id),
+			);
+			onRowsSelect(selectedData);
+		},
+		[data, onRowsSelect],
+	);
 
 	// Toggle selection of a single row
-	const toggleRow = (id: number) => {
-		if (allowSelection === 'single') {
-			setSelectedRows([id]);
-			handleRowSelection([id]);
-		} else {
-			setSelectedRows((prev) => {
-				const newSelection = prev.includes(id)
-					? prev.filter((rowId) => rowId !== id)
-					: [...prev, id];
-				handleRowSelection(newSelection);
-				return newSelection;
-			});
-		}
-	};
+	const toggleRow = useCallback(
+		(id: number) => {
+			if (allowSelection === 'single') {
+				setSelectedRows([id]);
+				handleRowSelection([id]);
+			} else {
+				setSelectedRows((prev) => {
+					const newSelection = prev.includes(id)
+						? prev.filter((rowId) => rowId !== id)
+						: [...prev, id];
+					handleRowSelection(newSelection);
+					return newSelection;
+				});
+			}
+		},
+		[allowSelection, handleRowSelection],
+	);
 
 	// Toggle all rows
-	const toggleAll = () => {
+	const toggleAll = useCallback(() => {
 		if (allowSelection === 'single') {
 			setSelectedRows([]);
 			handleRowSelection([]);
@@ -93,12 +101,12 @@ export const NewTable: React.FC<NewTableProps> = ({
 				return newSelection;
 			});
 		}
-	};
+	}, [allowSelection, currentData, handleRowSelection]);
 
 	// Change the current page
-	const changePage = (page: number) => {
+	const changePage = useCallback((page: number) => {
 		setCurrentPage(page);
-	};
+	}, []);
 
 	// Manage icon state when all rows are selected or not
 	useEffect(() => {
