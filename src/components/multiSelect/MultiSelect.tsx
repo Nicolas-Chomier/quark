@@ -14,7 +14,7 @@ import { IconButton } from '../iconButton/IconButton';
 import { Flex } from '../flex/Flex';
 import { Badge } from '../badge/Badge';
 
-type MultiSelectProps = {
+export type MultiSelectProps = {
 	onFieldChange: (result: string[] | undefined) => void;
 	data: string[];
 	placeholder: string;

@@ -54,44 +54,50 @@
 	max-width: 100%;
 }
 
-.table > thead {
+.tableThead {
 	text-align: right;
 	position: sticky;
 	z-index: 3;
 }
 
-.table > thead > tr > th {
+.tableTheadCell {
 	height: 2.8rem;
 	padding: 0.78rem 1.5rem 1rem 1.5rem;
 }
 
-.table > tbody {
+.tableTBody {
 	text-align: right;
 }
 
-.table > tbody > tr > td:first-child {
+.tableTBodyRow[data-selected='true'] {
+	background-color: var(--table-row-background-color-selected);
+}
+
+.tableTBodyRow:hover {
+	color: var(--table-row-text-color-hover);
+}
+
+.tableTBodyRow[data-selected='true']:hover {
+	color: var(--table-row-text-color-selected-hover);
+}
+
+/* CURSOR */
+.tableTBodyRow[data-allow-selection='single'],
+.tableTBodyRow[data-allow-selection='multiple'] {
+	cursor: pointer;
+}
+
+.tableTBodyCell:first-child {
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
 
-.table > tbody > tr > td:last-child {
+.tableTBodyCell:last-child {
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
-.table > tbody > tr[data-selected='true'] {
-	background-color: var(--table-row-background-color-selected);
-}
 
-.table > tbody > tr:hover {
-	color: var(--table-row-text-color-hover);
-}
-
-.table > tbody > tr[data-selected='true']:hover {
-	color: var(--table-row-text-color-selected-hover);
-}
-
-.table > tbody > tr > td,
-.table > tbody > tr > th {
+.tableTBodyCell {
 	height: 2rem;
 	padding: 0.125rem 1.5rem;
 	max-width: 11.25rem;
@@ -99,12 +105,6 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	background-color: transparent;
-}
-
-/* CURSOR */
-.table > tbody > tr[data-allow-selection='single'],
-.table > tbody > tr[data-allow-selection='multiple'] {
-	cursor: pointer;
 }
 
 .checkbox {
@@ -132,7 +132,7 @@
 	color: var(--table-pagination-button-text-color-standard);
 }
 
-.pagination > button {
+.paginationButton {
 	width: 2rem;
 	height: 2rem;
 
@@ -147,29 +147,25 @@
 	cursor: pointer;
 }
 
-.pagination > button:active {
+.paginationButton:active {
 	animation: clicky 0.15s ease;
 }
 
-.pagination > button:disabled {
+.paginationButton:disabled {
 	opacity: 0.3;
 	cursor: not-allowed;
 	animation: none;
 }
 
 /* TBODY when Loading */
-.loadingTBody > tr {
+.loadingTBodyRow {
 	min-width: 33rem;
 	height: 9rem;
 }
 
-.loadingTBody > tr > td {
+.loadingTBodyCell {
 	text-align: center;
 	vertical-align: middle;
-}
-
-.loadingTBody > tr > td > * {
-	display: inline-block;
 }
 
 /* Button animations */

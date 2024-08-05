@@ -9,24 +9,24 @@ import {
 } from 'lucide-react';
 import { FallBack } from '../fallback/Fallback';
 import { Spinner } from '../spinner/Spinner';
-import styles from './Table.module.css';
+import styles from './NewTable.module.css';
 
-interface TableData {
+type TableData = {
 	id: number;
 	[key: string]: any;
-}
+};
 
-export interface TableProps {
+export type NewTableProps = {
 	data: TableData[];
 	rowsPerPage?: number;
-	allowSelection?: 'single' | 'multiple' | 'none';
+	allowSelection?: 'single' | 'multiple';
 	size?: 'xs' | 's' | 'm' | 'l' | 'xl';
 	isLoading?: boolean;
 	error?: boolean;
 	onRowsSelect: (selectedRows: TableData[]) => void;
-}
+};
 
-export const Table: React.FC<TableProps> = ({
+export const NewTable: React.FC<NewTableProps> = ({
 	data = [],
 	rowsPerPage = 5,
 	allowSelection,
@@ -124,9 +124,10 @@ export const Table: React.FC<TableProps> = ({
 		<div className={styles.tableContainer}>
 			<table className={styles.table} data-width={size}>
 				{isLoading ? (
-					<thead>
+					<thead className={styles.tableThead}>
 						<tr>
 							<th
+								className={styles.tableTheadCell}
 								colSpan={
 									columns.length + (allowSelection ? 1 : 0)
 								}
@@ -134,10 +135,10 @@ export const Table: React.FC<TableProps> = ({
 						</tr>
 					</thead>
 				) : (
-					<thead>
+					<thead className={styles.tableThead}>
 						<tr>
 							{allowSelection ? (
-								<th>
+								<th className={styles.tableTheadCell}>
 									<button
 										className={styles.checkbox}
 										onClick={toggleAll}
@@ -146,7 +147,7 @@ export const Table: React.FC<TableProps> = ({
 											<X
 												size={16}
 												strokeWidth={3.6}
-												color='var(--X-icon-color)'
+												color='var(--table-X-icon-color)'
 											/>
 										) : (
 											<Check
@@ -159,7 +160,12 @@ export const Table: React.FC<TableProps> = ({
 							) : null}
 
 							{columns.map((column) => (
-								<th key={column.key}>{column.header}</th>
+								<th
+									className={styles.tableTheadCell}
+									key={column.key}
+								>
+									{column.header}
+								</th>
 							))}
 						</tr>
 					</thead>
@@ -167,8 +173,9 @@ export const Table: React.FC<TableProps> = ({
 
 				{isLoading ? (
 					<tbody className={styles.loadingTBody}>
-						<tr>
+						<tr className={styles.loadingTBodyRow}>
 							<td
+								className={styles.loadingTBodyCell}
 								colSpan={
 									columns.length + (allowSelection ? 1 : 0)
 								}
@@ -178,16 +185,17 @@ export const Table: React.FC<TableProps> = ({
 						</tr>
 					</tbody>
 				) : (
-					<tbody>
+					<tbody className={styles.tableTBody}>
 						{currentData.map((row) => (
 							<tr
+								className={styles.tableTBodyRow}
 								key={row.id}
 								data-allow-selection={allowSelection}
 								data-selected={selectedRows.includes(row.id)}
 								onClick={() => toggleRow(row.id)}
 							>
 								{allowSelection ? (
-									<td className={styles.checkboxContainer}>
+									<td className={styles.tableTBodyCell}>
 										<span className={styles.checkbox}>
 											{selectedRows.includes(row.id) ? (
 												<Check
@@ -200,7 +208,12 @@ export const Table: React.FC<TableProps> = ({
 								) : null}
 
 								{columns.map((column) => (
-									<td key={column.key}>{row[column.key]}</td>
+									<td
+										className={styles.tableTBodyCell}
+										key={column.key}
+									>
+										{row[column.key]}
+									</td>
 								))}
 							</tr>
 						))}
@@ -209,12 +222,14 @@ export const Table: React.FC<TableProps> = ({
 			</table>
 			<footer className={styles.pagination}>
 				<button
+					className={styles.paginationButton}
 					onClick={() => changePage(1)}
 					disabled={currentPage === 1}
 				>
 					<ChevronsLeft />
 				</button>
 				<button
+					className={styles.paginationButton}
 					onClick={() => changePage(currentPage - 1)}
 					disabled={currentPage === 1}
 				>
@@ -226,12 +241,14 @@ export const Table: React.FC<TableProps> = ({
 						: `Page ${currentPage} / ${totalPages}`}
 				</span>
 				<button
+					className={styles.paginationButton}
 					onClick={() => changePage(currentPage + 1)}
 					disabled={currentPage === totalPages}
 				>
 					<ChevronRight />
 				</button>
 				<button
+					className={styles.paginationButton}
 					onClick={() => changePage(totalPages)}
 					disabled={currentPage === totalPages}
 				>

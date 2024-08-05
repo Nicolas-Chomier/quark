@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './FallBack.module.css';
 import { Spinner } from '../spinner/Spinner';
 
-type FallBackProps = {
+export type FallBackProps = {
 	loading?: boolean;
 	message?: string;
 	loadingMessage?: string;

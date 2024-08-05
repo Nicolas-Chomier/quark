@@ -1,5 +1,5 @@
 import React from 'react';
-type FallBackProps = {
+export type FallBackProps = {
     loading?: boolean;
     message?: string;
     loadingMessage?: string;
@@ -7,4 +7,3 @@ type FallBackProps = {
     borderRadius?: 'xxxs' | 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl' | 'full';
 };
 export declare const FallBack: React.FC<FallBackProps>;
-export {};

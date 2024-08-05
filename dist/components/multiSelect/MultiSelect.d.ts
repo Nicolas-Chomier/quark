@@ -1,5 +1,5 @@
 import React from 'react';
-type MultiSelectProps = {
+export type MultiSelectProps = {
     onFieldChange: (result: string[] | undefined) => void;
     data: string[];
     placeholder: string;
@@ -13,4 +13,3 @@ type MultiSelectProps = {
     scrollbar?: boolean;
 };
 export declare const MultiSelect: React.FC<MultiSelectProps>;
-export {};
