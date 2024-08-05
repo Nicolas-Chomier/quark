@@ -41,13 +41,13 @@
 .badge[data-border-radius='xs'] {
 	border-radius: var(--badge-radius-xs);
 }
-.badge[data-border-radius='sm'] {
+.badge[data-border-radius='s'] {
 	border-radius: var(--badge-radius-s);
 }
-.badge[data-border-radius='md'] {
+.badge[data-border-radius='m'] {
 	border-radius: var(--badge-radius-m);
 }
-.badge[data-border-radius='lg'] {
+.badge[data-border-radius='l'] {
 	border-radius: var(--badge-radius-l);
 }
 .badge[data-border-radius='xl'] {

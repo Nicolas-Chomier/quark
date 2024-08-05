@@ -330,13 +330,13 @@
 .Badge-module_badge__viR1-[data-border-radius='xs'] {
 	border-radius: var(--badge-radius-xs);
 }
-.Badge-module_badge__viR1-[data-border-radius='sm'] {
+.Badge-module_badge__viR1-[data-border-radius='s'] {
 	border-radius: var(--badge-radius-s);
 }
-.Badge-module_badge__viR1-[data-border-radius='md'] {
+.Badge-module_badge__viR1-[data-border-radius='m'] {
 	border-radius: var(--badge-radius-m);
 }
-.Badge-module_badge__viR1-[data-border-radius='lg'] {
+.Badge-module_badge__viR1-[data-border-radius='l'] {
 	border-radius: var(--badge-radius-l);
 }
 .Badge-module_badge__viR1-[data-border-radius='xl'] {
