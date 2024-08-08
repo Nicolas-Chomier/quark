@@ -128,6 +128,16 @@
 	--typography-text-color-warning: #ffd000;
 	--typography-text-color-danger: #e5484d;
 
+	--typography-text-xs: 0.75rem;
+	--typography-text-s: 0.875rem;
+	--typography-text-m: 1rem;
+	--typography-text-l: 1.125rem;
+	--typography-text-xl: 1.25rem;
+	--typography-text-2xl: 1.5rem;
+	--typography-text-3xl: 1.875rem;
+	--typography-text-4xl: 2.25rem;
+	--typography-text-5xl: 3rem;
+
 	/* Checkbox */
 	--checkbox-background-color-outline: #0000001a;
 
@@ -657,15 +667,6 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.Button-module_text__mTBRU[data-font-size='110'] {
-	font-size: 110%;
-}
-.Button-module_text__mTBRU[data-font-size='120'] {
-	font-size: 120%;
-}
-.Button-module_text__mTBRU[data-font-size='130'] {
-	font-size: 128%;
-}
 
 /* STATES HOVER */
 .Button-module_button__iSBxU[data-variant='accent']:hover,
@@ -703,6 +704,7 @@
 	cursor: default;
 	animation: none;
 	box-shadow: none;
+	filter: brightness(100%);
 	background-color: var(--button-background-color-disabled);
 	color: var(--button-text-color-disabled);
 }
@@ -2574,6 +2576,43 @@
 }
 .Typography-module_typography__42NyF[data-space='wide'] {
 	letter-spacing: 0.05em;
+}
+
+/* size */
+.Typography-module_typography__42NyF[data-size='xs'] {
+	font-size: var(--typography-text-xs);
+}
+
+.Typography-module_typography__42NyF[data-size='s'] {
+	font-size: var(--typography-text-sm);
+}
+
+.Typography-module_typography__42NyF[data-size='m'] {
+	font-size: var(--typography-text-md);
+}
+
+.Typography-module_typography__42NyF[data-size='l'] {
+	font-size: var(--typography-text-lg);
+}
+
+.Typography-module_typography__42NyF[data-size='xl'] {
+	font-size: var(--typography-text-xl);
+}
+
+.Typography-module_typography__42NyF[data-size='2xl'] {
+	font-size: var(--typography-text-2xl);
+}
+
+.Typography-module_typography__42NyF[data-size='3xl'] {
+	font-size: var(--typography-text-3xl);
+}
+
+.Typography-module_typography__42NyF[data-size='4xl'] {
+	font-size: var(--typography-text-4xl);
+}
+
+.Typography-module_typography__42NyF[data-size='5xl'] {
+	font-size: var(--typography-text-5xl);
 }
 
 /* underline */

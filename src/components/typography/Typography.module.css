@@ -111,6 +111,43 @@
 	letter-spacing: 0.05em;
 }
 
+/* size */
+.typography[data-size='xs'] {
+	font-size: var(--typography-text-xs);
+}
+
+.typography[data-size='s'] {
+	font-size: var(--typography-text-sm);
+}
+
+.typography[data-size='m'] {
+	font-size: var(--typography-text-md);
+}
+
+.typography[data-size='l'] {
+	font-size: var(--typography-text-lg);
+}
+
+.typography[data-size='xl'] {
+	font-size: var(--typography-text-xl);
+}
+
+.typography[data-size='2xl'] {
+	font-size: var(--typography-text-2xl);
+}
+
+.typography[data-size='3xl'] {
+	font-size: var(--typography-text-3xl);
+}
+
+.typography[data-size='4xl'] {
+	font-size: var(--typography-text-4xl);
+}
+
+.typography[data-size='5xl'] {
+	font-size: var(--typography-text-5xl);
+}
+
 /* underline */
 .typography[data-underline='true'] {
 	text-decoration: underline;

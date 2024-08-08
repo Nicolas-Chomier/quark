@@ -2,12 +2,22 @@ import React from 'react';
 import styles from './Typography.module.css';
 
 type TypographyElement = 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'span';
-
+type TypographySize =
+	| 'xs'
+	| 's'
+	| 'm'
+	| 'l'
+	| 'xl'
+	| '2xl'
+	| '3xl'
+	| '4xl'
+	| '5xl';
 type TypographyVariant = 'body1' | 'body2' | 'subtitle1' | 'subtitle2';
 
 export interface TypographyProps {
 	element: TypographyElement;
 	variant?: TypographyVariant;
+	size?: TypographySize;
 	fontWeight?: 'lighter' | 'normal' | 'medium' | 'semibold' | 'bold';
 	truncate?: boolean;
 	gutter?: boolean;
@@ -25,6 +35,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 		{
 			element,
 			variant,
+			size,
 			fontWeight,
 			truncate,
 			gutter,
@@ -46,6 +57,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 				tabIndex={-1}
 				data-element={element}
 				data-variant={variant}
+				data-size={size}
 				data-font-weight={fontWeight}
 				data-truncate={truncate}
 				data-gutter={gutter}

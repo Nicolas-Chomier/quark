@@ -145,15 +145,6 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.text[data-font-size='110'] {
-	font-size: 110%;
-}
-.text[data-font-size='120'] {
-	font-size: 120%;
-}
-.text[data-font-size='130'] {
-	font-size: 128%;
-}
 
 /* STATES HOVER */
 .button[data-variant='accent']:hover,
@@ -191,6 +182,7 @@
 	cursor: default;
 	animation: none;
 	box-shadow: none;
+	filter: brightness(100%);
 	background-color: var(--button-background-color-disabled);
 	color: var(--button-text-color-disabled);
 }
