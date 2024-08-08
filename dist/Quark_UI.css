@@ -128,15 +128,15 @@
 	--typography-text-color-warning: #ffd000;
 	--typography-text-color-danger: #e5484d;
 
-	--typography-text-xs: 0.75rem;
-	--typography-text-s: 0.875rem;
-	--typography-text-m: 1rem;
-	--typography-text-l: 1.125rem;
-	--typography-text-xl: 1.25rem;
-	--typography-text-2xl: 1.5rem;
-	--typography-text-3xl: 1.875rem;
-	--typography-text-4xl: 2.25rem;
-	--typography-text-5xl: 3rem;
+	--typography-text-size-xs: 0.75rem;
+	--typography-text-size-s: 0.875rem;
+	--typography-text-size-m: 1rem;
+	--typography-text-size-l: 1.125rem;
+	--typography-text-size-xl: 1.25rem;
+	--typography-text-size-2xl: 1.5rem;
+	--typography-text-size-3xl: 1.875rem;
+	--typography-text-size-4xl: 2.25rem;
+	--typography-text-size-5xl: 3rem;
 
 	/* Checkbox */
 	--checkbox-background-color-outline: #0000001a;
@@ -2579,40 +2579,59 @@
 }
 
 /* size */
-.Typography-module_typography__42NyF[data-size='xs'] {
-	font-size: var(--typography-text-xs);
+.Typography-module_typography__42NyF[data-element='span'][data-size='xs'] {
+	font-size: var(--typography-text-size-xs);
 }
-
-.Typography-module_typography__42NyF[data-size='s'] {
-	font-size: var(--typography-text-sm);
+.Typography-module_typography__42NyF[data-element='span'][data-size='s'] {
+	font-size: var(--typography-text-size-s);
 }
-
-.Typography-module_typography__42NyF[data-size='m'] {
-	font-size: var(--typography-text-md);
+.Typography-module_typography__42NyF[data-element='span'][data-size='m'] {
+	font-size: var(--typography-text-size-m);
 }
-
-.Typography-module_typography__42NyF[data-size='l'] {
-	font-size: var(--typography-text-lg);
+.Typography-module_typography__42NyF[data-element='span'][data-size='l'] {
+	font-size: var(--typography-text-size-l);
 }
-
-.Typography-module_typography__42NyF[data-size='xl'] {
-	font-size: var(--typography-text-xl);
+.Typography-module_typography__42NyF[data-element='span'][data-size='xl'] {
+	font-size: var(--typography-text-size-xl);
 }
-
-.Typography-module_typography__42NyF[data-size='2xl'] {
-	font-size: var(--typography-text-2xl);
+.Typography-module_typography__42NyF[data-element='span'][data-size='2xl'] {
+	font-size: var(--typography-text-size-2xl);
 }
-
-.Typography-module_typography__42NyF[data-size='3xl'] {
-	font-size: var(--typography-text-3xl);
+.Typography-module_typography__42NyF[data-element='span'][data-size='3xl'] {
+	font-size: var(--typography-text-size-3xl);
 }
-
-.Typography-module_typography__42NyF[data-size='4xl'] {
-	font-size: var(--typography-text-4xl);
+.Typography-module_typography__42NyF[data-element='span'][data-size='4xl'] {
+	font-size: var(--typography-text-size-4xl);
 }
-
-.Typography-module_typography__42NyF[data-size='5xl'] {
-	font-size: var(--typography-text-5xl);
+.Typography-module_typography__42NyF[data-element='span'][data-size='5xl'] {
+	font-size: var(--typography-text-size-5xl);
+}
+.Typography-module_typography__42NyF[data-element='p'][data-size='xs'] {
+	font-size: var(--typography-text-size-xs);
+}
+.Typography-module_typography__42NyF[data-element='p'][data-size='s'] {
+	font-size: var(--typography-text-size-s);
+}
+.Typography-module_typography__42NyF[data-element='p'][data-size='m'] {
+	font-size: var(--typography-text-size-m);
+}
+.Typography-module_typography__42NyF[data-element='p'][data-size='l'] {
+	font-size: var(--typography-text-size-l);
+}
+.Typography-module_typography__42NyF[data-element='p'][data-size='xl'] {
+	font-size: var(--typography-text-size-xl);
+}
+.Typography-module_typography__42NyF[data-element='p'][data-size='2xl'] {
+	font-size: var(--typography-text-size-2xl);
+}
+.Typography-module_typography__42NyF[data-element='p'][data-size='3xl'] {
+	font-size: var(--typography-text-size-3xl);
+}
+.Typography-module_typography__42NyF[data-element='p'][data-size='4xl'] {
+	font-size: var(--typography-text-size-4xl);
+}
+.Typography-module_typography__42NyF[data-element='p'][data-size='5xl'] {
+	font-size: var(--typography-text-size-5xl);
 }
 
 /* underline */

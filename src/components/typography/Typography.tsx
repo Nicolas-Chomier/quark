@@ -33,7 +33,7 @@ export interface TypographyProps {
 export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 	(
 		{
-			element,
+			element = 'p',
 			variant,
 			size,
 			fontWeight,

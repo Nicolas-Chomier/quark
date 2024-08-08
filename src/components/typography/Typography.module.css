@@ -112,40 +112,59 @@
 }
 
 /* size */
-.typography[data-size='xs'] {
-	font-size: var(--typography-text-xs);
+.typography[data-element='span'][data-size='xs'] {
+	font-size: var(--typography-text-size-xs);
 }
-
-.typography[data-size='s'] {
-	font-size: var(--typography-text-sm);
+.typography[data-element='span'][data-size='s'] {
+	font-size: var(--typography-text-size-s);
 }
-
-.typography[data-size='m'] {
-	font-size: var(--typography-text-md);
+.typography[data-element='span'][data-size='m'] {
+	font-size: var(--typography-text-size-m);
 }
-
-.typography[data-size='l'] {
-	font-size: var(--typography-text-lg);
+.typography[data-element='span'][data-size='l'] {
+	font-size: var(--typography-text-size-l);
 }
-
-.typography[data-size='xl'] {
-	font-size: var(--typography-text-xl);
+.typography[data-element='span'][data-size='xl'] {
+	font-size: var(--typography-text-size-xl);
 }
-
-.typography[data-size='2xl'] {
-	font-size: var(--typography-text-2xl);
+.typography[data-element='span'][data-size='2xl'] {
+	font-size: var(--typography-text-size-2xl);
 }
-
-.typography[data-size='3xl'] {
-	font-size: var(--typography-text-3xl);
+.typography[data-element='span'][data-size='3xl'] {
+	font-size: var(--typography-text-size-3xl);
 }
-
-.typography[data-size='4xl'] {
-	font-size: var(--typography-text-4xl);
+.typography[data-element='span'][data-size='4xl'] {
+	font-size: var(--typography-text-size-4xl);
 }
-
-.typography[data-size='5xl'] {
-	font-size: var(--typography-text-5xl);
+.typography[data-element='span'][data-size='5xl'] {
+	font-size: var(--typography-text-size-5xl);
+}
+.typography[data-element='p'][data-size='xs'] {
+	font-size: var(--typography-text-size-xs);
+}
+.typography[data-element='p'][data-size='s'] {
+	font-size: var(--typography-text-size-s);
+}
+.typography[data-element='p'][data-size='m'] {
+	font-size: var(--typography-text-size-m);
+}
+.typography[data-element='p'][data-size='l'] {
+	font-size: var(--typography-text-size-l);
+}
+.typography[data-element='p'][data-size='xl'] {
+	font-size: var(--typography-text-size-xl);
+}
+.typography[data-element='p'][data-size='2xl'] {
+	font-size: var(--typography-text-size-2xl);
+}
+.typography[data-element='p'][data-size='3xl'] {
+	font-size: var(--typography-text-size-3xl);
+}
+.typography[data-element='p'][data-size='4xl'] {
+	font-size: var(--typography-text-size-4xl);
+}
+.typography[data-element='p'][data-size='5xl'] {
+	font-size: var(--typography-text-size-5xl);
 }
 
 /* underline */
