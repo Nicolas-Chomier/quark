@@ -528,7 +528,7 @@ var Spinner = function Spinner(_ref) {
 
 var styles$d = {"button":"Button-module_button__iSBxU","space":"Button-module_space__-VCLO","text":"Button-module_text__mTBRU","clicky":"Button-module_clicky__WNWW2"};
 
-var _excluded$8 = ["onClick", "text", "loading", "variant", "width", "borderRadius", "children", "className"];
+var _excluded$8 = ["onClick", "text", "loading", "variant", "width", "borderRadius", "fontSize", "children", "className"];
 var Button = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var onClick = _ref.onClick,
     text = _ref.text,
@@ -536,6 +536,7 @@ var Button = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     variant = _ref.variant,
     width = _ref.width,
     borderRadius = _ref.borderRadius,
+    fontSize = _ref.fontSize,
     children = _ref.children,
     className = _ref.className,
     props = _objectWithoutProperties(_ref, _excluded$8);
@@ -552,18 +553,21 @@ var Button = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Spinner, null), /*#__PURE__*/React.createElement("span", {
         className: styles$d.space
       }), /*#__PURE__*/React.createElement("span", {
-        className: styles$d.text
+        className: styles$d.text,
+        "data-font-size": fontSize
       }, text));
     }
     if (text && children) {
       return /*#__PURE__*/React.createElement(React.Fragment, null, children, /*#__PURE__*/React.createElement("span", {
         className: styles$d.space
       }), /*#__PURE__*/React.createElement("span", {
-        className: styles$d.text
+        className: styles$d.text,
+        "data-font-size": fontSize
       }, text));
     }
     return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
-      className: styles$d.text
+      className: styles$d.text,
+      "data-font-size": fontSize
     }, text), children);
   };
   if (!text && !children) return null;

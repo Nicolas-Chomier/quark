@@ -30,6 +30,7 @@ export interface ButtonProps
 		| 'xxl'
 		| 'xxxl'
 		| 'full';
+	fontSize?: '110' | '120' | '130';
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -41,6 +42,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 			variant,
 			width,
 			borderRadius,
+			fontSize,
 			children,
 			className,
 			...props
@@ -65,7 +67,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 					<>
 						<Spinner />
 						<span className={styles.space} />
-						<span className={styles.text}>{text}</span>
+						<span className={styles.text} data-font-size={fontSize}>
+							{text}
+						</span>
 					</>
 				);
 			}
@@ -74,14 +78,18 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 					<>
 						{children}
 						<span className={styles.space} />
-						<span className={styles.text}>{text}</span>
+						<span className={styles.text} data-font-size={fontSize}>
+							{text}
+						</span>
 					</>
 				);
 			}
 
 			return (
 				<>
-					<span className={styles.text}>{text}</span>
+					<span className={styles.text} data-font-size={fontSize}>
+						{text}
+					</span>
 					{children}
 				</>
 			);

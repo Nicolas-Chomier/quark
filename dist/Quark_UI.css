@@ -655,10 +655,20 @@
 	width: 0.5rem;
 }
 
+/* Text */
 .Button-module_text__mTBRU {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+.Button-module_text__mTBRU[data-font-size='110'] {
+	font-size: 110%;
+}
+.Button-module_text__mTBRU[data-font-size='120'] {
+	font-size: 120%;
+}
+.Button-module_text__mTBRU[data-font-size='130'] {
+	font-size: 128%;
 }
 
 /* STATES HOVER */
@@ -2281,7 +2291,7 @@
 	align-items: center;
 	justify-content: center;
 	gap: 0.8rem;
-	padding-top: 0.75rem;
+	padding-top: 0.6rem;
 }
 
 .Table-module_pageInfo__TOzx3 {

@@ -143,10 +143,20 @@
 	width: 0.5rem;
 }
 
+/* Text */
 .text {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+.text[data-font-size='110'] {
+	font-size: 110%;
+}
+.text[data-font-size='120'] {
+	font-size: 120%;
+}
+.text[data-font-size='130'] {
+	font-size: 128%;
 }
 
 /* STATES HOVER */
