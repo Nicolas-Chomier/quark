@@ -527,7 +527,6 @@
 	max-width: 8rem;
 	min-height: 2.75rem;
 	max-height: 2.75rem;
-	font-size: 0.8rem;
 	padding: 4px 6px;
 }
 
@@ -536,7 +535,6 @@
 	max-width: 12rem;
 	min-height: 2.75rem;
 	max-height: 2.75rem;
-	font-size: 0.9rem;
 	padding: 4px 8px;
 }
 
@@ -545,7 +543,6 @@
 	max-width: 15.5rem;
 	min-height: 2.75rem;
 	max-height: 2.75rem;
-	font-size: 1rem;
 	padding: 4px 10px;
 }
 
@@ -554,7 +551,6 @@
 	width: 100%;
 	min-height: 2.75rem;
 	max-height: 2.75rem;
-	font-size: 1.1rem;
 }
 
 /* Variants */
