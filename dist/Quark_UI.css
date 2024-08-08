@@ -134,9 +134,9 @@
 	--typography-text-size-l: 1.125rem;
 	--typography-text-size-xl: 1.25rem;
 	--typography-text-size-2xl: 1.5rem;
-	--typography-text-size-3xl: 1.875rem;
-	--typography-text-size-4xl: 2.25rem;
-	--typography-text-size-5xl: 3rem;
+	--typography-text-size-3xl: 2rem;
+	--typography-text-size-4xl: 3rem;
+	--typography-text-size-5xl: 4rem;
 
 	/* Checkbox */
 	--checkbox-background-color-outline: #0000001a;
