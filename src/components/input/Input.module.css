@@ -104,7 +104,7 @@
 
 /* Disabled */
 .input:disabled {
-	background-color: var(--input-text-color-disabled);
+	background-color: var(--input-background-color-disabled);
 	color: var(--input-text-color-disabled);
 	cursor: default;
 	animation: none;
