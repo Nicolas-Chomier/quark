@@ -5,12 +5,27 @@ export interface DialogProps
 	extends React.DialogHTMLAttributes<HTMLDialogElement> {
 	id: string;
 	isOpen?: boolean;
+	background?: boolean;
+	padding?: 's' | 'm' | 'l';
+	shadow?: boolean;
 	children?: ReactNode;
 	className?: string;
 }
 
 export const Dialog = React.forwardRef<HTMLDialogElement, DialogProps>(
-	({ id, isOpen, className, children, ...props }, ref) => {
+	(
+		{
+			id,
+			isOpen,
+			background,
+			padding,
+			shadow,
+			className,
+			children,
+			...props
+		},
+		ref,
+	) => {
 		const dialogRef = useRef<HTMLDialogElement>(null);
 
 		useEffect(() => {
@@ -29,6 +44,9 @@ export const Dialog = React.forwardRef<HTMLDialogElement, DialogProps>(
 			<dialog
 				id={`u-dialog-${id}`}
 				ref={ref || dialogRef}
+				data-background={background}
+				data-box-shadow={shadow}
+				data-padding={padding}
 				className={`${styles.dialog} ${className || ''}`}
 				{...props}
 			>

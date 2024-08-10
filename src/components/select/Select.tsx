@@ -5,11 +5,11 @@ import React, {
 	useMemo,
 	useCallback,
 } from 'react';
+import { useClickOutside } from '../../hooks/useClickOutside';
 import { Label } from '../label/Label';
 import { Input } from '../input/Input';
 import { IconButton } from '../iconButton/IconButton';
 import { Flex } from '../flex/Flex';
-import { useClickOutside } from '../../hooks/useClickOutside';
 import styles from './Select.module.css';
 
 export type SelectProps = {

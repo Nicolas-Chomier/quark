@@ -248,25 +248,29 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
 							direction='row'
 							align='center'
 							justify='center'
-							pt='3'
-							pb='3'
-							pl='5'
-							pr='5'
 							gap='2xs'
 							wrap={'wrap'}
 						>
 							{itemList.map((str: string) => {
 								return (
-									<Badge
+									<Flex
 										key={`badge-${str}`}
-										variant='solid'
-										size='medium'
-										borderRadius='full'
-										clickable
-										onClick={(e: any) => removeBadge(e)}
+										pt='1'
+										pb='3'
+										pl='1'
+										pr='1'
 									>
-										{str}
-									</Badge>
+										<Badge
+											color='theme'
+											variant='solid'
+											size='medium'
+											borderRadius='l'
+											clickable
+											onClick={(e: any) => removeBadge(e)}
+										>
+											{str}
+										</Badge>
+									</Flex>
 								);
 							})}
 						</Flex>
