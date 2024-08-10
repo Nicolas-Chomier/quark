@@ -1,6 +1,6 @@
 .dialog {
 	display: none;
-	animation: fadeIn 0.9s ease-out;
+	animation: fadeIn 0.7s ease-out;
 }
 
 .dialog[open] {

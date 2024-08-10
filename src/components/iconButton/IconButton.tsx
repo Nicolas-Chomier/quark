@@ -56,7 +56,6 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
 			[onClick],
 		);
 
-		if (!children) return null;
 		return (
 			<button
 				onClick={handleClick}
