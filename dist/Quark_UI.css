@@ -313,6 +313,32 @@
 	--table-pagination-button-text-color-standard: #e6e6e6;
 
 	--table-X-icon-color: rgb(224, 51, 51);
+
+	/* Alert */
+	--alert-background-color-success: #d4edda;
+	--alert-color-success: #155724;
+	--alert-border-color-success: #c3e6cb;
+
+	--alert-background-color-warning: #fff3cd;
+	--alert-color-warning: #856404;
+	--alert-border-color-warning: #ffeeba;
+
+	--alert-background-color-danger: #f8d7da;
+	--alert-color-danger: #721c24;
+	--alert-border-color-danger: #f5c6cb;
+
+	--alert-background-color-info: #d1ecf1;
+	--alert-color-info: #0c5460;
+	--alert-border-color-info: #bee5eb;
+
+	--alert-border-radius-xs: 6px;
+	--alert-border-radius-s: 8px;
+	--alert-border-radius-m: 12px;
+	--alert-border-radius-l: 16px;
+	--alert-border-radius-xl: 22px;
+
+	--alert-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Sizes */
