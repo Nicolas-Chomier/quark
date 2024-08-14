@@ -21,7 +21,7 @@
 }
 
 .flags {
-	min-width: 5rem;
+	min-width: 2.75rem;
 	max-width: 7rem;
 	display: flex;
 	flex-direction: column;
