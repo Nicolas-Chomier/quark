@@ -1373,7 +1373,6 @@
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	gap: 2px;
 }
 
 .Flags-module_panel__dQwU9 {
@@ -1381,7 +1380,7 @@
 	height: fit-content;
 	position: absolute;
 	top: 0;
-	left: 100%;
+	left: calc(100% + 2px);
 	z-index: 999;
 	display: flex;
 	flex-direction: row;
@@ -1389,12 +1388,13 @@
 }
 
 .Flags-module_flags__DNIKj {
-	min-width: 2.75rem;
+	min-width: 2.125rem;
 	max-width: 7rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	box-sizing: border-box;
 	padding: 0.5rem 0.625rem;
 	border-radius: 0.75rem;
 	opacity: 0;
