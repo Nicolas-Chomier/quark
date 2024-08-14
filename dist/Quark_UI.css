@@ -103,7 +103,9 @@
 	--spinner-background-color-basic: #fafafa;
 
 	/* Flex */
-	--flex-background-color-standard: #181818;
+	--flex-background-color-layer1: red;
+	--flex-background-color-layer2: green;
+	--flex-background-color-layer3: blue;
 
 	--flex-radius-xxxs: 4px;
 	--flex-radius-xxs: 6px;
@@ -1135,8 +1137,14 @@
 }
 
 /* background color */
-.Flex-module_flex__bglxA[data-background='true'] {
-	background-color: var(--flex-background-color-standard);
+.Flex-module_flex__bglxA[data-background='layer1'] {
+	background-color: var(--flex-background-color-layer1);
+}
+.Flex-module_flex__bglxA[data-background='layer2'] {
+	background-color: var(--flex-background-color-layer2);
+}
+.Flex-module_flex__bglxA[data-background='layer3'] {
+	background-color: var(--flex-background-color-layer3);
 }
 
 /* inline */

@@ -7,8 +7,14 @@
 }
 
 /* background color */
-.flex[data-background='true'] {
-	background-color: var(--flex-background-color-standard);
+.flex[data-background='layer1'] {
+	background-color: var(--flex-background-color-layer1);
+}
+.flex[data-background='layer2'] {
+	background-color: var(--flex-background-color-layer2);
+}
+.flex[data-background='layer3'] {
+	background-color: var(--flex-background-color-layer3);
 }
 
 /* inline */
