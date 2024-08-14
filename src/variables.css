@@ -341,4 +341,40 @@
 
 	--alert-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
 		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+	/* Flags */
+	--flags-radius-xxxs: 4px;
+	--flags-radius-xxs: 6px;
+	--flags-radius-xs: 8px;
+	--flags-radius-s: 10px;
+	--flags-radius-m: 12px;
+	--flags-radius-l: 14px;
+	--flags-radius-xl: 16px;
+	--flags-radius-xxl: 18px;
+	--flags-radius-xxxl: 20px;
+	--flags-radius-full: 9999px;
+
+	--flags-text-color-theme: #fafafa;
+	--flags-text-color-accent: #fafafa;
+	--flags-text-color-simple: #fafafa;
+	--flags-text-color-outline: #fafafa;
+	--flags-text-color-fade: #181818;
+	--flags-text-color-ghost: #181818;
+	--flags-text-color-info: #181818;
+	--flags-text-color-success: #fafafa;
+	--flags-text-color-warning: #181818;
+	--flags-text-color-danger: #fafafa;
+	--flags-text-color-disabled: #bebfc5;
+
+	--flags-background-color-theme: #7148fc;
+	--flags-background-color-accent: #d3fc48;
+	--flags-background-color-simple: #181818;
+	--flags-background-color-fade: #f2f2f5;
+	--flags-background-color-info: #87aaeb;
+	--flags-background-color-success: #3e9b4f;
+	--flags-background-color-warning: #ffd000;
+	--flags-background-color-danger: #e5484d;
+	--flags-background-color-disabled: #e5e4e2;
+
+	--flags-border-color-normal: #0000001f;
 }
