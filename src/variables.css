@@ -377,4 +377,10 @@
 	--flags-background-color-disabled: #e5e4e2;
 
 	--flags-border-color-normal: #0000001f;
+
+	/* Avatar */
+	--avatar-gap: 0.4rem;
+	--avatar-name-color: black;
+	--avatar-rank-color: gray;
+	--avatar-max-width: 12.5rem;
 }
