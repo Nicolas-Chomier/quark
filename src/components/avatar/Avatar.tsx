@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { createAvatar } from '@dicebear/core';
 import { initials } from '@dicebear/collection';
-import styles from './TAvatar2.module.css';
+import styles from './Avatar.module.css';
 
 // Types pour les propriétés du composant
 type RankingTable = Record<string, string>;
