@@ -1,6 +1,6 @@
 import React from 'react';
 type RankingTable = Record<string, string>;
-export type TAvatarProps = {
+export type AvatarProps = {
     name: string;
     rank?: string;
     avatarSize?: number;
@@ -8,6 +8,7 @@ export type TAvatarProps = {
     borderRadius?: 's' | 'm' | 'l';
     customRankingTable?: RankingTable;
     italic?: boolean;
+    variant?: 'bots' | 'fun';
 };
-export declare const Avatar: React.FC<TAvatarProps>;
+export declare const Avatar: React.FC<AvatarProps>;
 export {};

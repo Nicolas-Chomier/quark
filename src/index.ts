@@ -2,7 +2,7 @@ import './variables.css';
 
 /* Components */
 export { Alert, type AlertProps } from './components/alert/Alert';
-export { Avatar, type TAvatarProps } from './components/avatar/Avatar';
+export { Avatar, type AvatarProps } from './components/avatar/Avatar';
 export { Badge, type BadgeProps } from './components/badge/Badge';
 export { Button, type ButtonProps } from './components/button/Button';
 export { Checkbox, type CheckboxProps } from './components/checkbox/Checkbox';

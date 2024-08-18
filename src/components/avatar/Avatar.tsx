@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react';
 import { createAvatar } from '@dicebear/core';
-import { initials } from '@dicebear/collection';
+import { initials, botttsNeutral, funEmoji } from '@dicebear/collection';
 import styles from './Avatar.module.css';
 
 // Types pour les propriétés du composant
 type RankingTable = Record<string, string>;
 
-export type TAvatarProps = {
+export type AvatarProps = {
 	name: string;
 	rank?: string;
 	avatarSize?: number;
@@ -14,6 +14,7 @@ export type TAvatarProps = {
 	borderRadius?: 's' | 'm' | 'l';
 	customRankingTable?: RankingTable;
 	italic?: boolean;
+	variant?: 'bots' | 'fun';
 };
 
 // Table de couleurs par défaut pour les rangs
@@ -40,7 +41,7 @@ const getAvatarRadius = (borderRadius?: 's' | 'm' | 'l'): number => {
 	}
 };
 
-export const Avatar: React.FC<TAvatarProps> = ({
+export const Avatar: React.FC<AvatarProps> = ({
 	name,
 	rank = 'user',
 	avatarSize = 44,
@@ -48,6 +49,7 @@ export const Avatar: React.FC<TAvatarProps> = ({
 	borderRadius,
 	customRankingTable,
 	italic,
+	variant,
 }) => {
 	// Calcul de la couleur du rang
 	const rankingColor = useMemo(() => {
@@ -57,7 +59,7 @@ export const Avatar: React.FC<TAvatarProps> = ({
 
 	// Génération de l'avatar SVG
 	const avatarSvg = useMemo(() => {
-		const seed = `${name}${rank}`;
+		const seed = `${name}${rank}8`;
 		const avatarOptions = {
 			seed,
 			size: avatarSize,
@@ -65,8 +67,15 @@ export const Avatar: React.FC<TAvatarProps> = ({
 			radius: getAvatarRadius(borderRadius),
 		};
 
+		if (variant === 'bots') {
+			return createAvatar(botttsNeutral, avatarOptions).toString();
+		}
+		if (variant === 'fun') {
+			return createAvatar(funEmoji, avatarOptions).toString();
+		}
+
 		return createAvatar(initials, avatarOptions).toString();
-	}, [name, rank, avatarSize, rankingColor, borderRadius]);
+	}, [name, rank, avatarSize, rankingColor, borderRadius, variant]);
 
 	// Ne rien rendre si le nom n'est pas fourni
 	if (!name) return null;
