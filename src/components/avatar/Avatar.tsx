@@ -90,6 +90,7 @@ export const Avatar: React.FC<AvatarProps> = ({
 	// Calcul de la couleur du rang
 	const rankingColor = useMemo(() => {
 		const rankingTable = { ...defaultRankingTable, ...customRankingTable };
+		if (rankingTable[rank] === undefined) return '#000000';
 		return rankingTable[rank].replace('#', '');
 	}, [customRankingTable, rank]);
 
