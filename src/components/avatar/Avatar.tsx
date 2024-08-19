@@ -11,7 +11,17 @@ export type AvatarProps = {
 	rank?: string;
 	avatarSize?: number;
 	side?: 'left' | 'right';
-	borderRadius?: 's' | 'm' | 'l';
+	borderRadius?:
+		| 'xxxs'
+		| 'xxs'
+		| 'xs'
+		| 's'
+		| 'm'
+		| 'l'
+		| 'xl'
+		| 'xxl'
+		| 'xxxl'
+		| 'full';
 	customRankingTable?: RankingTable;
 	italic?: boolean;
 	variant?: 'bots' | 'fun';
@@ -28,14 +38,40 @@ const defaultRankingTable: RankingTable = {
 };
 
 // Fonction utilitaire pour obtenir le rayon de l'avatar
-const getAvatarRadius = (borderRadius?: 's' | 'm' | 'l'): number => {
+const getAvatarRadius = (
+	borderRadius?:
+		| 'xxxs'
+		| 'xxs'
+		| 'xs'
+		| 's'
+		| 'm'
+		| 'l'
+		| 'xl'
+		| 'xxl'
+		| 'xxxl'
+		| 'full',
+): number => {
 	switch (borderRadius) {
+		case 'xxxs':
+			return 10;
+		case 'xxs':
+			return 12;
+		case 'xs':
+			return 16;
 		case 's':
 			return 18;
 		case 'm':
-			return 22;
+			return 20;
 		case 'l':
+			return 22;
+		case 'xl':
+			return 24;
+		case 'xxl':
 			return 28;
+		case 'xxxl':
+			return 32;
+		case 'full':
+			return 999;
 		default:
 			return 0;
 	}
