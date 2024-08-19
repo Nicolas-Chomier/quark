@@ -21,6 +21,7 @@ export interface TypographyProps {
 	fontWeight?: 'lighter' | 'normal' | 'medium' | 'semibold' | 'bold';
 	truncate?: boolean;
 	gutter?: boolean;
+	capitalyse?: boolean;
 	dynamic?: boolean;
 	align?: 'left' | 'center' | 'right' | 'justify';
 	color?: 'theme' | 'accent' | 'info' | 'success' | 'warning' | 'danger';
@@ -39,6 +40,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 			fontWeight,
 			truncate,
 			gutter,
+			capitalyse,
 			dynamic,
 			align,
 			color,
@@ -61,6 +63,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 				data-font-weight={fontWeight}
 				data-truncate={truncate}
 				data-gutter={gutter}
+				data-capitalyse={capitalyse}
 				data-dynamic={dynamic}
 				data-align={align}
 				data-color={color}

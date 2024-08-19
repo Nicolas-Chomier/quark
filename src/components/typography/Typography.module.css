@@ -19,6 +19,11 @@
 	margin-top: -0.125rem;
 }
 
+/* Capitalyse */
+.typography[data-capitalyse='true'] {
+	text-transform: capitalize;
+}
+
 /* Variants */
 .typography[data-variant='body1'] {
 	font-size: 1rem;

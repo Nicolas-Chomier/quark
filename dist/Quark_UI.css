@@ -2943,6 +2943,11 @@
 	margin-top: -0.125rem;
 }
 
+/* Capitalyse */
+.Typography-module_typography__42NyF[data-capitalyse='true'] {
+	text-transform: capitalize;
+}
+
 /* Variants */
 .Typography-module_typography__42NyF[data-variant='body1'] {
 	font-size: 1rem;

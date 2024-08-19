@@ -9,6 +9,7 @@ export interface TypographyProps {
     fontWeight?: 'lighter' | 'normal' | 'medium' | 'semibold' | 'bold';
     truncate?: boolean;
     gutter?: boolean;
+    capitalyse?: boolean;
     dynamic?: boolean;
     align?: 'left' | 'center' | 'right' | 'justify';
     color?: 'theme' | 'accent' | 'info' | 'success' | 'warning' | 'danger';
