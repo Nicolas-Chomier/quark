@@ -1,6 +1,11 @@
 import React, { useMemo } from 'react';
 import { createAvatar } from '@dicebear/core';
-import { initials, botttsNeutral, funEmoji } from '@dicebear/collection';
+import {
+	initials,
+	botttsNeutral,
+	funEmoji,
+	bottts,
+} from '@dicebear/collection';
 import styles from './Avatar.module.css';
 
 // Types pour les propriétés du composant
@@ -24,7 +29,7 @@ export type AvatarProps = {
 		| 'full';
 	customRankingTable?: RankingTable;
 	italic?: boolean;
-	variant?: 'bots' | 'fun';
+	variant?: 'bots' | 'bots2' | 'fun';
 };
 
 // Table de couleurs par défaut pour les rangs
@@ -109,6 +114,9 @@ export const Avatar: React.FC<AvatarProps> = ({
 		}
 		if (variant === 'fun') {
 			return createAvatar(funEmoji, avatarOptions).toString();
+		}
+		if (variant === 'bots2') {
+			return createAvatar(bottts, avatarOptions).toString();
 		}
 
 		return createAvatar(initials, avatarOptions).toString();

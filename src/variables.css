@@ -103,9 +103,9 @@
 	--spinner-background-color-basic: #fafafa;
 
 	/* Flex */
-	--flex-background-color-layer1: red;
-	--flex-background-color-layer2: green;
-	--flex-background-color-layer3: blue;
+	--flex-background-color-style1: red;
+	--flex-background-color-style2: green;
+	--flex-background-color-style3: blue;
 
 	--flex-radius-xxxs: 4px;
 	--flex-radius-xxs: 6px;

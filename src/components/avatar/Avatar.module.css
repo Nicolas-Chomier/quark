@@ -29,13 +29,14 @@
 .name {
 	font-size: 1rem;
 	color: var(--avatar-name-color);
-	font-weight: bold;
+	text-transform: capitalize;
 }
 
 .rank {
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	color: var(--avatar-rank-color);
 	text-transform: capitalize;
+	font-weight: bold;
 }
 
 .rank[data-italic='true'] {

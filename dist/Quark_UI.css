@@ -103,9 +103,9 @@
 	--spinner-background-color-basic: #fafafa;
 
 	/* Flex */
-	--flex-background-color-layer1: red;
-	--flex-background-color-layer2: green;
-	--flex-background-color-layer3: blue;
+	--flex-background-color-style1: red;
+	--flex-background-color-style2: green;
+	--flex-background-color-style3: blue;
 
 	--flex-radius-xxxs: 4px;
 	--flex-radius-xxs: 6px;
@@ -509,13 +509,14 @@
 .Avatar-module_name__6t3B2 {
 	font-size: 1rem;
 	color: var(--avatar-name-color);
-	font-weight: bold;
+	text-transform: capitalize;
 }
 
 .Avatar-module_rank__BREjF {
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	color: var(--avatar-rank-color);
 	text-transform: capitalize;
+	font-weight: bold;
 }
 
 .Avatar-module_rank__BREjF[data-italic='true'] {
@@ -1625,14 +1626,14 @@
 }
 
 /* background color */
-.Flex-module_flex__bglxA[data-background='layer1'] {
-	background-color: var(--flex-background-color-layer1);
+.Flex-module_flex__bglxA[data-background='style1'] {
+	background-color: var(--flex-background-color-style1);
 }
-.Flex-module_flex__bglxA[data-background='layer2'] {
-	background-color: var(--flex-background-color-layer2);
+.Flex-module_flex__bglxA[data-background='style2'] {
+	background-color: var(--flex-background-color-style2);
 }
-.Flex-module_flex__bglxA[data-background='layer3'] {
-	background-color: var(--flex-background-color-layer3);
+.Flex-module_flex__bglxA[data-background='style3'] {
+	background-color: var(--flex-background-color-style3);
 }
 
 /* inline */
@@ -1722,22 +1723,22 @@
 	gap: 1rem;
 } /* 16px */
 .Flex-module_flex__bglxA[data-gap='xl'] {
-	gap: 1.25rem;
+	gap: 1.5rem;
 } /* 20px */
 .Flex-module_flex__bglxA[data-gap='2xl'] {
-	gap: 1.5rem;
+	gap: 1.85rem;
 } /* 24px */
 .Flex-module_flex__bglxA[data-gap='3xl'] {
-	gap: 1.75rem;
+	gap: 2.25rem;
 } /* 28px */
 .Flex-module_flex__bglxA[data-gap='4xl'] {
-	gap: 2rem;
+	gap: 3rem;
 } /* 32px */
 .Flex-module_flex__bglxA[data-gap='5xl'] {
-	gap: 2.25rem;
+	gap: 4rem;
 } /* 36px */
 .Flex-module_flex__bglxA[data-gap='6xl'] {
-	gap: 2.5rem;
+	gap: 6rem;
 } /* 40px */
 
 /* Padding Top */

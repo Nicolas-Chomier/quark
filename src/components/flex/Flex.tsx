@@ -60,7 +60,7 @@ type FlexBorderRadius =
 	| 'full';
 
 export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
-	background?: 'layer1' | 'layer2' | 'layer3';
+	background?: 'style1' | 'style2' | 'style3';
 	direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
 	wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
 	justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
