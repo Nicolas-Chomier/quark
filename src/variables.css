@@ -378,6 +378,8 @@
 
 	--flags-border-color-normal: #0000001f;
 
+	--flags-gap: 3px;
+
 	/* Avatar */
 	--avatar-gap: 0.4rem;
 	--avatar-name-color: black;

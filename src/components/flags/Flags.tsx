@@ -1,10 +1,12 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
+import { useClickOutside } from '../../hooks/useClickOutside';
 import { IconButton } from '../iconButton/IconButton';
-import styles from './Flags.module.css';
+import styles from './TFlags.module.css';
 
 export type FlagsProps = {
 	onClick?: (language: string) => void;
 	languages?: string[];
+	column?: boolean;
 	variant?:
 		| 'theme'
 		| 'accent'
@@ -33,11 +35,16 @@ export type FlagsProps = {
 export const Flags: React.FC<FlagsProps> = ({
 	onClick,
 	languages,
+	column,
 	variant,
 	size,
 	borderRadius,
 }) => {
 	const [openPanel, setOpenPanel] = useState(false);
+	const clickRef = useRef(null);
+
+	// Close dropdown when clicking outside
+	useClickOutside(clickRef, () => setOpenPanel(false));
 
 	// Handles the click event
 	const handleLanguageClick = useCallback(
@@ -52,7 +59,7 @@ export const Flags: React.FC<FlagsProps> = ({
 
 	if (!languages) return null;
 	return (
-		<div className={styles.languageContainer}>
+		<div className={styles.languageContainer} ref={clickRef}>
 			<IconButton
 				variant={variant}
 				size={size}
@@ -76,7 +83,7 @@ export const Flags: React.FC<FlagsProps> = ({
 				</svg>
 			</IconButton>
 			{openPanel && (
-				<div className={styles.panel}>
+				<div className={styles.panel} data-column={column}>
 					{languages?.map((language: string, index: number) => (
 						<button
 							onClick={() => handleLanguageClick(language)}
