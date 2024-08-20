@@ -6,7 +6,7 @@ import styles from './Flags.module.css';
 export type FlagsProps = {
 	onClick?: (language: string) => void;
 	languages?: string[];
-	column?: boolean;
+	direction?: 'row' | 'column';
 	variant?:
 		| 'theme'
 		| 'accent'
@@ -35,7 +35,7 @@ export type FlagsProps = {
 export const Flags: React.FC<FlagsProps> = ({
 	onClick,
 	languages,
-	column,
+	direction,
 	variant,
 	size,
 	borderRadius,
@@ -83,7 +83,7 @@ export const Flags: React.FC<FlagsProps> = ({
 				</svg>
 			</IconButton>
 			{openPanel && (
-				<div className={styles.panel} data-column={column}>
+				<div className={styles.panel} data-direction={direction}>
 					{languages?.map((language: string, index: number) => (
 						<button
 							onClick={() => handleLanguageClick(language)}
