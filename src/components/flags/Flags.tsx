@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { useClickOutside } from '../../hooks/useClickOutside';
 import { IconButton } from '../iconButton/IconButton';
-import styles from './TFlags.module.css';
+import styles from './Flags.module.css';
 
 export type FlagsProps = {
 	onClick?: (language: string) => void;
