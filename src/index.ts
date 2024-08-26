@@ -7,42 +7,6 @@ export { Badge, type BadgeProps } from './components/badge/Badge';
 export { Button, type ButtonProps } from './components/button/Button';
 export { Checkbox, type CheckboxProps } from './components/checkbox/Checkbox';
 export { Dialog, type DialogProps } from './components/dialog/Dialog';
-export {
-	DisplayContent,
-	type DisplayContentComponent,
-} from './components/display/content/DisplayContent';
-export {
-	DisplayIcon,
-	type DisplayIconProps,
-} from './components/display/icon/DisplayIcon';
-export {
-	DisplayLabel,
-	type DisplayLabelProps,
-} from './components/display/label/DisplayLabel';
-export {
-	DisplayList,
-	type DisplayListComponent,
-} from './components/display/list/DisplayList';
-export {
-	DisplayRoot,
-	type DisplayComponent,
-} from './components/display/root/DisplayRoot';
-export {
-	DisplayStatistic,
-	type DisplayStatisticProps,
-} from './components/display/stat/DisplayStatistic';
-export {
-	DisplayText,
-	type DisplayTextProps,
-} from './components/display/text/DisplayText';
-export {
-	DisplayTrend,
-	type DisplayTrendProps,
-} from './components/display/trend/DisplayTrend';
-export {
-	DisplayUnit,
-	type DisplayUnitProps,
-} from './components/display/unit/DisplayUnit';
 export { FallBack, type FallBackProps } from './components/fallback/Fallback';
 export { Flags, type FlagsProps } from './components/flags/Flags';
 export { Flex, type FlexProps } from './components/flex/Flex';
@@ -84,3 +48,41 @@ export { useCopyToClipboard } from './hooks/useCopyToClipboard';
 export { _object } from './functions/object';
 export { _array } from './functions/array';
 export { _capitalize } from './functions/string';
+
+/* Components en construction (PBS importation circulaire) */
+/* export {
+	DisplayContent,
+	type DisplayContentComponent,
+} from './components/display(W.I.P)/content/DisplayContent';
+export {
+	DisplayIcon,
+	type DisplayIconProps,
+} from './components/display(W.I.P)/icon/DisplayIcon';
+export {
+	DisplayLabel,
+	type DisplayLabelProps,
+} from './components/display(W.I.P)/label/DisplayLabel';
+export {
+	DisplayList,
+	type DisplayListComponent,
+} from './components/display(W.I.P)/list/DisplayList';
+export {
+	DisplayRoot,
+	type DisplayComponent,
+} from './components/display(W.I.P)/root/DisplayRoot';
+export {
+	DisplayStatistic,
+	type DisplayStatisticProps,
+} from './components/display(W.I.P)/stat/DisplayStatistic';
+export {
+	DisplayText,
+	type DisplayTextProps,
+} from './components/display(W.I.P)/text/DisplayText';
+export {
+	DisplayTrend,
+	type DisplayTrendProps,
+} from './components/display(W.I.P)/trend/DisplayTrend';
+export {
+	DisplayUnit,
+	type DisplayUnitProps,
+} from './components/display(W.I.P)/unit/DisplayUnit'; */
