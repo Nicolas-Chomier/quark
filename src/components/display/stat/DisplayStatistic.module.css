@@ -1,0 +1,40 @@
+.statistic {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+	text-align: justify;
+	color: inherit;
+	cursor: default;
+	padding-bottom: 0.1rem;
+}
+
+/* Disable */
+.statistic[data-disabled='true'] {
+	opacity: var(--displayStatistic-disabled-opacity);
+}
+
+/* Style */
+.statistic[data-style='infos'] {
+	color: var(--displayStatistic-statistic-color-infos);
+}
+.statistic[data-style='success'] {
+	color: var(--displayStatistic-statistic-color-success);
+}
+.statistic[data-style='warning'] {
+	color: var(--displayStatistic-statistic-color-warning);
+}
+.statistic[data-style='danger'] {
+	color: var(--displayStatistic-statistic-color-danger);
+}
+
+/* Size */
+.statistic[data-font-size='s'] {
+	font-size: 1.1rem;
+}
+.statistic[data-font-size='m'] {
+	font-size: 2rem;
+}
+.statistic[data-font-size='l'] {
+	font-size: 3.1rem;
+}

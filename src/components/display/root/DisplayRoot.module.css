@@ -1,0 +1,5 @@
+.displayRoot {
+	display: flex;
+	flex-direction: column;
+	cursor: default;
+}

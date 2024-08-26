@@ -1,0 +1,67 @@
+/* Width */
+.text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+	text-align: justify;
+	color: inherit;
+	cursor: default;
+}
+
+/* Disable */
+.text[data-disabled='true'] {
+	opacity: var(--displayText-disabled-opacity);
+}
+
+/* Style */
+.text[data-style='infos'] {
+	color: var(--displayText-text-color-infos);
+}
+.text[data-style='success'] {
+	color: var(--displayText-text-color-success);
+}
+.text[data-style='warning'] {
+	color: var(--displayText-text-color-warning);
+}
+.text[data-style='danger'] {
+	color: var(--displayText-text-color-danger);
+}
+
+/* Size */
+.text[data-font-size='xs'] {
+	font-size: 0.75rem;
+}
+.text[data-font-size='s'] {
+	font-size: 0.875rem;
+}
+.text[data-font-size='m'] {
+	font-size: 1rem;
+}
+.text[data-font-size='l'] {
+	font-size: 1.2rem;
+}
+.text[data-font-size='xl'] {
+	font-size: 1.8rem;
+}
+
+/* Align */
+.text[data-justify='left'] {
+	justify-content: flex-start;
+	padding-left: 0.3rem;
+}
+.text[data-justify='right'] {
+	justify-content: flex-end;
+	padding-right: 0.3rem;
+}
+
+/* Justify */
+.text[data-align='left'] {
+	text-align: left;
+}
+.text[data-align='center'] {
+	text-align: center;
+}
+.text[data-align='right'] {
+	text-align: right;
+}
