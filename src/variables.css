@@ -107,6 +107,8 @@
 	--flex-radius-xxl: 18px;
 	--flex-radius-xxxl: 20px;
 	--flex-radius-full: 9999px;
+	--flex-border-thickness: 1.4px;
+	--flex-border-color-normal: #9a63af8e;
 
 	/* Dialog */
 	--dialog-background-color-standard: #f8f8f8de;

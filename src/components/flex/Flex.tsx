@@ -67,6 +67,7 @@ export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
 	align?: 'start' | 'end' | 'center' | 'stretch' | 'baseline';
 	gap?: FlexGap;
 	borderRadius?: FlexBorderRadius;
+	border?: boolean;
 	inline?: boolean;
 	pt?: FlexSize;
 	pb?: FlexSize;
@@ -88,6 +89,7 @@ export const Flex = React.forwardRef<HTMLDivElement, FlexProps>(
 			pl,
 			pr,
 			borderRadius,
+			border,
 			inline,
 			children,
 			className,
@@ -109,6 +111,7 @@ export const Flex = React.forwardRef<HTMLDivElement, FlexProps>(
 				data-pr={pr}
 				data-inline={inline}
 				data-border-radius={borderRadius}
+				data-border={border}
 				className={`${styles.flex} ${className || ''}`}
 				ref={ref}
 				{...props}

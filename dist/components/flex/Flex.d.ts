@@ -10,6 +10,7 @@ export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
     align?: 'start' | 'end' | 'center' | 'stretch' | 'baseline';
     gap?: FlexGap;
     borderRadius?: FlexBorderRadius;
+    border?: boolean;
     inline?: boolean;
     pt?: FlexSize;
     pb?: FlexSize;

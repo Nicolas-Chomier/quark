@@ -521,3 +521,9 @@
 .flex[data-border-radius='full'] {
 	border-radius: var(--flex-radius-full);
 }
+
+/* border */
+.flex[data-border='true'] {
+	box-shadow: inset 0 0 0 var(--flex-border-thickness)
+		var(--flex-border-color-normal);
+}
