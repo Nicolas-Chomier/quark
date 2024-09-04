@@ -7,7 +7,7 @@ export type TableProps = {
     data: TableData[];
     rowsPerPage?: number;
     allowSelection?: 'single' | 'multiple';
-    size?: 'xs' | 's' | 'm' | 'l' | 'xl';
+    width?: 'xs' | 's' | 'm' | 'l' | 'xl';
     isLoading?: boolean;
     error?: boolean;
     onRowsSelect: (selectedRows: TableData[]) => void;

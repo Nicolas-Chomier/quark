@@ -12,7 +12,7 @@ export type TableProps = {
 	data: TableData[];
 	rowsPerPage?: number;
 	allowSelection?: 'single' | 'multiple';
-	size?: 'xs' | 's' | 'm' | 'l' | 'xl';
+	width?: 'xs' | 's' | 'm' | 'l' | 'xl';
 	isLoading?: boolean;
 	error?: boolean;
 	onRowsSelect: (selectedRows: TableData[]) => void;
@@ -22,7 +22,7 @@ export const Table: React.FC<TableProps> = ({
 	data = [],
 	rowsPerPage = 5,
 	allowSelection,
-	size,
+	width,
 	isLoading,
 	error,
 	onRowsSelect,
@@ -66,7 +66,7 @@ export const Table: React.FC<TableProps> = ({
 			if (allowSelection === 'single') {
 				setSelectedRows([id]);
 				handleRowSelection([id]);
-			} else {
+			} else if (allowSelection === 'multiple') {
 				setSelectedRows((prev) => {
 					const newSelection = prev.includes(id)
 						? prev.filter((rowId) => rowId !== id)
@@ -74,6 +74,8 @@ export const Table: React.FC<TableProps> = ({
 					handleRowSelection(newSelection);
 					return newSelection;
 				});
+			} else {
+				return null;
 			}
 		},
 		[allowSelection, handleRowSelection],
@@ -84,7 +86,7 @@ export const Table: React.FC<TableProps> = ({
 		if (allowSelection === 'single') {
 			setSelectedRows([]);
 			handleRowSelection([]);
-		} else {
+		} else if (allowSelection === 'multiple') {
 			const currentIds = currentData.map((row) => row.id);
 			setSelectedRows((prev) => {
 				let newSelection;
@@ -100,6 +102,8 @@ export const Table: React.FC<TableProps> = ({
 				handleRowSelection(newSelection);
 				return newSelection;
 			});
+		} else {
+			return null;
 		}
 	}, [allowSelection, currentData, handleRowSelection]);
 
@@ -129,7 +133,7 @@ export const Table: React.FC<TableProps> = ({
 
 	return (
 		<div className={styles.tableContainer}>
-			<table className={styles.table} data-width={size}>
+			<table className={styles.table} data-width={width}>
 				{isLoading ? (
 					<thead className={styles.tableThead}>
 						<tr>
@@ -188,14 +192,18 @@ export const Table: React.FC<TableProps> = ({
 								</th>
 							) : null}
 
-							{columns.map((column) => (
-								<th
-									className={styles.tableTheadCell}
-									key={column.key}
-								>
-									{column.header}
-								</th>
-							))}
+							{columns.map((column) => {
+								if (column.key !== 'id') {
+									return (
+										<th
+											className={styles.tableTheadCell}
+											key={column.key}
+										>
+											{column.header}
+										</th>
+									);
+								}
+							})}
 						</tr>
 					</thead>
 				)}
@@ -247,14 +255,20 @@ export const Table: React.FC<TableProps> = ({
 									</td>
 								) : null}
 
-								{columns.map((column) => (
-									<td
-										className={styles.tableTBodyCell}
-										key={column.key}
-									>
-										{row[column.key]}
-									</td>
-								))}
+								{columns.map((column) => {
+									if (column.key !== 'id') {
+										return (
+											<td
+												className={
+													styles.tableTBodyCell
+												}
+												key={column.key}
+											>
+												{row[column.key]}
+											</td>
+										);
+									}
+								})}
 							</tr>
 						))}
 					</tbody>

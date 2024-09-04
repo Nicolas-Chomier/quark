@@ -29,27 +29,27 @@
 	z-index: 2;
 }
 
-.table[data-size='xs'] {
+.table[data-width='xs'] {
 	width: 33rem;
 	max-width: 33rem;
 }
 
-.table[data-size='s'] {
+.table[data-width='s'] {
 	width: 46rem;
 	max-width: 46rem;
 }
 
-.table[data-size='m'] {
+.table[data-width='m'] {
 	width: 62rem;
 	max-width: 62rem;
 }
 
-.table[data-size='l'] {
+.table[data-width='l'] {
 	width: 90rem;
 	max-width: 90rem;
 }
 
-.table[data-size='xl'] {
+.table[data-width='xl'] {
 	width: 100%;
 	max-width: 100%;
 }
@@ -71,14 +71,11 @@
 
 .tableTBodyRow[data-selected='true'] {
 	background-color: var(--table-row-background-color-selected);
+	color: var(--table-row-text-color-selected);
 }
 
 .tableTBodyRow:hover {
 	color: var(--table-row-text-color-hover);
-}
-
-.tableTBodyRow[data-selected='true']:hover {
-	color: var(--table-row-text-color-selected-hover);
 }
 
 /* CURSOR */

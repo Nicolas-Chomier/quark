@@ -263,7 +263,7 @@
 	--table-border-color-standard: #262629;
 	--table-row-background-color-selected: rgb(143, 47, 252);
 	--table-row-text-color-hover: hotpink;
-	--table-row-text-color-selected-hover: #e6e6e6;
+	--table-row-text-color-selected: #e6e6e6;
 	--table-pagination-button-radius: 10px;
 	--table-pagination-button-background-color-standard: #3e3e45;
 	--table-pagination-button-text-color-standard: #e6e6e6;
@@ -2712,27 +2712,27 @@
 	z-index: 2;
 }
 
-.Table-module_table__-LOHJ[data-size='xs'] {
+.Table-module_table__-LOHJ[data-width='xs'] {
 	width: 33rem;
 	max-width: 33rem;
 }
 
-.Table-module_table__-LOHJ[data-size='s'] {
+.Table-module_table__-LOHJ[data-width='s'] {
 	width: 46rem;
 	max-width: 46rem;
 }
 
-.Table-module_table__-LOHJ[data-size='m'] {
+.Table-module_table__-LOHJ[data-width='m'] {
 	width: 62rem;
 	max-width: 62rem;
 }
 
-.Table-module_table__-LOHJ[data-size='l'] {
+.Table-module_table__-LOHJ[data-width='l'] {
 	width: 90rem;
 	max-width: 90rem;
 }
 
-.Table-module_table__-LOHJ[data-size='xl'] {
+.Table-module_table__-LOHJ[data-width='xl'] {
 	width: 100%;
 	max-width: 100%;
 }
@@ -2754,14 +2754,11 @@
 
 .Table-module_tableTBodyRow__L11kn[data-selected='true'] {
 	background-color: var(--table-row-background-color-selected);
+	color: var(--table-row-text-color-selected);
 }
 
 .Table-module_tableTBodyRow__L11kn:hover {
 	color: var(--table-row-text-color-hover);
-}
-
-.Table-module_tableTBodyRow__L11kn[data-selected='true']:hover {
-	color: var(--table-row-text-color-selected-hover);
 }
 
 /* CURSOR */

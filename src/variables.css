@@ -263,7 +263,7 @@
 	--table-border-color-standard: #262629;
 	--table-row-background-color-selected: rgb(143, 47, 252);
 	--table-row-text-color-hover: hotpink;
-	--table-row-text-color-selected-hover: #e6e6e6;
+	--table-row-text-color-selected: #e6e6e6;
 	--table-pagination-button-radius: 10px;
 	--table-pagination-button-background-color-standard: #3e3e45;
 	--table-pagination-button-text-color-standard: #e6e6e6;
