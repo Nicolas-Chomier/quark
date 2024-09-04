@@ -3061,7 +3061,7 @@
 .Typography-module_typography__42NyF[data-color='theme'] {
 	color: var(--typography-text-color-theme);
 }
-.Typography-module_typography__42NyF[data-color='secondary'] {
+.Typography-module_typography__42NyF[data-color='accent'] {
 	color: var(--typography-text-color-accent);
 }
 .Typography-module_typography__42NyF[data-color='info'] {

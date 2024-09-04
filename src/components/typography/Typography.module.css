@@ -76,7 +76,7 @@
 .typography[data-color='theme'] {
 	color: var(--typography-text-color-theme);
 }
-.typography[data-color='secondary'] {
+.typography[data-color='accent'] {
 	color: var(--typography-text-color-accent);
 }
 .typography[data-color='info'] {
