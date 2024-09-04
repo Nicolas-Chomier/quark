@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { FallBack } from '../fallback/Fallback';
-import { Spinner } from '../spinner/Spinner';
+import { TableDummy } from '../dummy/TableDummy';
 import styles from './Table.module.css';
 
 type TableData = {
@@ -10,11 +9,14 @@ type TableData = {
 
 export type TableProps = {
 	data: TableData[];
+	loadingMessage?: string;
+	noRowsMessage?: string;
 	rowsPerPage?: number;
 	allowSelection?: 'single' | 'multiple';
 	width?: 'xs' | 's' | 'm' | 'l' | 'xl';
 	isLoading?: boolean;
 	error?: boolean;
+	hideColumns?: string[];
 	onRowsSelect: (selectedRows: TableData[]) => void;
 };
 
@@ -25,6 +27,9 @@ export const Table: React.FC<TableProps> = ({
 	width,
 	isLoading,
 	error,
+	hideColumns,
+	loadingMessage = 'Loading...',
+	noRowsMessage = 'No rows to display.',
 	onRowsSelect,
 }) => {
 	// State for selected rows and current page
@@ -122,56 +127,90 @@ export const Table: React.FC<TableProps> = ({
 		}
 	}, [currentData, selectedRows]);
 
-	if (!isLoading && (data.length === 0 || error))
-		return (
-			<FallBack
-				width='l'
-				borderRadius='s'
-				message='No rows to display.'
-			/>
-		);
-
+	// Display fallback if needed
+	if (isLoading) {
+		return <TableDummy width={width} spinner message={loadingMessage} />;
+	}
+	if (data.length === 0 || error) {
+		return <TableDummy width={width} message={noRowsMessage} />;
+	}
 	return (
-		<div className={styles.tableContainer}>
+		<div className={styles.tableContainer} data-width={width}>
 			<table className={styles.table} data-width={width}>
-				{isLoading ? (
-					<thead className={styles.tableThead}>
-						<tr>
-							<th
-								className={styles.tableTheadCell}
-								colSpan={
-									columns.length + (allowSelection ? 1 : 0)
-								}
-							></th>
-						</tr>
-					</thead>
-				) : (
-					<thead className={styles.tableThead}>
-						<tr>
+				<thead className={styles.tableThead}>
+					<tr>
+						{allowSelection ? (
+							<th className={styles.tableTheadCell}>
+								<button
+									className={styles.checkbox}
+									onClick={toggleAll}
+								>
+									{allRowsSelected ? (
+										<svg
+											xmlns='http://www.w3.org/2000/svg'
+											width='16'
+											height='16'
+											viewBox='0 0 24 24'
+											color='var(--table-X-icon-color)'
+										>
+											<path
+												fill='none'
+												stroke='currentColor'
+												strokeLinecap='round'
+												strokeLinejoin='round'
+												strokeWidth='3.6'
+												d='M18 6L6 18M6 6l12 12'
+											/>
+										</svg>
+									) : (
+										<svg
+											xmlns='http://www.w3.org/2000/svg'
+											width='14'
+											height='14'
+											viewBox='0 0 24 24'
+										>
+											<path
+												fill='none'
+												stroke='currentColor'
+												strokeLinecap='round'
+												strokeLinejoin='round'
+												strokeWidth='3.6'
+												d='M20 6L9 17l-5-5'
+											/>
+										</svg>
+									)}
+								</button>
+							</th>
+						) : null}
+
+						{columns.map((column) => {
+							if (hideColumns?.includes(column.key)) return null;
+							if (column.key === 'id') return null;
+							return (
+								<th
+									className={styles.tableTheadCell}
+									key={column.key}
+								>
+									{column.header}
+								</th>
+							);
+						})}
+					</tr>
+				</thead>
+
+				<tbody className={styles.tableTBody}>
+					{currentData.map((row) => (
+						<tr
+							className={styles.tableTBodyRow}
+							key={row.id}
+							data-allow-selection={allowSelection}
+							data-selected={selectedRows.includes(row.id)}
+							onClick={() => toggleRow(row.id)}
+						>
 							{allowSelection ? (
-								<th className={styles.tableTheadCell}>
-									<button
-										className={styles.checkbox}
-										onClick={toggleAll}
-									>
-										{allRowsSelected ? (
-											<svg
-												xmlns='http://www.w3.org/2000/svg'
-												width='16'
-												height='16'
-												viewBox='0 0 24 24'
-												color='var(--table-X-icon-color)'
-											>
-												<path
-													fill='none'
-													stroke='currentColor'
-													strokeLinecap='round'
-													strokeLinejoin='round'
-													strokeWidth='3.6'
-													d='M18 6L6 18M6 6l12 12'
-												/>
-											</svg>
-										) : (
+								<td className={styles.tableTBodyCell}>
+									<span className={styles.checkbox}>
+										{selectedRows.includes(row.id) ? (
 											<svg
 												xmlns='http://www.w3.org/2000/svg'
 												width='14'
@@ -187,92 +226,27 @@ export const Table: React.FC<TableProps> = ({
 													d='M20 6L9 17l-5-5'
 												/>
 											</svg>
-										)}
-									</button>
-								</th>
+										) : null}
+									</span>
+								</td>
 							) : null}
 
 							{columns.map((column) => {
-								if (column.key !== 'id') {
-									return (
-										<th
-											className={styles.tableTheadCell}
-											key={column.key}
-										>
-											{column.header}
-										</th>
-									);
-								}
+								if (hideColumns?.includes(column.key))
+									return null;
+								if (column.key === 'id') return null;
+								return (
+									<td
+										className={styles.tableTBodyCell}
+										key={column.key}
+									>
+										{row[column.key]}
+									</td>
+								);
 							})}
 						</tr>
-					</thead>
-				)}
-
-				{isLoading ? (
-					<tbody className={styles.loadingTBody}>
-						<tr className={styles.loadingTBodyRow}>
-							<td
-								className={styles.loadingTBodyCell}
-								colSpan={
-									columns.length + (allowSelection ? 1 : 0)
-								}
-							>
-								<Spinner size='xl' />
-							</td>
-						</tr>
-					</tbody>
-				) : (
-					<tbody className={styles.tableTBody}>
-						{currentData.map((row) => (
-							<tr
-								className={styles.tableTBodyRow}
-								key={row.id}
-								data-allow-selection={allowSelection}
-								data-selected={selectedRows.includes(row.id)}
-								onClick={() => toggleRow(row.id)}
-							>
-								{allowSelection ? (
-									<td className={styles.tableTBodyCell}>
-										<span className={styles.checkbox}>
-											{selectedRows.includes(row.id) ? (
-												<svg
-													xmlns='http://www.w3.org/2000/svg'
-													width='14'
-													height='14'
-													viewBox='0 0 24 24'
-												>
-													<path
-														fill='none'
-														stroke='currentColor'
-														strokeLinecap='round'
-														strokeLinejoin='round'
-														strokeWidth='3.6'
-														d='M20 6L9 17l-5-5'
-													/>
-												</svg>
-											) : null}
-										</span>
-									</td>
-								) : null}
-
-								{columns.map((column) => {
-									if (column.key !== 'id') {
-										return (
-											<td
-												className={
-													styles.tableTBodyCell
-												}
-												key={column.key}
-											>
-												{row[column.key]}
-											</td>
-										);
-									}
-								})}
-							</tr>
-						))}
-					</tbody>
-				)}
+					))}
+				</tbody>
 			</table>
 			<footer className={styles.pagination}>
 				<button
@@ -318,9 +292,7 @@ export const Table: React.FC<TableProps> = ({
 					</svg>
 				</button>
 				<span className={styles.pageInfo}>
-					{isLoading
-						? 'Loading...'
-						: `Page ${currentPage} / ${totalPages}`}
+					{`Page ${currentPage} / ${totalPages}`}
 				</span>
 				<button
 					className={styles.paginationButton}

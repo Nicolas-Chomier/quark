@@ -1,4 +1,6 @@
 .tableContainer {
+	height: fit-content;
+	width: fit-content;
 	position: relative;
 	background-color: var(--table-background-color-standard);
 	border-radius: var(--table-radius);
@@ -74,6 +76,11 @@
 	color: var(--table-row-text-color-selected);
 }
 
+.tableTBodyRow[data-selected='true']:hover {
+	background-color: var(--table-row-background-color-selected);
+	color: var(--table-row-text-color-selected);
+}
+
 .tableTBodyRow:hover {
 	color: var(--table-row-text-color-hover);
 }
@@ -97,7 +104,7 @@
 .tableTBodyCell {
 	height: 2rem;
 	padding: 0.125rem 1.5rem;
-	max-width: 11.25rem;
+	max-width: 12rem;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;

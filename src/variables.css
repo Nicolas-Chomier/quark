@@ -237,6 +237,9 @@
 	--multiSelect-scrollbar-width: 1rem;
 	--multiSelect-panel-absolute-top-position: calc(100% + 2px);
 
+	/* Dummy */
+	--table-dummy-font-size-standard: 2.8rem;
+
 	/* Fallback */
 	--fallback-background-color: rgb(39, 39, 39);
 	--fallback-text-color: rgb(255, 255, 255);

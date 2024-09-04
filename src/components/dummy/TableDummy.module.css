@@ -1,0 +1,55 @@
+.container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 1.4rem;
+	height: 275px;
+	position: relative;
+	background-color: var(--table-background-color-standard);
+	border-radius: var(--table-radius);
+	box-shadow: inset 0 0 0 1px var(--table-border-color-standard);
+	max-width: fit-content;
+	z-index: 1;
+	padding: var(--table-padding);
+	color: var(--table-text-color-standard);
+	font-size: var(--table-dummy-font-size-standard);
+	overflow: hidden;
+}
+
+.container::before {
+	width: calc(100% - var(--table-padding) * 2);
+	height: 2.8rem;
+	content: '';
+	position: absolute;
+	top: var(--table-padding);
+	left: var(--table-padding);
+	background-color: var(--table-header-background-color-standard);
+	border-radius: var(--table-header-radius);
+	z-index: 2;
+}
+
+.container[data-width='xs'] {
+	width: 33rem;
+	max-width: 33rem;
+}
+
+.container[data-width='s'] {
+	width: 46rem;
+	max-width: 46rem;
+}
+
+.container[data-width='m'] {
+	width: 62rem;
+	max-width: 62rem;
+}
+
+.container[data-width='l'] {
+	width: 90rem;
+	max-width: 90rem;
+}
+
+.container[data-width='xl'] {
+	width: 100%;
+	max-width: 100%;
+}

@@ -5,6 +5,7 @@ export { Badge, type BadgeProps } from './components/badge/Badge';
 export { Button, type ButtonProps } from './components/button/Button';
 export { Checkbox, type CheckboxProps } from './components/checkbox/Checkbox';
 export { Dialog, type DialogProps } from './components/dialog/Dialog';
+export { TableDummy, type TableDummyProps, } from './components/dummy/TableDummy';
 export { FallBack, type FallBackProps } from './components/fallback/Fallback';
 export { Flags, type FlagsProps } from './components/flags/Flags';
 export { Flex, type FlexProps } from './components/flex/Flex';

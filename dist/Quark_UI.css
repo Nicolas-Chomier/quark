@@ -237,6 +237,9 @@
 	--multiSelect-scrollbar-width: 1rem;
 	--multiSelect-panel-absolute-top-position: calc(100% + 2px);
 
+	/* Dummy */
+	--table-dummy-font-size-standard: 2.8rem;
+
 	/* Fallback */
 	--fallback-background-color: rgb(39, 39, 39);
 	--fallback-text-color: rgb(255, 255, 255);
@@ -746,8 +749,8 @@
 
 .Spinner-module_spinner__seXak[data-size='l'] {
 	border: 2px solid;
-	width: 1.5rem;
-	height: 1.5rem;
+	width: 1.7rem;
+	height: 1.7rem;
 }
 .Spinner-module_spinner__seXak[data-size='xl'] {
 	border: 3px solid;
@@ -1166,6 +1169,62 @@
 	to {
 		opacity: 1;
 	}
+}
+
+.TableDummy-module_container__LEpDW {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 1.4rem;
+	height: 275px;
+	position: relative;
+	background-color: var(--table-background-color-standard);
+	border-radius: var(--table-radius);
+	box-shadow: inset 0 0 0 1px var(--table-border-color-standard);
+	max-width: fit-content;
+	z-index: 1;
+	padding: var(--table-padding);
+	color: var(--table-text-color-standard);
+	font-size: var(--table-dummy-font-size-standard);
+	overflow: hidden;
+}
+
+.TableDummy-module_container__LEpDW::before {
+	width: calc(100% - var(--table-padding) * 2);
+	height: 2.8rem;
+	content: '';
+	position: absolute;
+	top: var(--table-padding);
+	left: var(--table-padding);
+	background-color: var(--table-header-background-color-standard);
+	border-radius: var(--table-header-radius);
+	z-index: 2;
+}
+
+.TableDummy-module_container__LEpDW[data-width='xs'] {
+	width: 33rem;
+	max-width: 33rem;
+}
+
+.TableDummy-module_container__LEpDW[data-width='s'] {
+	width: 46rem;
+	max-width: 46rem;
+}
+
+.TableDummy-module_container__LEpDW[data-width='m'] {
+	width: 62rem;
+	max-width: 62rem;
+}
+
+.TableDummy-module_container__LEpDW[data-width='l'] {
+	width: 90rem;
+	max-width: 90rem;
+}
+
+.TableDummy-module_container__LEpDW[data-width='xl'] {
+	width: 100%;
+	max-width: 100%;
 }
 
 .FallBack-module_fallback__yfz9b {
@@ -2682,6 +2741,8 @@
 }
 
 .Table-module_tableContainer__Q4by1 {
+	height: fit-content;
+	width: fit-content;
 	position: relative;
 	background-color: var(--table-background-color-standard);
 	border-radius: var(--table-radius);
@@ -2757,6 +2818,11 @@
 	color: var(--table-row-text-color-selected);
 }
 
+.Table-module_tableTBodyRow__L11kn[data-selected='true']:hover {
+	background-color: var(--table-row-background-color-selected);
+	color: var(--table-row-text-color-selected);
+}
+
 .Table-module_tableTBodyRow__L11kn:hover {
 	color: var(--table-row-text-color-hover);
 }
@@ -2780,7 +2846,7 @@
 .Table-module_tableTBodyCell__jELTx {
 	height: 2rem;
 	padding: 0.125rem 1.5rem;
-	max-width: 11.25rem;
+	max-width: 12rem;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
