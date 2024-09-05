@@ -22,7 +22,7 @@ export interface TypographyProps {
 	truncate?: boolean;
 	gutter?: boolean;
 	capitalyse?: boolean;
-	dynamic?: boolean;
+	spaceWord?: boolean;
 	align?: 'left' | 'center' | 'right' | 'justify';
 	color?: 'theme' | 'accent' | 'info' | 'success' | 'warning' | 'danger';
 	space?: 'tight' | 'wide';
@@ -41,7 +41,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 			truncate,
 			gutter,
 			capitalyse,
-			dynamic,
+			spaceWord,
 			align,
 			color,
 			space,
@@ -64,7 +64,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 				data-truncate={truncate}
 				data-gutter={gutter}
 				data-capitalyse={capitalyse}
-				data-dynamic={dynamic}
+				data-space-word={spaceWord}
 				data-align={align}
 				data-color={color}
 				data-space={space}

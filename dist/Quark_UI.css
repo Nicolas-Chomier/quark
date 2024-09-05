@@ -3062,6 +3062,11 @@
 	white-space: nowrap;
 }
 
+.Typography-module_typography__42NyF[data-space-word='true'] {
+	overflow-wrap: break-word;
+	white-space: normal;
+}
+
 /* Gutter */
 .Typography-module_typography__42NyF[data-gutter='true'] {
 	margin-top: -0.125rem;

@@ -10,7 +10,7 @@ export interface TypographyProps {
     truncate?: boolean;
     gutter?: boolean;
     capitalyse?: boolean;
-    dynamic?: boolean;
+    spaceWord?: boolean;
     align?: 'left' | 'center' | 'right' | 'justify';
     color?: 'theme' | 'accent' | 'info' | 'success' | 'warning' | 'danger';
     space?: 'tight' | 'wide';

@@ -14,6 +14,11 @@
 	white-space: nowrap;
 }
 
+.typography[data-space-word='true'] {
+	overflow-wrap: break-word;
+	white-space: normal;
+}
+
 /* Gutter */
 .typography[data-gutter='true'] {
 	margin-top: -0.125rem;
