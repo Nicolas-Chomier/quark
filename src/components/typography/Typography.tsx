@@ -22,6 +22,7 @@ export interface TypographyProps {
 	truncate?: boolean;
 	gutter?: boolean;
 	capitalyse?: boolean;
+	uppercase?: boolean;
 	spaceWord?: boolean;
 	align?: 'left' | 'center' | 'right' | 'justify';
 	color?: 'theme' | 'accent' | 'info' | 'success' | 'warning' | 'danger';
@@ -41,6 +42,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 			truncate,
 			gutter,
 			capitalyse,
+			uppercase,
 			spaceWord,
 			align,
 			color,
@@ -64,6 +66,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 				data-truncate={truncate}
 				data-gutter={gutter}
 				data-capitalyse={capitalyse}
+				data-uppercase={uppercase}
 				data-space-word={spaceWord}
 				data-align={align}
 				data-color={color}

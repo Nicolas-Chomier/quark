@@ -28,6 +28,9 @@
 .typography[data-capitalyse='true'] {
 	text-transform: capitalize;
 }
+.typography[data-uppercase='true'] {
+	text-transform: uppercase;
+}
 
 /* Variants */
 .typography[data-variant='body1'] {

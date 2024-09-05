@@ -3076,6 +3076,9 @@
 .Typography-module_typography__42NyF[data-capitalyse='true'] {
 	text-transform: capitalize;
 }
+.Typography-module_typography__42NyF[data-uppercase='true'] {
+	text-transform: uppercase;
+}
 
 /* Variants */
 .Typography-module_typography__42NyF[data-variant='body1'] {
