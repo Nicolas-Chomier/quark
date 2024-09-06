@@ -13,7 +13,7 @@ export type TableProps = {
 	noRowsMessage?: string;
 	rowsPerPage?: number;
 	allowSelection?: 'single' | 'multiple';
-	width?: 'xs' | 's' | 'm' | 'l' | 'xl';
+	width?: '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl';
 	isLoading?: boolean;
 	error?: boolean;
 	hideColumns?: string[];

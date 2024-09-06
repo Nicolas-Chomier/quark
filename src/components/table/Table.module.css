@@ -31,6 +31,16 @@
 	z-index: 2;
 }
 
+.table[data-width='3xs'] {
+	width: 14rem;
+	max-width: 14rem;
+}
+
+.table[data-width='2xs'] {
+	width: 22rem;
+	max-width: 22rem;
+}
+
 .table[data-width='xs'] {
 	width: 33rem;
 	max-width: 33rem;

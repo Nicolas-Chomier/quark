@@ -4,7 +4,7 @@ import styles from './TableDummy.module.css';
 
 export type TableDummyProps = {
 	message?: string;
-	width?: 'xs' | 's' | 'm' | 'l' | 'xl';
+	width?: '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl';
 	spinner?: boolean;
 };
 

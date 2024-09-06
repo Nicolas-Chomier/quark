@@ -332,10 +332,20 @@
 	--avatar-name-color: black;
 	--avatar-rank-color: gray;
 	--avatar-max-width: 12.5rem;
-	--avatar-variant-fade-padding: 0.5rem;
+	--avatar-variant-padding: 0.5rem;
 	--avatar-variant-outline-background-color: rgb(130, 255, 105);
 	--avatar-variant-fade-background-color: hotpink;
 	--avatar-variant-fade-border-color: rgb(255, 0, 128);
+	--avatar-xxxs-border-radius: 4px;
+	--avatar-xxs-border-radius: 6px;
+	--avatar-xs-border-radius: 8px;
+	--avatar-s-border-radius: 10px;
+	--avatar-m-border-radius: 12px;
+	--avatar-l-border-radius: 14px;
+	--avatar-xl-border-radius: 16px;
+	--avatar-xxl-border-radius: 18px;
+	--avatar-xxxl-border-radius: 20px;
+	--avatar-full-border-radius: 9999px;
 
 	/* Display Content */
 	--displayContent-radius-xxxs: 4px;
@@ -2817,6 +2827,16 @@
 	background-color: var(--table-header-background-color-standard);
 	border-radius: var(--table-header-radius);
 	z-index: 2;
+}
+
+.Table-module_table__-LOHJ[data-width='3xs'] {
+	width: 14rem;
+	max-width: 14rem;
+}
+
+.Table-module_table__-LOHJ[data-width='2xs'] {
+	width: 22rem;
+	max-width: 22rem;
 }
 
 .Table-module_table__-LOHJ[data-width='xs'] {
