@@ -4,7 +4,7 @@
 	align-items: center;
 	justify-content: center;
 	gap: 1.4rem;
-	height: 17.188rem;
+	height: 16rem;
 	position: relative;
 	background-color: var(--table-background-color-standard);
 	border-radius: var(--table-radius);
@@ -27,6 +27,16 @@
 	background-color: var(--table-header-background-color-standard);
 	border-radius: var(--table-header-radius);
 	z-index: 2;
+}
+
+.container[data-width='3xs'] {
+	width: 14rem;
+	max-width: 14rem;
+}
+
+.container[data-width='2xs'] {
+	width: 22rem;
+	max-width: 22rem;
 }
 
 .container[data-width='xs'] {
