@@ -47,6 +47,7 @@ export { useObjectProperties } from './hooks/useObjectProperties';
 export { useReadLocalStorage } from './hooks/useReadLocalStorage';
 export { useSessionStorage } from './hooks/useSessionStorage';
 export { useCopyToClipboard } from './hooks/useCopyToClipboard';
+export { useUrlParams } from './hooks/useUrlParams';
 
 /* Functions */
 export { _object } from './functions/object';
