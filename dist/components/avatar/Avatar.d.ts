@@ -8,7 +8,8 @@ export type AvatarProps = {
     borderRadius?: 'xxxs' | 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl' | 'full';
     customRankingTable?: RankingTable;
     italic?: boolean;
-    variant?: 'bots' | 'bots2' | 'fun';
+    avatarVariant?: 'bots' | 'fun' | 'bots2';
+    variant?: 'fade' | 'outline';
 };
 export declare const Avatar: React.FC<AvatarProps>;
 export {};

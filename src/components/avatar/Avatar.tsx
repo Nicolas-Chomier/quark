@@ -29,7 +29,8 @@ export type AvatarProps = {
 		| 'full';
 	customRankingTable?: RankingTable;
 	italic?: boolean;
-	variant?: 'bots' | 'bots2' | 'fun';
+	avatarVariant?: 'bots' | 'fun' | 'bots2';
+	variant?: 'fade' | 'outline';
 };
 
 // Table de couleurs par défaut pour les rangs
@@ -90,6 +91,7 @@ export const Avatar: React.FC<AvatarProps> = ({
 	borderRadius,
 	customRankingTable,
 	italic,
+	avatarVariant,
 	variant,
 }) => {
 	// Calcul de la couleur du rang
@@ -109,18 +111,18 @@ export const Avatar: React.FC<AvatarProps> = ({
 			radius: getAvatarRadius(borderRadius),
 		};
 
-		if (variant === 'bots') {
+		if (avatarVariant === 'bots') {
 			return createAvatar(botttsNeutral, avatarOptions).toString();
 		}
-		if (variant === 'fun') {
+		if (avatarVariant === 'fun') {
 			return createAvatar(funEmoji, avatarOptions).toString();
 		}
-		if (variant === 'bots2') {
+		if (avatarVariant === 'bots2') {
 			return createAvatar(bottts, avatarOptions).toString();
 		}
 
 		return createAvatar(initials, avatarOptions).toString();
-	}, [name, rank, avatarSize, rankingColor, borderRadius, variant]);
+	}, [name, rank, avatarSize, rankingColor, borderRadius, avatarVariant]);
 
 	// Ne rien rendre si le nom n'est pas fourni
 	if (!name) return null;
@@ -129,6 +131,7 @@ export const Avatar: React.FC<AvatarProps> = ({
 			className={styles.avatar}
 			data-side={side}
 			data-border-radius={borderRadius}
+			data-variant={variant}
 		>
 			<svg
 				viewBox={`0 0 ${avatarSize} ${avatarSize}`}

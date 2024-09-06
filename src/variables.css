@@ -332,6 +332,10 @@
 	--avatar-name-color: black;
 	--avatar-rank-color: gray;
 	--avatar-max-width: 12.5rem;
+	--avatar-variant-fade-padding: 0.5rem;
+	--avatar-variant-outline-background-color: rgb(130, 255, 105);
+	--avatar-variant-fade-background-color: hotpink;
+	--avatar-variant-fade-border-color: rgb(255, 0, 128);
 
 	/* Display Content */
 	--displayContent-radius-xxxs: 4px;
