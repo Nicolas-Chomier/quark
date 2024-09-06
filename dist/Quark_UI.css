@@ -1233,7 +1233,7 @@
 	align-items: center;
 	justify-content: center;
 	gap: 1.4rem;
-	height: 275px;
+	height: 17.188rem;
 	position: relative;
 	background-color: var(--table-background-color-standard);
 	border-radius: var(--table-radius);
@@ -2809,6 +2809,7 @@
 }
 
 .Table-module_table__-LOHJ {
+	min-height: 17.188rem;
 	height: fit-content;
 	width: fit-content;
 	overflow-x: auto;
