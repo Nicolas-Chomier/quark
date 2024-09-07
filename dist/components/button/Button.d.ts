@@ -4,8 +4,8 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
     text?: string;
     loading?: boolean;
     variant?: 'theme' | 'accent' | 'simple' | 'outline' | 'fade' | 'ghost' | 'info' | 'success' | 'warning' | 'danger';
-    width?: 's' | 'm' | 'l' | 'full';
-    size?: 'xs' | 's' | 'm' | 'l' | 'xl';
+    width?: 'xs' | 's' | 'm' | 'l' | 'full';
+    fontSize?: '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl';
     borderRadius?: 'xxxs' | 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl' | 'full';
 }
 export declare const Button: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;

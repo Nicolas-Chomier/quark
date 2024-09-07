@@ -3,17 +3,24 @@ type TableData = {
     id: number;
     [key: string]: any;
 };
+type TableAction = {
+    label: string;
+    index: string;
+    render: (row: any) => React.ReactNode;
+};
 export type TableProps = {
+    onRowsSelect: (selectedRows: TableData[]) => void;
     data: TableData[];
-    loadingMessage?: string;
-    noRowsMessage?: string;
+    columns: string[];
+    actions?: TableAction[];
     rowsPerPage?: number;
-    allowSelection?: 'single' | 'multiple';
-    width?: '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl';
+    allowSelection?: number;
     isLoading?: boolean;
     error?: boolean;
     hideColumns?: string[];
-    onRowsSelect: (selectedRows: TableData[]) => void;
+    width?: number;
+    loadingMessage?: string;
+    noRowsMessage?: string;
 };
 export declare const Table: React.FC<TableProps>;
 export {};

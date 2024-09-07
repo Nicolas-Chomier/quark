@@ -18,8 +18,8 @@ export interface ButtonProps
 		| 'success'
 		| 'warning'
 		| 'danger';
-	width?: 's' | 'm' | 'l' | 'full';
-	size?: 'xs' | 's' | 'm' | 'l' | 'xl';
+	width?: 'xs' | 's' | 'm' | 'l' | 'full';
+	fontSize?: '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl';
 	borderRadius?:
 		| 'xxxs'
 		| 'xxs'
@@ -42,7 +42,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 			variant,
 			width,
 			borderRadius,
-			size,
+			fontSize,
 			children,
 			className,
 			...props
@@ -98,7 +98,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 				data-isloading={loading}
 				data-variant={variant}
 				data-width={width}
-				data-size={size}
+				data-font-size={fontSize}
 				data-border-radius={borderRadius}
 				className={`${styles.button} ${className || ''}`}
 				ref={ref}

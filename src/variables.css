@@ -239,6 +239,7 @@
 
 	/* Dummy */
 	--table-dummy-font-size-standard: 2.8rem;
+	--table-dummy-spinner-background-color: hotpink;
 
 	/* Fallback */
 	--fallback-background-color: rgb(39, 39, 39);

@@ -7,30 +7,42 @@ type TableData = {
 	[key: string]: any;
 };
 
+type TableAction = {
+	label: string;
+	index: string;
+	render: (row: any) => React.ReactNode;
+};
+
 export type TableProps = {
+	onRowsSelect: (selectedRows: TableData[]) => void;
 	data: TableData[];
-	loadingMessage?: string;
-	noRowsMessage?: string;
+	columns: string[];
+	actions?: TableAction[];
 	rowsPerPage?: number;
-	allowSelection?: 'single' | 'multiple';
-	width?: '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl';
+	allowSelection?: number;
+
 	isLoading?: boolean;
 	error?: boolean;
 	hideColumns?: string[];
-	onRowsSelect: (selectedRows: TableData[]) => void;
+
+	width?: number;
+	loadingMessage?: string;
+	noRowsMessage?: string;
 };
 
 export const Table: React.FC<TableProps> = ({
+	onRowsSelect,
 	data = [],
+	columns = [],
+	actions = [],
 	rowsPerPage = 5,
-	allowSelection,
-	width,
+	allowSelection = 0,
 	isLoading,
 	error,
 	hideColumns,
+	width,
 	loadingMessage = 'Loading...',
 	noRowsMessage = 'No rows to display.',
-	onRowsSelect,
 }) => {
 	// State for selected rows and current page
 	const [selectedRows, setSelectedRows] = useState<number[]>([]);
@@ -45,14 +57,21 @@ export const Table: React.FC<TableProps> = ({
 	const endIndex = startIndex + rowsPerPage;
 	const currentData = data.slice(startIndex, endIndex);
 
-	const columns = useMemo(() => {
-		if (data.length === 0) return [];
-		const columnKeys = Object.keys(data[0]);
-		return columnKeys.map((key) => ({
-			key,
-			header: key.toUpperCase(),
-		}));
-	}, [data]);
+	// Calculate new current data with empty rows
+	const newCurrentData = useMemo(() => {
+		if (data?.length === 0) return [];
+		if (currentData.length >= rowsPerPage) return currentData;
+
+		const emptyRows = Array(rowsPerPage - currentData.length)
+			.fill(null)
+			.map(() =>
+				Object.fromEntries(
+					Object.keys(currentData[0]).map((key) => [key, null]),
+				),
+			);
+
+		return [...currentData, ...emptyRows];
+	}, [currentData, data, rowsPerPage]);
 
 	// Row selection handler
 	const handleRowSelection = useCallback(
@@ -65,52 +84,45 @@ export const Table: React.FC<TableProps> = ({
 		[data, onRowsSelect],
 	);
 
-	// Toggle selection of a single row
+	// Toggle selection of a row
 	const toggleRow = useCallback(
-		(id: number) => {
-			if (allowSelection === 'single') {
-				setSelectedRows([id]);
-				handleRowSelection([id]);
-			} else if (allowSelection === 'multiple') {
-				setSelectedRows((prev) => {
-					const newSelection = prev.includes(id)
-						? prev.filter((rowId) => rowId !== id)
-						: [...prev, id];
-					handleRowSelection(newSelection);
-					return newSelection;
-				});
-			} else {
-				return null;
-			}
+		(id: number | null) => {
+			if (!allowSelection || !id) return;
+			const newSelection =
+				allowSelection === 1
+					? selectedRows.includes(id)
+						? []
+						: [id]
+					: selectedRows.includes(id)
+					? selectedRows.filter((rowId) => rowId !== id)
+					: [...selectedRows, id].slice(-allowSelection);
+
+			setSelectedRows(newSelection);
+			handleRowSelection(newSelection);
 		},
-		[allowSelection, handleRowSelection],
+		[allowSelection, handleRowSelection, selectedRows],
 	);
 
-	// Toggle all rows
+	// Toggle selection of all rows
 	const toggleAll = useCallback(() => {
-		if (allowSelection === 'single') {
-			setSelectedRows([]);
-			handleRowSelection([]);
-		} else if (allowSelection === 'multiple') {
-			const currentIds = currentData.map((row) => row.id);
-			setSelectedRows((prev) => {
-				let newSelection;
-				if (prev.length >= currentIds.length) {
-					setAllRowsSelected(false);
-					newSelection = prev.filter(
-						(id) => !currentIds.includes(id),
-					);
-				} else {
-					setAllRowsSelected(true);
-					newSelection = [...new Set([...prev, ...currentIds])];
-				}
-				handleRowSelection(newSelection);
-				return newSelection;
-			});
+		if (!allowSelection) return;
+
+		const currentIds = currentData.map((row) => row.id);
+		let newSelection: number[];
+
+		if (allowSelection === 1) {
+			newSelection = [];
 		} else {
-			return null;
+			const isAllSelected = selectedRows.length >= currentIds.length;
+			newSelection = isAllSelected
+				? selectedRows.filter((id) => !currentIds.includes(id))
+				: [...new Set([...selectedRows, ...currentIds])].slice(
+						-allowSelection,
+				  );
 		}
-	}, [allowSelection, currentData, handleRowSelection]);
+		setSelectedRows(newSelection);
+		handleRowSelection(newSelection);
+	}, [allowSelection, handleRowSelection, selectedRows, currentData]);
 
 	// Change the current page
 	const changePage = useCallback((page: number) => {
@@ -129,22 +141,19 @@ export const Table: React.FC<TableProps> = ({
 
 	// Display fallback if needed
 	if (isLoading) {
-		return <TableDummy width={width} spinner message={loadingMessage} />;
+		return <TableDummy width={width} message={loadingMessage} spinner />;
 	}
 	if (data.length === 0 || error) {
 		return <TableDummy width={width} message={noRowsMessage} />;
 	}
 	return (
-		<div className={styles.tableContainer} data-width={width}>
-			<table className={styles.table} data-width={width}>
-				<thead className={styles.tableThead}>
+		<div className={styles.container}>
+			<table className={styles.table}>
+				<thead className={styles.thead}>
 					<tr>
 						{allowSelection ? (
-							<th className={styles.tableTheadCell}>
-								<button
-									className={styles.checkbox}
-									onClick={toggleAll}
-								>
+							<th>
+								<button onClick={toggleAll}>
 									{allRowsSelected ? (
 										<svg
 											xmlns='http://www.w3.org/2000/svg'
@@ -184,73 +193,73 @@ export const Table: React.FC<TableProps> = ({
 						) : null}
 
 						{columns.map((column) => {
-							if (hideColumns?.includes(column.key)) return null;
-							if (column.key === 'id') return null;
-							return (
-								<th
-									className={styles.tableTheadCell}
-									key={column.key}
-								>
-									{column.header}
-								</th>
-							);
+							if (hideColumns?.includes(column)) return null;
+							return <th key={column}>{column}</th>;
+						})}
+
+						{actions?.map((action: any, index: number) => {
+							return <th key={index}>{action.label}</th>;
 						})}
 					</tr>
 				</thead>
 
-				<tbody className={styles.tableTBody}>
-					{currentData.map((row) => (
-						<tr
-							className={styles.tableTBodyRow}
-							key={row.id}
-							data-allow-selection={allowSelection}
-							data-selected={selectedRows.includes(row.id)}
-							onClick={() => toggleRow(row.id)}
-						>
-							{allowSelection ? (
-								<td className={styles.tableTBodyCell}>
-									<span className={styles.checkbox}>
-										{selectedRows.includes(row.id) ? (
-											<svg
-												xmlns='http://www.w3.org/2000/svg'
-												width='14'
-												height='14'
-												viewBox='0 0 24 24'
-											>
-												<path
-													fill='none'
-													stroke='currentColor'
-													strokeLinecap='round'
-													strokeLinejoin='round'
-													strokeWidth='3.6'
-													d='M20 6L9 17l-5-5'
-												/>
-											</svg>
-										) : null}
-									</span>
-								</td>
-							) : null}
-
-							{columns.map((column) => {
-								if (hideColumns?.includes(column.key))
-									return null;
-								if (column.key === 'id') return null;
-								return (
-									<td
-										className={styles.tableTBodyCell}
-										key={column.key}
-									>
-										{row[column.key]}
+				<tbody className={styles.body}>
+					{newCurrentData.map((row, index) => {
+						return row.id === null ? (
+							<tr key={`${index}-null`}>{''}</tr>
+						) : (
+							<tr
+								key={row.id}
+								data-allow-selection={allowSelection}
+								data-selected={selectedRows.includes(row.id)}
+								onClick={() => toggleRow(row.id)}
+							>
+								{!!allowSelection && (
+									<td>
+										<span>
+											{selectedRows.includes(row.id) ? (
+												<svg
+													xmlns='http://www.w3.org/2000/svg'
+													width='14'
+													height='14'
+													viewBox='0 0 24 24'
+												>
+													<path
+														fill='none'
+														stroke='currentColor'
+														strokeLinecap='round'
+														strokeLinejoin='round'
+														strokeWidth='3.6'
+														d='M20 6L9 17l-5-5'
+													/>
+												</svg>
+											) : null}
+										</span>
 									</td>
-								);
-							})}
-						</tr>
-					))}
+								)}
+
+								{columns.map((column) => {
+									if (hideColumns?.includes(column))
+										return null;
+
+									return <td key={column}>{row[column]}</td>;
+								})}
+
+								{actions?.map((action: any, index: number) => {
+									return (
+										<td key={index}>
+											{action.render(row)}
+										</td>
+									);
+								})}
+							</tr>
+						);
+					})}
 				</tbody>
 			</table>
-			<footer className={styles.pagination}>
+
+			<footer>
 				<button
-					className={styles.paginationButton}
 					onClick={() => changePage(1)}
 					disabled={currentPage === 1}
 				>
@@ -271,7 +280,6 @@ export const Table: React.FC<TableProps> = ({
 					</svg>
 				</button>
 				<button
-					className={styles.paginationButton}
 					onClick={() => changePage(currentPage - 1)}
 					disabled={currentPage === 1}
 				>
@@ -291,11 +299,8 @@ export const Table: React.FC<TableProps> = ({
 						/>
 					</svg>
 				</button>
-				<span className={styles.pageInfo}>
-					{`Page ${currentPage} / ${totalPages}`}
-				</span>
+				<span>{`Page ${currentPage} / ${totalPages}`}</span>
 				<button
-					className={styles.paginationButton}
 					onClick={() => changePage(currentPage + 1)}
 					disabled={currentPage === totalPages}
 				>
@@ -316,7 +321,6 @@ export const Table: React.FC<TableProps> = ({
 					</svg>
 				</button>
 				<button
-					className={styles.paginationButton}
 					onClick={() => changePage(totalPages)}
 					disabled={currentPage === totalPages}
 				>

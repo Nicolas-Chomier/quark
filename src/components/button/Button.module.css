@@ -10,29 +10,35 @@
 }
 
 /* Font size */
-.button[data-size='xs'] {
-	font-size: 0.75rem;
+.button[data-font-size='2xs'] {
+	font-size: 0.675rem;
 }
-.button[data-size='s'] {
+.button[data-font-size='xs'] {
+	font-size: 0.78rem;
+}
+.button[data-font-size='s'] {
 	font-size: 0.9rem;
 }
-.button[data-size='m'] {
+.button[data-font-size='m'] {
 	font-size: 1.1rem;
 }
-.button[data-size='l'] {
-	font-size: 1.8rem;
+.button[data-font-size='l'] {
+	font-size: 1.6rem;
 }
-.button[data-size='xl'] {
-	font-size: 2.2rem;
+.button[data-font-size='xl'] {
+	font-size: 2.1rem;
+}
+.button[data-font-size='2xl'] {
+	font-size: 3rem;
 }
 
 /* Width */
 .button[data-width='xs'] {
-	width: 6rem;
-	max-width: 6rem;
-	min-height: 2rem;
-	max-height: 2rem;
-	padding: 2px 4px;
+	width: 6.5rem;
+	max-width: 6.5rem;
+	min-height: 2.4rem;
+	max-height: 2.4rem;
+	padding: 3px 4px;
 }
 
 .button[data-width='s'] {
