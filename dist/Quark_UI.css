@@ -856,6 +856,20 @@
 	box-sizing: border-box;
 }
 
+/* Font size */
+.Button-module_button__iSBxU[data-size='s'] {
+	font-size: 0.9rem;
+}
+.Button-module_button__iSBxU[data-size='m'] {
+	font-size: 1.1rem;
+}
+.Button-module_button__iSBxU[data-size='l'] {
+	font-size: 1.8rem;
+}
+.Button-module_button__iSBxU[data-size='xl'] {
+	font-size: 2.2rem;
+}
+
 /* Width */
 .Button-module_button__iSBxU[data-width='s'] {
 	width: 8rem;

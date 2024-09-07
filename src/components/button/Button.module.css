@@ -9,6 +9,20 @@
 	box-sizing: border-box;
 }
 
+/* Font size */
+.button[data-size='s'] {
+	font-size: 0.9rem;
+}
+.button[data-size='m'] {
+	font-size: 1.1rem;
+}
+.button[data-size='l'] {
+	font-size: 1.8rem;
+}
+.button[data-size='xl'] {
+	font-size: 2.2rem;
+}
+
 /* Width */
 .button[data-width='s'] {
 	width: 8rem;
