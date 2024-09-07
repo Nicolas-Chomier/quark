@@ -857,6 +857,9 @@
 }
 
 /* Font size */
+.Button-module_button__iSBxU[data-size='xs'] {
+	font-size: 0.75rem;
+}
 .Button-module_button__iSBxU[data-size='s'] {
 	font-size: 0.9rem;
 }
@@ -871,6 +874,14 @@
 }
 
 /* Width */
+.Button-module_button__iSBxU[data-width='xs'] {
+	width: 6rem;
+	max-width: 6rem;
+	min-height: 2rem;
+	max-height: 2rem;
+	padding: 2px 4px;
+}
+
 .Button-module_button__iSBxU[data-width='s'] {
 	width: 8rem;
 	max-width: 8rem;

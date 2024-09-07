@@ -19,7 +19,7 @@ export interface ButtonProps
 		| 'warning'
 		| 'danger';
 	width?: 's' | 'm' | 'l' | 'full';
-	size?: 's' | 'm' | 'l' | 'xl';
+	size?: 'xs' | 's' | 'm' | 'l' | 'xl';
 	borderRadius?:
 		| 'xxxs'
 		| 'xxs'

@@ -10,6 +10,9 @@
 }
 
 /* Font size */
+.button[data-size='xs'] {
+	font-size: 0.75rem;
+}
 .button[data-size='s'] {
 	font-size: 0.9rem;
 }
@@ -24,6 +27,14 @@
 }
 
 /* Width */
+.button[data-width='xs'] {
+	width: 6rem;
+	max-width: 6rem;
+	min-height: 2rem;
+	max-height: 2rem;
+	padding: 2px 4px;
+}
+
 .button[data-width='s'] {
 	width: 8rem;
 	max-width: 8rem;
