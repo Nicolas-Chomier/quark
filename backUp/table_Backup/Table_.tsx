@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import styles from './Table.module.css';
-import { TableDummy } from '../dummy/TableDummy';
-import { Button } from '../button/Button';
+import { TableDummy } from '../../src/components/dummy/TableDummy';
+import { Button } from '../../src/components/button/Button';
 
 type TableData_ = {
 	id: number;

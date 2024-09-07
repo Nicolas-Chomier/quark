@@ -15,7 +15,12 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true
 	},
-	"include": ["src/**/*", "src/types/**/*"],
+	"include": [
+		"src/**/*",
+		"src/types/**/*",
+		"backUp/table_Backup",
+		"display(W.I.P)"
+	],
 	"exclude": ["node_modules", "dist"],
 	"files": ["src/types/css.d.ts"]
 }
