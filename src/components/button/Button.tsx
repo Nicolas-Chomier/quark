@@ -18,8 +18,9 @@ export interface ButtonProps
 		| 'success'
 		| 'warning'
 		| 'danger';
-	width?: 'xs' | 's' | 'm' | 'l' | 'full';
+	width?: 'xs' | 's' | 'm' | 'l' | 'full' | 'fit';
 	fontSize?: '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl';
+	fontWeight?: 'light' | 'semibold' | 'bold';
 	borderRadius?:
 		| 'xxxs'
 		| 'xxs'
@@ -43,6 +44,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 			width,
 			borderRadius,
 			fontSize,
+			fontWeight,
 			children,
 			className,
 			...props
@@ -66,8 +68,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 				return (
 					<>
 						<Spinner />
-						<span className={styles.space} />
-						<span className={styles.text}>{text}</span>
 					</>
 				);
 			}
@@ -99,6 +99,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 				data-variant={variant}
 				data-width={width}
 				data-font-size={fontSize}
+				data-font-weight={fontWeight}
 				data-border-radius={borderRadius}
 				className={`${styles.button} ${className || ''}`}
 				ref={ref}

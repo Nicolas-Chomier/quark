@@ -880,12 +880,26 @@
 	font-size: 3rem;
 }
 
+/* Font weight */
+.Button-module_button__iSBxU[data-font-weight='light'] {
+	font-weight: lighter;
+}
+
+.Button-module_button__iSBxU[data-font-weight='semibold'] {
+	font-weight: 500;
+}
+
+.Button-module_button__iSBxU[data-font-weight='bold'] {
+	font-weight: bolder;
+	letter-spacing: 0.2px;
+}
+
 /* Width */
 .Button-module_button__iSBxU[data-width='xs'] {
-	width: 6.5rem;
+	width: 6rem;
 	max-width: 6.5rem;
-	min-height: 2.4rem;
-	max-height: 2.4rem;
+	min-height: 2rem;
+	max-height: 2rem;
 	padding: 3px 4px;
 }
 
@@ -916,6 +930,13 @@
 .Button-module_button__iSBxU[data-width='full'] {
 	padding: 4px 6px;
 	width: 100%;
+	min-height: 2.75rem;
+	max-height: 2.75rem;
+}
+
+.Button-module_button__iSBxU[data-width='fit'] {
+	padding: 4px 6px;
+	width: fit-content;
 	min-height: 2.75rem;
 	max-height: 2.75rem;
 }
@@ -1052,7 +1073,7 @@
 .Button-module_button__iSBxU[data-variant='success']:hover,
 .Button-module_button__iSBxU[data-variant='warning']:hover,
 .Button-module_button__iSBxU[data-variant='danger']:hover {
-	filter: brightness(113%);
+	filter: brightness(90%);
 }
 
 /* STATES DISABLED */

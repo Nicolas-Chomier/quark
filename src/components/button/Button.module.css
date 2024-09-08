@@ -32,12 +32,26 @@
 	font-size: 3rem;
 }
 
+/* Font weight */
+.button[data-font-weight='light'] {
+	font-weight: lighter;
+}
+
+.button[data-font-weight='semibold'] {
+	font-weight: 500;
+}
+
+.button[data-font-weight='bold'] {
+	font-weight: bolder;
+	letter-spacing: 0.2px;
+}
+
 /* Width */
 .button[data-width='xs'] {
-	width: 6.5rem;
+	width: 6rem;
 	max-width: 6.5rem;
-	min-height: 2.4rem;
-	max-height: 2.4rem;
+	min-height: 2rem;
+	max-height: 2rem;
 	padding: 3px 4px;
 }
 
@@ -68,6 +82,13 @@
 .button[data-width='full'] {
 	padding: 4px 6px;
 	width: 100%;
+	min-height: 2.75rem;
+	max-height: 2.75rem;
+}
+
+.button[data-width='fit'] {
+	padding: 4px 6px;
+	width: fit-content;
 	min-height: 2.75rem;
 	max-height: 2.75rem;
 }
@@ -204,7 +225,7 @@
 .button[data-variant='success']:hover,
 .button[data-variant='warning']:hover,
 .button[data-variant='danger']:hover {
-	filter: brightness(113%);
+	filter: brightness(90%);
 }
 
 /* STATES DISABLED */

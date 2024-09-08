@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+/* import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import styles from './Table.module.css';
 import { TableDummy } from '../../src/components/dummy/TableDummy';
@@ -139,7 +139,7 @@ export const Table_: React.FC<TableProps_> = ({
 	}
 	if (data.length === 0 || error) {
 		return <TableDummy width={width} message={noRowsMessage} />;
-	} */
+	} 
 	return (
 		<div className={styles.tableContainer} data-width={width}>
 			<table className={styles.table} data-width={width}>
@@ -373,3 +373,4 @@ export const Table_: React.FC<TableProps_> = ({
 		</div>
 	);
 };
+ */
