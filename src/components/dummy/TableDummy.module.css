@@ -3,6 +3,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	text-align: center;
 	gap: 1.4rem;
 	min-height: 315.94px;
 	max-height: 315.94px;
