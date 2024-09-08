@@ -18,8 +18,9 @@
 	"include": [
 		"src/**/*",
 		"src/types/**/*",
-		"backUp/table_Backup",
-		"display(W.I.P)"
+		"src/functions/backup/table_Backup",
+		"display(W.I.P)",
+		"backup"
 	],
 	"exclude": ["node_modules", "dist"],
 	"files": ["src/types/css.d.ts"]
