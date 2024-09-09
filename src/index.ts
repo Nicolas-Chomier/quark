@@ -54,6 +54,7 @@ export { _object } from './functions/object';
 export { _array } from './functions/array';
 export { _capitalize } from './functions/string';
 export { keepSelectedKeys } from './functions/keepSelectedKey';
+export { textToInt } from './functions/textToInt';
 
 /* Components en construction (PBS importation circulaire) */
 /* export {

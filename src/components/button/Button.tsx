@@ -65,11 +65,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 		// Renders the content of the button
 		const renderContent = () => {
 			if (text && loading) {
-				return (
-					<>
-						<Spinner />
-					</>
-				);
+				return <Spinner />;
 			}
 			if (text && children) {
 				return (

@@ -5,7 +5,8 @@ export interface InputProps
 	extends React.InputHTMLAttributes<HTMLInputElement> {
 	type: 'text' | 'password' | 'email' | 'number';
 	name: string;
-	width?: 's' | 'm' | 'l' | 'full';
+	width?: 's' | 'm' | 'l' | 'xl' | 'xxl' | 'full';
+	height?: 's' | 'm' | 'l';
 	border?: boolean;
 	borderRadius?:
 		| 'xxxs'
@@ -27,6 +28,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 			type,
 			name,
 			width = 's',
+			height = 's',
 			border = false,
 			borderRadius = undefined,
 			className,
@@ -40,6 +42,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 				name={name}
 				type={type}
 				data-width={width}
+				data-height={height}
 				data-border={border}
 				data-border-radius={borderRadius}
 				className={`${styles.input} ${className || ''}`}
