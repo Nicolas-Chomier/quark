@@ -48,6 +48,7 @@ export { useReadLocalStorage } from './hooks/useReadLocalStorage';
 export { useSessionStorage } from './hooks/useSessionStorage';
 export { useCopyToClipboard } from './hooks/useCopyToClipboard';
 export { useUrlParams } from './hooks/useUrlParams';
+export { useDebounceValue } from './hooks/useDebounceValue';
 
 /* Functions */
 export { _object } from './functions/object';

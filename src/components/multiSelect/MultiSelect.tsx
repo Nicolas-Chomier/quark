@@ -224,6 +224,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
 						placeholder={dynamicPlaceholder ?? placeholder}
 						disabled={isDisable}
 						width='s'
+						height='m'
 						borderRadius='m'
 					/>
 

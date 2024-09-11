@@ -206,7 +206,7 @@ export const Table: React.FC<TableProps> = ({
 				<tbody className={styles.body}>
 					{newCurrentData.map((row, index) => {
 						return row.id === null ? (
-							<tr key={`${index}-null`}>{''}</tr>
+							<tr key={`${index}-null`}>{null}</tr>
 						) : (
 							<tr
 								key={row.id}
