@@ -6,6 +6,7 @@ export interface TypographyProps {
     element: TypographyElement;
     variant?: TypographyVariant;
     size?: TypographySize;
+    blink?: boolean;
     fontWeight?: 'lighter' | 'normal' | 'medium' | 'semibold' | 'bold';
     truncate?: boolean;
     gutter?: boolean;

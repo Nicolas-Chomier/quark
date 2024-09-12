@@ -97,6 +97,10 @@
 	--flex-background-color-style1: red;
 	--flex-background-color-style2: green;
 	--flex-background-color-style3: blue;
+	--flex-background-color-danger: #ff0000;
+	--flex-background-color-success: #00ff00;
+	--flex-background-color-warning: #ffff00;
+	--flex-background-color-info: #0000ff;
 	--flex-radius-xxxs: 4px;
 	--flex-radius-xxs: 6px;
 	--flex-radius-xs: 8px;

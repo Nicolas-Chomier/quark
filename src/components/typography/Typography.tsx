@@ -18,6 +18,7 @@ export interface TypographyProps {
 	element: TypographyElement;
 	variant?: TypographyVariant;
 	size?: TypographySize;
+	blink?: boolean;
 	fontWeight?: 'lighter' | 'normal' | 'medium' | 'semibold' | 'bold';
 	truncate?: boolean;
 	gutter?: boolean;
@@ -38,6 +39,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 			element = 'p',
 			variant,
 			size,
+			blink,
 			fontWeight,
 			truncate,
 			gutter,
@@ -62,6 +64,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 				data-element={element}
 				data-variant={variant}
 				data-size={size}
+				data-blink={blink}
 				data-font-weight={fontWeight}
 				data-truncate={truncate}
 				data-gutter={gutter}
