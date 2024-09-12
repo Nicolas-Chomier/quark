@@ -3,7 +3,9 @@ type FlexSize = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11
 type FlexGap = '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
 type FlexBorderRadius = 'xxxs' | 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl' | 'full';
 export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
-    background?: 'style1' | 'style2' | 'style3';
+    background?: 'style1' | 'style2' | 'style3' | 'danger' | 'success' | 'warning' | 'info';
+    width?: boolean;
+    height?: boolean;
     direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
     wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
     justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';

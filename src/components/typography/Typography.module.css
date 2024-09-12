@@ -19,6 +19,11 @@
 	white-space: normal;
 }
 
+/* Blink */
+.typography[data-blink='true'] {
+	animation: blink 2s ease-in-out infinite;
+}
+
 /* Gutter */
 .typography[data-gutter='true'] {
 	margin-top: -0.125rem;
@@ -184,4 +189,15 @@
 /* underline */
 .typography[data-underline='true'] {
 	text-decoration: underline;
+}
+
+/* Animation */
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.2;
+	}
 }

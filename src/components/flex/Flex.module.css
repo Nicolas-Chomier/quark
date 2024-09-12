@@ -6,6 +6,14 @@
 	box-sizing: border-box;
 }
 
+/* Size */
+.flex[data-full-width='true'] {
+	width: 100%;
+}
+.flex[data-full-height='true'] {
+	height: 100%;
+}
+
 /* background color */
 .flex[data-background='style1'] {
 	background-color: var(--flex-background-color-style1);
@@ -15,6 +23,18 @@
 }
 .flex[data-background='style3'] {
 	background-color: var(--flex-background-color-style3);
+}
+.flex[data-background='danger'] {
+	background-color: var(--flex-background-color-danger);
+}
+.flex[data-background='success'] {
+	background-color: var(--flex-background-color-success);
+}
+.flex[data-background='warning'] {
+	background-color: var(--flex-background-color-warning);
+}
+.flex[data-background='info'] {
+	background-color: var(--flex-background-color-info);
 }
 
 /* inline */
