@@ -1850,19 +1850,18 @@
 }
 
 .Flex-module_flex__bglxA {
-	width: fit-content;
-	height: fit-content;
+	width: 100%;
+	height: 100%;
+
 	display: flex;
 	z-index: 1;
 	box-sizing: border-box;
 }
 
-/* Size */
-.Flex-module_flex__bglxA[data-full-width='true'] {
-	width: 100%;
-}
-.Flex-module_flex__bglxA[data-full-height='true'] {
-	height: 100%;
+/* Fit-content */
+.Flex-module_flex__bglxA[data-fit='true'] {
+	width: fit-content;
+	height: fit-content;
 }
 
 /* background color */
@@ -3393,6 +3392,6 @@
 		opacity: 1;
 	}
 	50% {
-		opacity: 0.2;
+		opacity: 0;
 	}
 }
