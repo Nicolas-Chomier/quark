@@ -1,16 +1,18 @@
 .flex {
-	width: 100%;
-	height: 100%;
+	width: fit-content;
+	height: fit-content;
 
 	display: flex;
 	z-index: 1;
 	box-sizing: border-box;
 }
 
-/* Fit-content */
-.flex[data-fit='true'] {
-	width: fit-content;
-	height: fit-content;
+/* Width & Height */
+.flex[data-full-width='true'] {
+	width: 100%;
+}
+.flex[data-full-height='true'] {
+	height: 100%;
 }
 
 /* background color */
