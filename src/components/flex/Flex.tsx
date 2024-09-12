@@ -68,8 +68,7 @@ export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
 		| 'success'
 		| 'warning'
 		| 'info';
-	width?: boolean;
-	height?: boolean;
+	fit?: boolean;
 	direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
 	wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
 	justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
@@ -88,8 +87,7 @@ export const Flex = React.forwardRef<HTMLDivElement, FlexProps>(
 	(
 		{
 			background,
-			width,
-			height,
+			fit,
 			direction,
 			wrap,
 			justify,
@@ -111,8 +109,7 @@ export const Flex = React.forwardRef<HTMLDivElement, FlexProps>(
 		return (
 			<div
 				data-background={background}
-				data-full-width={width}
-				data-full-height={height}
+				data-fit={fit}
 				data-direction={direction}
 				data-wrap={wrap}
 				data-justify={justify}
