@@ -19,6 +19,10 @@
 	white-space: normal;
 }
 
+.typography[data-pre-wrap='true'] {
+	white-space: pre-wrap;
+}
+
 /* Blink */
 .typography[data-blink='true'] {
 	animation: blink 2s ease-in-out infinite;

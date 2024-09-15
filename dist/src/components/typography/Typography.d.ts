@@ -13,6 +13,7 @@ export interface TypographyProps {
     capitalyse?: boolean;
     uppercase?: boolean;
     spaceWord?: boolean;
+    prewrap?: boolean;
     align?: 'left' | 'center' | 'right' | 'justify';
     color?: 'theme' | 'accent' | 'info' | 'success' | 'warning' | 'danger';
     space?: 'tight' | 'wide';

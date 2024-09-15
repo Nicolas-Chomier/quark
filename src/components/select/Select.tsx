@@ -202,6 +202,7 @@ export const Select: React.FC<SelectProps> = ({
 						placeholder={placeholder}
 						disabled={isDisable}
 						width='s'
+						height='m'
 						borderRadius='m'
 					/>
 

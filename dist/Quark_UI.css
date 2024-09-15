@@ -3215,6 +3215,10 @@
 	white-space: normal;
 }
 
+.Typography-module_typography__42NyF[data-pre-wrap='true'] {
+	white-space: pre-wrap;
+}
+
 /* Blink */
 .Typography-module_typography__42NyF[data-blink='true'] {
 	animation: Typography-module_blink__uZxFt 2s ease-in-out infinite;

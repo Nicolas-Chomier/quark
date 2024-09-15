@@ -25,6 +25,7 @@ export interface TypographyProps {
 	capitalyse?: boolean;
 	uppercase?: boolean;
 	spaceWord?: boolean;
+	prewrap?: boolean;
 	align?: 'left' | 'center' | 'right' | 'justify';
 	color?: 'theme' | 'accent' | 'info' | 'success' | 'warning' | 'danger';
 	space?: 'tight' | 'wide';
@@ -46,6 +47,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 			capitalyse,
 			uppercase,
 			spaceWord,
+			prewrap,
 			align,
 			color,
 			space,
@@ -71,6 +73,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 				data-capitalyse={capitalyse}
 				data-uppercase={uppercase}
 				data-space-word={spaceWord}
+				data-pre-wrap={prewrap}
 				data-align={align}
 				data-color={color}
 				data-space={space}
