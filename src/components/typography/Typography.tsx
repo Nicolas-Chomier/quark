@@ -60,6 +60,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 	) => {
 		const Component = element as React.ElementType;
 
+		if (!children) return null;
 		return (
 			<Component
 				tabIndex={-1}

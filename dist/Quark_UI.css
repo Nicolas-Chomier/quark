@@ -3181,7 +3181,7 @@
 /* Focus */
 .TextArea-module_textarea__chdmN:focus {
 	outline: none;
-	box-shadow: inset 0 0 0 1.4px var(--textarea-border-color-focus);
+	box-shadow: inset 0 0 0 1px var(--textarea-border-color-focus);
 }
 
 .Tooltip-module_tooltipTrigger__sn7D1 {

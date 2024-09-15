@@ -164,9 +164,7 @@ export const Select: React.FC<SelectProps> = ({
 
 	// Update variant based on component state
 	useEffect(() => {
-		if (isError) setNewVariant('danger');
-		if (isValid) setNewVariant('success');
-		setNewVariant(variant);
+		setNewVariant(isError ? 'danger' : isValid ? 'success' : variant);
 	}, [isError, isValid, variant]);
 
 	// Sync input value with external value prop
