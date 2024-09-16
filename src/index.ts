@@ -49,6 +49,7 @@ export { useSessionStorage } from './hooks/useSessionStorage';
 export { useCopyToClipboard } from './hooks/useCopyToClipboard';
 export { useUrlParams } from './hooks/useUrlParams';
 export { useDebounceValue } from './hooks/useDebounceValue';
+export { useWindowSize } from './hooks/useWindowSize';
 
 /* Functions */
 export { _object } from './functions/object';
