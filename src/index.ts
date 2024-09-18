@@ -25,6 +25,10 @@ export {
 	type MultiSelectProps,
 } from './components/multiSelect/MultiSelect';
 export { Select, type SelectProps } from './components/select/Select';
+export {
+	SimpleSelect,
+	type SimpleSelectProps,
+} from './components/simpleSelect/SimpleSelect';
 export { Spinner, type SpinnerProps } from './components/spinner/Spinner';
 export { Table, type TableProps } from './components/table/Table';
 export { TextArea, type TextAreaProps } from './components/textarea/TextArea';
@@ -49,7 +53,6 @@ export { useSessionStorage } from './hooks/useSessionStorage';
 export { useCopyToClipboard } from './hooks/useCopyToClipboard';
 export { useUrlParams } from './hooks/useUrlParams';
 export { useDebounceValue } from './hooks/useDebounceValue';
-export { useWindowSize } from './hooks/useWindowSize';
 
 /* Functions */
 export { _object } from './functions/object';

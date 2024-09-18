@@ -2907,6 +2907,90 @@
 	border-radius: 99px;
 }
 
+.SimpleSelect-module_container__QZtip {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	position: relative;
+}
+
+.SimpleSelect-module_field__Beh-h {
+	display: flex;
+	align-items: center;
+	gap: 0.125rem;
+	padding: 0.1875rem;
+	border-radius: var(--select-field-and-panel-radius);
+	box-shadow: inset 0 0 0 1px var(--select-border-color-standard);
+	background-color: var(--select-field-background-color-standard);
+	transition: background-color 0.2s ease;
+}
+.SimpleSelect-module_field__Beh-h:hover {
+	background-color: var(--select-field-background-color-hover);
+}
+
+.SimpleSelect-module_panel__kuFWP {
+	width: 15.5rem;
+	max-width: 15.5rem;
+	height: 0;
+	position: absolute;
+	top: var(--select-panel-absolute-top-position);
+	z-index: 999;
+	margin-top: 0.125rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: var(--select-panel-background-color);
+	border-radius: var(--select-field-and-panel-radius);
+	transition: height 0.3s ease, box-shadow 0.3s ease;
+}
+.SimpleSelect-module_panelOpen__G-Wbe {
+	height: auto;
+	height: calc-size(auto);
+	max-height: 14.875rem;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	box-shadow: inset 0 0 0 1px var(--select-panel-open-border-color);
+}
+
+.SimpleSelect-module_customButton__ewbBh {
+	width: calc(15.5rem - 2px);
+	max-width: calc(15.5rem - 2px);
+	height: 2.375rem;
+	padding: 0.25rem;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: var(--select-button-panel-text-color-standard);
+	cursor: pointer;
+	font: inherit;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+}
+.SimpleSelect-module_customButton__ewbBh:hover {
+	background-color: var(--select-panel-background-color-hover);
+	color: var(--select-button-panel-text-color-hover);
+}
+.SimpleSelect-module_panel__kuFWP::-webkit-scrollbar {
+	width: 0;
+}
+.SimpleSelect-module_panel__kuFWP[data-scrollbar='true']::-webkit-scrollbar {
+	width: var(--select-scrollbar-width);
+}
+.SimpleSelect-module_panel__kuFWP[data-scrollbar='true']::-webkit-scrollbar-track {
+	background: var(--select-scrollbar-background-color-outer);
+}
+.SimpleSelect-module_panel__kuFWP[data-scrollbar='true']::-webkit-scrollbar-thumb {
+	background: var(--select-scrollbar-background-color-inner);
+	border-radius: 99px;
+}
+
 .Table-module_container__6WObv {
 	--table-cell-height: 2.5rem;
 
