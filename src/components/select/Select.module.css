@@ -63,6 +63,7 @@
 	font-weight: inherit;
 	font-style: inherit;
 	font-family: inherit;
+	z-index: 999;
 }
 .customButton:hover {
 	background-color: var(--select-panel-background-color-hover);

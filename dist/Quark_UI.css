@@ -2412,6 +2412,12 @@
 }
 
 /* Width */
+.input-module_input__-ipHD[data-width='xs'] {
+	min-width: 11rem;
+	max-width: 11rem;
+	padding: 0 0.625rem;
+}
+
 .input-module_input__-ipHD[data-width='s'] {
 	min-width: 12.5rem;
 	max-width: 12.5rem;
@@ -2888,6 +2894,7 @@
 	font-weight: inherit;
 	font-style: inherit;
 	font-family: inherit;
+	z-index: 999;
 }
 .Select-module_customButton__svbBJ:hover {
 	background-color: var(--select-panel-background-color-hover);
@@ -3272,6 +3279,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: transparent;
 }
 
 .Tooltip-module_tooltipArrow__2EIv- {
